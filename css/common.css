@@ -1,6 +1,17 @@
-:root{
+:root {
+    /* base color */
+    --black: #000;
+    --gray01: #86868b;
+    --gray02: #cfcfcf;
+    --gray03: #e4e6ea;
+    --gray04: #eff1f5;
+    --gray05: #f5f7fa;
+    --white: #fff;
+}
 
-  /* base color */
-  --black: #000;
-  --gray01:#86868B;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: var(--gray05);
 }
