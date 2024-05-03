@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* 인트로 */
+@keyframes introMove1 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@keyframes introMove2 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}

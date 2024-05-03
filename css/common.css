@@ -14,6 +14,10 @@ body {
     width: 100%;
     height: 100%;
     background: var(--gray05);
+    margin: 0;
+}
+section {
+    min-height: 100vh;
 }
 
 html {

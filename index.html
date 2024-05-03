@@ -7,8 +7,18 @@
         <!-- main css -->
         <link rel="stylesheet" href="./css/reset.css" />
         <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/ani.css" />
         <link rel="stylesheet" href="./css/rootmem-company-main.css" />
         <link rel="stylesheet" href="./css/index.css" />
+
+        <!-- main js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+        <!-- ScrollTrigger CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+        <!-- Lenis -->
+        <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+        <script defer src="./js/rootme-company-main.js"></script>
+
         <title>rootme-company</title>
     </head>
 
@@ -18,23 +28,33 @@
                 <div class="header_gnb">
                     <div class="logo">
                         <a href="rootme-company.html">
-                            <img src="" alt="rootme-logo" />
+                            <img src="./images/logo.png" alt="rootme-logo" />
                         </a>
                     </div>
                     <div class="menubar">
                         <menu class="header_menu">
-                            <li>About</li>
-                            <li>Work</li>
-                            <li>Story</li>
-                            <li>Brand</li>
-                            <li>Contact</li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li>
+                                <a href="#work">Work</a>
+                            </li>
+                            <li>
+                                <a href="">Story</a>
+                            </li>
+                            <li>
+                                <a href="">Brand</a>
+                            </li>
+                            <li>
+                                <a href="">Contact</a>
+                            </li>
                         </menu>
                     </div>
                 </div>
             </headerer>
 
             <main>
-                <section class="main">
+                <section class="main" id="main">
                     <div>
                         <div class="main_txt">
                             <p>스마트한 서비스, 스마트한 비즈니스</p>
@@ -46,62 +66,63 @@
                     </div>
                 </section>
 
-                <section class="about">
-                    <div>
-                        <div class="">
-                            <img src="" alt="" />
-                            <div>
+                <section class="about" id="about">
+                    <div class="about_container">
+                        <div class="about_box about_txt1">
+                            <div class="about_txt">
                                 <span>Expert in Each field</span>
-                                <h3>
-                                    다양한 분야의 전문가들이 모여 서비스의 상상을 현실로 만드는 곳
-                                </h3>
+                                <h3>다양한 분야의 전문가들이 모여</h3>
+                                <h3>서비스의 상상을 현실로 만드는 곳</h3>
                             </div>
                         </div>
-                        <div>
-                            <img src="" alt="" />
-                            <div>
+                        <div class="about_box about_txt2">
+                            <div class="about_txt">
                                 <span>Flexible thinking attitude</span>
-                                <h3>
-                                    우리는 열린 생각과 유연한 태도로 서비스를 행복하게 만듭니다.
-                                </h3>
+                                <h3>우리는 열린 생각과 유연한 태도로</h3>
+                                <h3>서비스를 행복하게 만듭니다.</h3>
                             </div>
                         </div>
-                        <div>
-                            <img src="" alt="" />
-                            <div>
+                        <div class="about_box about_txt3">
+                            <div class="about_txt">
                                 <span>New flow service</span>
-                                <h3>
-                                    각자의 다양한 개성과 능력으로 새로운 흐름의 서비스를 만듭니다.
-                                </h3>
+                                <h3>각자의 다양한 개성과 능력으로</h3>
+                                <h3>새로운 흐름의 서비스를 만듭니다.</h3>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="Work">
+                <section class="work" id="work">
                     <div>
-                        <div>
+                        <div class="work_top_txt">
                             <span>(Our Innovation)</span>
-                            <div>
-                                <h3>becomes a speclal day bAum rootme every day</h3>
-                                <h3>becomes a speclal day bAum rootme every day</h3>
-                                <h3>becomes a speclal day bAum rootme every day</h3>
+                            <div class="work_move_txt">
+                                <h3>
+                                    becomes a speclal day bAum rootme every day becomes a speclal
+                                    day bAum rootme every day
+                                </h3>
+                                <h3>
+                                    becomes a speclal day bAum rootme every day becomes a speclal
+                                    day bAum rootme every day
+                                </h3>
+                                <h3>
+                                    becomes a speclal day bAum rootme every day becomes a speclal
+                                    day bAum rootme every day
+                                </h3>
                             </div>
                         </div>
 
-                        <div>
-                            <div>
-                                <div>
-                                    <div>
-                                        <span>EXPERT IN EACH FIELD</span>
-                                        <img src="" alt="" />
-                                        <div>
-                                            <p>YANOLJA (SEAT RESERVATION)</p>
-                                            <em>@2024</em>
-                                        </div>
+                        <div class="work_project_box">
+                            <div class="project_wrap">
+                                <div class="work_project_info">
+                                    <span>EXPERT IN EACH FIELD</span>
+                                    <img src="./images/work1.png" alt="임시" />
+                                    <div class="work_project_btm">
+                                        <p>YANOLJA (SEAT RESERVATION)</p>
+                                        <em>@2024</em>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="work_project_text">
                                     <ul>
                                         <li>Seat Reservation</li>
                                         <li>Mobile App</li>
@@ -111,18 +132,8 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div>
-                                    <div>
-                                        <span>EXPERT IN EACH FIELD</span>
-                                        <img src="" alt="" />
-                                        <div>
-                                            <p>IMUG (OUR SERVICES)</p>
-                                            <em>@2022</em>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
+                            <div class="project_wrap">
+                                <div class="work_project_text">
                                     <ul>
                                         <li>Healthy Habits</li>
                                         <li>Mobile App</li>
@@ -130,20 +141,26 @@
                                         <li>Imug</li>
                                     </ul>
                                 </div>
-                            </div>
-
-                            <div>
-                                <div>
-                                    <div>
-                                        <span>EXPERT IN EACH FIELD</span>
-                                        <img src="" alt="" />
-                                        <div>
-                                            <p>YANOLJA (SEAT RESERVATION)</p>
-                                            <em>@2024</em>
-                                        </div>
+                                <div class="work_project_info">
+                                    <span>EXPERT IN EACH FIELD</span>
+                                    <img src="./images/work2.png" alt="임시" />
+                                    <div class="work_project_btm">
+                                        <p>IMUG (OUR SERVICES)</p>
+                                        <em>@2022</em>
                                     </div>
                                 </div>
-                                <div>
+                            </div>
+
+                            <div class="project_wrap">
+                                <div class="work_project_info">
+                                    <span>EXPERT IN EACH FIELD</span>
+                                    <img src="./images/work3.png" alt="임시" />
+                                    <div class="work_project_btm">
+                                        <p>YANOLJA (SEAT RESERVATION)</p>
+                                        <em>@2024</em>
+                                    </div>
+                                </div>
+                                <div class="work_project_text">
                                     <ul>
                                         <li>Voting Promotions</li>
                                         <li>Website</li>
