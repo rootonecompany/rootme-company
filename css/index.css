@@ -1,0 +1,207 @@
+/* Story */
+.story {
+    position: absolute;
+    background: white;
+}
+
+.story_background {
+    width: 100%;
+    height: 100%;
+}
+
+.title_box {
+    background: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 232px;
+    top: 8299px;
+}
+
+.story_title {
+    color: black;
+    font-size: 100px;
+    font-weight: 400;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+.story_title_bold {
+    color: black;
+    font-size: 100px;
+    font-weight: 900;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+.box_container {
+    display: flex;
+}
+
+.box_item_white {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 608px;
+    height: 608px;
+    margin: 10px;
+    padding: 56px 60px;
+    border: 1px solid black;
+}
+
+.box_item_black {
+    /* display: inline-block; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 608px;
+    height: 608px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
+}
+
+.bottom_main_content {
+    margin-top: 44px;
+    margin-bottom: 87px;
+}
+
+.box_top {
+    display: block;
+    border: 1px solid red;
+}
+
+.box_bottom {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+.smarter_text {
+    font-size: 20px;
+}
+
+.box_content {
+    font-size: 28px;
+}
+
+.box_footer {
+    font-size: 14px;
+}
+
+/* story 2 (black background) */
+
+.background_image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, black 100%);
+}
+
+.brand_title {
+    color: white;
+    font-size: 92px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 114px;
+    word-wrap: break-word;
+}
+
+.brand_title_
+
+
+/* Brand */
+.contact {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: var(--gray05);
+}
+
+.subtitle {
+    text-align: center;
+    color: #86868b;
+    font-size: 32px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.contact_title_bold {
+    color: black;
+    font-weight: 900;
+    font-size: 100px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+.contact_title {
+    color: black;
+    font-size: 100px;
+    font-weight: 400;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+.logo_container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+}
+
+.logo_box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 222px;
+    height: 80px;
+    border: 1px #cfcfcf solid;
+}
+
+.logo_box > img {
+}
+
+/* Contact */
+.contact_title {
+    font-size: 100px;
+    font-weight: 400;
+}
+
+.contact_title_bold {
+    font-size: 100px;
+    font-weight: 900;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sidebar {
+    text-align: right;
+    font-size: 14px;
+}
+
+.sidebar {
+    width: 138px;
+    height: 140px;
+    border: 1px #cfcfcf solid;
+    background: white;
+    border-radius: 10px;
+}
+
+.sidebar_menu {
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.contact {
+    text-align: right;
+}
