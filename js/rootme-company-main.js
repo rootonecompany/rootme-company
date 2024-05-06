@@ -1,4 +1,12 @@
+// 페이지 새로고침 시 맨 위로 이동
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+window.onbeforeunload = scrollToTop;
+
+//GSAP
 gsap.registerPlugin(ScrollTrigger);
+
 
 // scroll
 const lenis = new Lenis();
@@ -11,13 +19,13 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
-// 비디오 늘리기
+// main video
 const main_video = gsap.timeline();
 
 main_video.to(".main_video_object", {
   scale: 1,
   width: "100vw",
-  height: "100vh",
+  duration: 4,
 });
 
 ScrollTrigger.create({
@@ -27,7 +35,6 @@ ScrollTrigger.create({
   end: "bottom top",
   scrub: true,
   pin: true,
-  markers: false,
   anticipatePin: 1,
 });
 
@@ -72,22 +79,51 @@ function showListBox03() {
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector('.header_gnb');
   const mainVideo = document.querySelector('.main_video');
-  let lastScrollTop = 0;
   const triggerOffset = 570;
 
-  window.addEventListener("scroll", function () {
-    let st = window.pageYOffset || document.documentElement.scrollTop;
+  let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  function handleScroll() {
+    const st = window.pageYOffset || document.documentElement.scrollTop;
 
     if (st > lastScrollTop && st > mainVideo.offsetTop + triggerOffset) {
-
-      if (!header.classList.contains('hidden')) {
-        header.classList.add('hidden');
-      }
+      header.classList.add('hidden');
     } else {
-      if (header.classList.contains('hidden')) {
-        header.classList.remove('hidden');
-      }
+      header.classList.remove('hidden');
     }
+
     lastScrollTop = st <= 0 ? 0 : st;
-  }, false);
+  }
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
 });
+
+
+
+//work move text
+const workTopTxt = document.querySelector('.work_top_txt');
+const workSection = document.querySelector('.work');
+let isScrolling = false;
+
+function handleScroll() {
+  if (!isScrolling) {
+    isScrolling = true;
+    requestAnimationFrame(() => {
+      const scrollTop = window.scrollY;
+      const sectionOffsetTop = workSection.offsetTop;
+
+      if (scrollTop > sectionOffsetTop) {
+        const translateY = scrollTop - sectionOffsetTop;
+        workTopTxt.style.transform = `translateY(${translateY}px)`;
+        workTopTxt.style.color = 'gray';
+      } else {
+        workTopTxt.style.transform = 'translateY(0)';
+        workTopTxt.style.color = 'black';
+      }
+
+      isScrolling = false;
+    });
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
