@@ -1,204 +1,331 @@
-/* Story */
-.story {
-    position: absolute;
-    background: white;
-}
-
-.story_background {
+/* story */
+#story {
     width: 100%;
     height: 100%;
-}
-
-.title_box {
-    background: white;
-    width: 100%;
-    height: 100%;
+    background: #f5f7fa;
 }
 
 .story_title {
-    color: black;
-    font-size: 100px;
-    font-weight: 400;
-    text-transform: uppercase;
-    word-wrap: break-word;
-}
-
-.story_title_bold {
-    color: black;
-    font-size: 100px;
-    font-weight: 900;
-    text-transform: uppercase;
-    word-wrap: break-word;
-}
-
-.box_container {
+    height: 333px;
     display: flex;
-}
-
-.box_item_white {
-    display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    width: 608px;
-    height: 608px;
-    margin: 10px;
-    padding: 56px 60px;
-    border: 1px solid black;
+    text-transform: uppercase;
+    margin-top: 73px;
+    margin-left: 80px;
+    text-wrap: nowrap;
 }
 
-.box_item_black {
-    /* display: inline-block; */
+.story_title > h1 {
+    font-size: 10rem;
+}
+
+.story1 {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    background: url("../images/story_1st_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.story1_box_container {
+    display: flex;
     align-items: center;
-    background-color: black;
-    color: white;
+    justify-content: flex-end;
+    margin-left: 232px;
+    gap: 32px;
+    line-height: 100%;
+}
+
+.story1_box {
+    display: flex;
+    background: #fff;
     width: 608px;
     height: 608px;
-    margin: 10px;
-    padding: 10px;
+    /* border: 1px solid orange; */
 }
 
-.icon {
-    width: 36px;
-    height: 36px;
-}
-
-.bottom_main_content {
-    margin-top: 44px;
-    margin-bottom: 87px;
-}
-
-.box_top {
-    display: block;
-    border: 1px solid red;
-}
-
-.box_bottom {
+.story2 {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
-}
-
-.smarter_text {
-    font-size: 20px;
-}
-
-.box_content {
-    font-size: 28px;
-}
-
-.box_footer {
-    font-size: 14px;
-}
-
-/* story 2 (black background) */
-
-.background_image {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, black 100%);
+    /* height: 100vh; */
+    background: #000;
+    color: #fff;
+    padding-top: 211px;
+    padding-bottom: 211px;
+    justify-content: center;
 }
 
-.brand_title {
-    color: white;
-    font-size: 92px;
+.story2_bg_img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+        url("../images/story_2nd_bg.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.story2_main_txt {
+    display: flex;
+    flex-direction: column;
+    margin-top: 215px;
+    margin-left: 248px;
+    margin-bottom: 40px;
+}
+
+.story2_main_txt > h2 {
+    font-size: 9.2rem;
     font-weight: 400;
     text-transform: uppercase;
-    line-height: 114px;
+    line-height: 1.2;
+}
+
+.story2_main_txt > h2:nth-child(2) {
+    font-weight: 800;
+}
+
+.story2_sub_txt {
+    margin-left: 722px;
+    margin-bottom: 165px;
+    /* width: 663px;
+    height: 162px; */
+}
+
+.story2_sub_txt > h4 {
+    line-height: 1.4;
+    font-size: 3.4rem;
+}
+
+/* brand */
+#brand {
+    width: 100%;
+    height: 100vh;
+    background: #f5f7fa;
+}
+
+.brand_container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 28px;
+    /* border: 3px solid gray; */
+}
+
+.brand_header {
+    display: flex;
+    justify-content: space-between;
+    /* border: 3px solid coral; */
+}
+
+.brand_header > span {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
     word-wrap: break-word;
 }
 
-.brand_title_
-
-
-/* Brand */
-.contact {
+.brand_contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
     width: 100%;
     height: 100%;
-    position: relative;
-    background: var(--gray05);
+    /* background: yellowgreen; */
 }
 
-.subtitle {
+.brand_contents_txt {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    /* border: 5px solid plum; */
+    margin-bottom: 80px;
+}
+
+.brand_contents_txt > span {
+    display: inline-block;
     color: #86868b;
-    font-size: 32px;
+    font-size: 3.2rem;
     font-weight: 700;
     word-wrap: break-word;
+    margin-bottom: 36px;
 }
 
-.contact_title_bold {
-    color: black;
-    font-weight: 900;
-    font-size: 100px;
-    text-transform: uppercase;
-    word-wrap: break-word;
-}
-
-.contact_title {
-    color: black;
-    font-size: 100px;
+.brand_contents_txt > h2 {
+    font-size: 10rem;
     font-weight: 400;
     text-transform: uppercase;
     word-wrap: break-word;
+}
+
+.brand_contents_txt > h2:nth-child(2) {
+    font-weight: 900;
 }
 
 .logo_container {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid red;
-    width: 100%;
-    height: 100%;
-}
-
-.logo_box {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
     justify-content: center;
     align-items: center;
-    width: 222px;
-    height: 80px;
-    border: 1px #cfcfcf solid;
+    /* border: 3px solid seagreen; */
 }
 
-.logo_box > img {
+.logo_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 422px;
+    height: 180px;
+    padding: 40px 90px;
+    border: 1px solid #CFCFCF;
 }
 
-/* Contact */
-.contact_title {
-    font-size: 100px;
-    font-weight: 400;
+.logo_item_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 242px;
+    height: 100px;
+    padding: 10px;
+    /* border: 2px solid skyblue; */
 }
 
-.contact_title_bold {
-    font-size: 100px;
-    font-weight: 900;
+.logo_item_inner > img {
+    width: auto;
+    height: 100%;
+    padding: 10px;
+    /* border: 2px solid salmon; */
 }
 
-.text {
-    font-size: 20px;
+
+
+/* contact */
+#contact {
+    width: 100%;
+    height: 100vh;
+    background: #f5f7fa;
+}
+
+.contact_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* height: 100vh; */
+    /* border: 3px solid red; */
+    /* margin: auto 80px; */
+}
+
+.contact_container > span {
+    display: inline-block;
+    font-size: 1.4rem;
     font-weight: 700;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    margin-left: 340px;
+    margin-bottom: 42px;
 }
 
-.sidebar {
-    text-align: right;
-    font-size: 14px;
+.contact_image {
+    margin: auto 80px;
 }
 
-.sidebar {
+.contact_txt {
+    /* margin-bottom: 483px; */
+    /* border: 3px solid skyblue; */
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.contact_main_txt {
+    width: 893px;
+    height: 222px;
+    font-weight: 400;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    margin-top: 52px;
+    margin-left: 80px;
+}
+
+.contact_main_txt > h2 {
+    font-size: 10rem;
+}
+
+.contact_sub_txt {
+    font-size: 2rem;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-left: 80px;
+    margin-bottom: 133px;
+}
+
+.contact_sub_txt > p:nth-child(2) {
+    margin-bottom: 32px;
+}
+
+.contact_btm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* border: 3px solid green; */
+    /* margin-top: 133px; */
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 40px;
+}
+
+.contact_menubar {
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
     width: 138px;
     height: 140px;
-    border: 1px #cfcfcf solid;
-    background: white;
-    border-radius: 10px;
+    margin-bottom: 8px;
 }
 
-.sidebar_menu {
+.contact_menubar > ul > li {
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: inline-flex;
+    font-size: 1.4rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #cfcfcf;
 }
 
-.contact {
-    text-align: right;
+.famsite_btn {
+    background: #e4e6ea;
+    border: none;
+    border-radius: 10px;
+    width: 138px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    word-wrap: break-word;
+    padding: 15px 18px;
+}
+
+.famsite_btn > img {
+    width: 12px;
+    height: 6px;
+    margin-left: 4px;
+}
+
+/* footer */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    /* background: #f5f7fa; */
+    margin-left: 80px;
+    /* background: orange; */
+
+}
+
+.footer > span {
+    font-size: 1.3rem;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-bottom: 60px;
+    /* border: 2px solid red; */
 }
