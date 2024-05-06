@@ -5,6 +5,15 @@
     background: #f5f7fa;
 }
 
+#story > span {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    margin-left: 340px;
+    margin-bottom: 42px;
+}
+
 .story_title {
     height: 333px;
     display: flex;
@@ -28,21 +37,80 @@
     background-repeat: no-repeat;
 }
 
-.story1_box_container {
+.box_wrap {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-left: 232px;
     gap: 32px;
-    line-height: 100%;
 }
 
-.story1_box {
-    display: flex;
+.box {
     background: #fff;
     width: 608px;
     height: 608px;
-    /* border: 1px solid orange; */
+}
+
+.box:nth-child(even) {
+    background: #000;
+}
+
+.box_top {
+    margin-left: 60px;
+    margin-top: 56px;
+}
+
+.box_top > span {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.box:nth-child(even) .box_top > span {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.box_btm {
+    margin-left: 60px;
+}
+
+.star_icon {
+    width: 36px;
+    height: 36px;
+    margin-top: 220px;
+    margin-bottom: 44px;
+}
+
+.btm_main_txt {
+
+}
+
+.btm_main_txt > h4 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.box:nth-child(even) .btm_main_txt > h4  {
+    color: #fff;
+}
+
+.btm_sub_txt {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    word-wrap: break-word;
+    margin-top: 87px;
+}
+
+.box:nth-child(even) .btm_sub_txt > span {
+    color: #fff;
 }
 
 .story2 {
@@ -86,14 +154,33 @@
 .story2_sub_txt {
     margin-left: 722px;
     margin-bottom: 165px;
-    /* width: 663px;
-    height: 162px; */
 }
 
 .story2_sub_txt > h4 {
-    line-height: 1.4;
+    line-height: 1.6;
     font-size: 3.4rem;
 }
+
+.scroll_down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.scroll_down > span {
+    display: flex;
+
+    font-size: 1.6rem;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.scroll_down > img {
+    width: 38px;
+    height: 38px; 
+} 
+
 
 /* brand */
 #brand {
@@ -105,6 +192,8 @@
 .brand_container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 100vh;
     margin-left: 80px;
     margin-right: 80px;
     margin-top: 28px;
@@ -128,7 +217,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     width: 100%;
     height: 100%;
     /* background: yellowgreen; */
@@ -153,13 +242,9 @@
 
 .brand_contents_txt > h2 {
     font-size: 10rem;
-    font-weight: 400;
+    font-weight: 900;
     text-transform: uppercase;
     word-wrap: break-word;
-}
-
-.brand_contents_txt > h2:nth-child(2) {
-    font-weight: 900;
 }
 
 .logo_container {
@@ -178,7 +263,7 @@
     width: 422px;
     height: 180px;
     padding: 40px 90px;
-    border: 1px solid #CFCFCF;
+    border: 1px solid #cfcfcf;
 }
 
 .logo_item_inner {
@@ -197,8 +282,6 @@
     padding: 10px;
     /* border: 2px solid salmon; */
 }
-
-
 
 /* contact */
 #contact {
@@ -268,7 +351,6 @@
     flex-direction: column;
     align-items: flex-end;
     /* border: 3px solid green; */
-    /* margin-top: 133px; */
     margin-left: 80px;
     margin-right: 80px;
     margin-bottom: 40px;
@@ -282,15 +364,26 @@
     margin-bottom: 8px;
 }
 
+.contact_menubar > ul {
+    display: flex;
+    flex-direction: column;
+    justify-self: space-between;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 .contact_menubar > ul > li {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
     font-size: 1.4rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
     border-bottom: 1px solid #cfcfcf;
+}
+
+.contact_menubar > ul > li:nth-child(3) {
+    border-bottom: none;
 }
 
 .famsite_btn {
@@ -314,12 +407,10 @@
 #footer {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     height: 90px;
     /* background: #f5f7fa; */
-    margin-left: 80px;
-    /* background: orange; */
-
+    margin: auto 80px;
+    background: orange;
 }
 
 .footer > span {
@@ -327,5 +418,5 @@
     font-weight: 700;
     word-wrap: break-word;
     margin-bottom: 60px;
-    /* border: 2px solid red; */
+    border: 2px solid red;
 }
