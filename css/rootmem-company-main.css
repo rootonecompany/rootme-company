@@ -7,12 +7,18 @@
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 0 20px;
+}
+.header_gnb.hidden {
+    display: none;
 }
 .logo {
     width: 90px;
     height: 32px;
     flex-shrink: 0;
-    padding: 17px 0 17px 80px;
 }
 .logo img {
     width: 90px;
@@ -61,14 +67,14 @@
     font-weight: 800;
     line-height: normal;
     text-transform: uppercase;
-    margin: 34px 0 0;
+    margin: 34px 0 92px;
 }
 .main_video video {
     width: 700px;
     height: 880px;
     object-fit: cover;
     flex-shrink: 0;
-    margin: 92px auto 0;
+    margin: 0 auto;
     display: block;
 }
 
