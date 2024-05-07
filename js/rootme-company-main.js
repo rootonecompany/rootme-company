@@ -79,21 +79,22 @@ ScrollTrigger.create({
   trigger: workSection,
   start: "top top",
   end: "bottom top",
-  onUpdate: (self) => {
-    const translateY = self.progress * (workSection.offsetHeight - window.innerHeight);
-    gsap.to(workTopTxt, { y: translateY });
+  onUpdate: () => {
+    const translateY = window.scrollY - workSection.offsetTop;
+    console.log(translateY)
+    gsap.to(workTopTxt, { y: translateY, duration: 0 });
 
     const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
-
-    if (self.direction === 1) {
+    if (direction === 1) {
       gsap.to(workTopTxt, { color: 'var(--color-gray02)' });
       gsap.to(targetH3, { webkitTextStroke: '1px var(--color-gray02)' });
     } else {
-      gsap.to(workTopTxt, { color: 'var(--color-black)s' });
+      gsap.to(workTopTxt, { color: 'var(--color-black)' });
       gsap.to(targetH3, { webkitTextStroke: '1px var(--color-black)' });
     }
   }
 });
+
 
 
 // const workTopTxt = document.querySelector('.work_top_txt');
@@ -166,4 +167,3 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-window.addEventListener('scroll', handleScroll);
