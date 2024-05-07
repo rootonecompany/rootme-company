@@ -25,7 +25,8 @@ const main_video = gsap.timeline();
 main_video.to(".main_video_object", {
   scale: 1,
   width: "100vw",
-  duration: 4,
+  duration: 2,
+  scrub: 1,
 });
 
 ScrollTrigger.create({
@@ -62,68 +63,107 @@ gsap
     },
   })
   .from(".about_txt1", { opacity: 1, y: 0 })
-  .to(".about_txt1", { opacity: 0, y: -50, duration: 2, onComplete: showListBox02 })
-  .to(".about_txt2", { opacity: 1, y: 0, duration: 2 })
-  .to(".about_txt2", { opacity: 0, y: -50, duration: 2, onComplete: showListBox03 })
-  .to(".about_txt3", { opacity: 1, y: 0, duration: 2 });
-
-function showListBox02() {
-  gsap.to(".about_txt2", { opacity: 1, y: 0 });
-}
-function showListBox03() {
-  gsap.to(".about_txt3", { opacity: 1, y: 0 });
-}
+  .to(".about_txt1", { opacity: 0, y: -50 })
+  .to(".about_txt2", { opacity: 1, y: 0, })
+  .to(".about_txt2", { opacity: 0, y: -50 })
+  .to(".about_txt3", { opacity: 1, y: 0, });
 
 
-//header_gnb
+// work move text
+const workTopTxt = document.querySelector('.work_top_txt');
+const workSection = document.querySelector('.work');
+
+gsap.set(workTopTxt, { y: 0 });
+
+ScrollTrigger.create({
+  trigger: workSection,
+  start: "top top",
+  end: "bottom top",
+  onUpdate: (self) => {
+    const translateY = self.progress * (workSection.offsetHeight - window.innerHeight);
+    gsap.to(workTopTxt, { y: translateY });
+
+    const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
+
+    if (self.direction === 1) {
+      gsap.to(workTopTxt, { color: 'var(--color-gray02)' });
+      gsap.to(targetH3, { webkitTextStroke: '1px var(--color-gray02)' });
+    } else {
+      gsap.to(workTopTxt, { color: 'var(--color-black)s' });
+      gsap.to(targetH3, { webkitTextStroke: '1px var(--color-black)' });
+    }
+  }
+});
+
+
+// const workTopTxt = document.querySelector('.work_top_txt');
+// const workSection = document.querySelector('.work');
+// let isScrolling = false;
+
+// function handleScroll() {
+//   if (!isScrolling) {
+//     isScrolling = true;
+//     requestAnimationFrame(() => {
+//       const scrollTop = window.scrollY;
+//       const sectionOffsetTop = workSection.offsetTop;
+//       const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
+
+//       if (scrollTop > (sectionOffsetTop)) {
+//         const translateY = scrollTop - sectionOffsetTop;
+//         workTopTxt.style.transform = `translateY(${translateY}px)`;
+
+//         workTopTxt.style.transition = 'color 0.3s ease';
+//         workTopTxt.style.color = 'var(--color-gray02)';
+
+//         targetH3.style.transition = 'color 0.3s ease';
+//         targetH3.style.webkitTextStroke = '1px var(--color-gray02)';
+//       } else {
+//         workTopTxt.style.transform = 'translateY(0)';
+
+//         workTopTxt.style.transition = 'none';
+//         workTopTxt.style.color = 'var(--color-black)';
+
+//         targetH3.style.transition = 'none';
+//         targetH3.style.webkitTextStroke = '1px var(--color-black)';
+//       }
+
+//       isScrolling = false;
+//     });
+//   }
+// }
+
+// window.addEventListener('scroll', handleScroll);
+
+
+
+
+
+
+//header 
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector('.header_gnb');
   const mainVideo = document.querySelector('.main_video');
   const triggerOffset = 570;
 
-  let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
   function handleScroll() {
-    const st = window.pageYOffset || document.documentElement.scrollTop;
+    const st = window.scrollY || document.documentElement.scrollTop;
+    const isScrolledPastTrigger = st > mainVideo.offsetTop + triggerOffset;
 
-    if (st > lastScrollTop && st > mainVideo.offsetTop + triggerOffset) {
-      header.classList.add('hidden');
-    } else {
-      header.classList.remove('hidden');
-    }
-
+    header.classList.toggle('hidden', st > lastScrollTop && isScrolledPastTrigger);
     lastScrollTop = st <= 0 ? 0 : st;
   }
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-});
-
-
-
-//work move text
-const workTopTxt = document.querySelector('.work_top_txt');
-const workSection = document.querySelector('.work');
-let isScrolling = false;
-
-function handleScroll() {
-  if (!isScrolling) {
-    isScrolling = true;
-    requestAnimationFrame(() => {
-      const scrollTop = window.scrollY;
-      const sectionOffsetTop = workSection.offsetTop;
-
-      if (scrollTop > sectionOffsetTop) {
-        const translateY = scrollTop - sectionOffsetTop;
-        workTopTxt.style.transform = `translateY(${translateY}px)`;
-        workTopTxt.style.color = 'gray';
-      } else {
-        workTopTxt.style.transform = 'translateY(0)';
-        workTopTxt.style.color = 'black';
-      }
-
-      isScrolling = false;
-    });
+  function closeHeader() {
+    header.classList.add('hidden');
   }
-}
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  header.addEventListener("click", function (event) {
+    closeHeader();
+  });
+});
 
 window.addEventListener('scroll', handleScroll);
