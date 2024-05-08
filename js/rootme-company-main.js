@@ -63,9 +63,9 @@ gsap
     },
   })
   .from(".about_txt1", { opacity: 1, y: 0 })
-  .to(".about_txt1", { opacity: 0, y: -50 })
+  .to(".about_txt1", { opacity: 0, y: 0 })
   .to(".about_txt2", { opacity: 1, y: 0, })
-  .to(".about_txt2", { opacity: 0, y: -50 })
+  .to(".about_txt2", { opacity: 0, y: 0 })
   .to(".about_txt3", { opacity: 1, y: 0, });
 
 
