@@ -62,11 +62,11 @@ gsap
       },
     },
   })
-  .from(".about_txt1", { opacity: 1, y: 0 })
-  .to(".about_txt1", { opacity: 0, y: 0 })
-  .to(".about_txt2", { opacity: 1, y: 0, })
-  .to(".about_txt2", { opacity: 0, y: 0 })
-  .to(".about_txt3", { opacity: 1, y: 0, });
+  .from(".about_txt1", { opacity: 1 })
+  .to(".about_txt1", { opacity: 0 })
+  .to(".about_txt2", { opacity: 1 })
+  .to(".about_txt2", { opacity: 0 })
+  .to(".about_txt3", { opacity: 1 });
 
 
 // work move text
@@ -82,7 +82,7 @@ ScrollTrigger.create({
   onUpdate: () => {
     const translateY = window.scrollY - workSection.offsetTop;
     console.log(translateY)
-    gsap.to(workTopTxt, { y: translateY, duration: 0 });
+    gsap.to(workTopTxt, { y: translateY - 100, duration: 0 });
 
     const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
     if (window.scrollY > (workSection.offsetTop)) {
