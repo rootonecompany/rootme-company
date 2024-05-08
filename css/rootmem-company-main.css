@@ -237,7 +237,6 @@
     font-weight: 700;
     line-height: normal;
     border-radius: 22px;
-    width: 100%;
     background-color: var(--color-gray05);
 }
 .work_project_text li:hover {
