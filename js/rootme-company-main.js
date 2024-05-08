@@ -19,6 +19,40 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
+
+//header
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector('.header_gnb');
+  const mainVideo = document.querySelector('.main_video');
+  const triggerOffset = 560;
+  let isHeaderHidden = false;
+
+  let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  function handleScroll() {
+    const st = window.scrollY || document.documentElement.scrollTop;
+    const isScrolledPastTrigger = st > mainVideo.offsetTop + triggerOffset;
+
+    if (!isHeaderHidden && st > lastScrollTop && isScrolledPastTrigger) {
+      gsap.to(header, { opacity: 0, duration: 0.3 });
+      isHeaderHidden = true;
+    } else if (isHeaderHidden && st < lastScrollTop) {
+      gsap.to(header, { opacity: 1, duration: 0.3 });
+      isHeaderHidden = false;
+    }
+
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  header.addEventListener("click", function (event) {
+    gsap.to(header, { opacity: 0, duration: 0.3 });
+    isHeaderHidden = true;
+  });
+});
+
+
 // main video
 const main_video = gsap.timeline();
 
@@ -85,40 +119,13 @@ ScrollTrigger.create({
 
     const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
     if (window.scrollY > workSection.offsetTop) {
-      gsap.to(workTopTxt, { opacity: 0.1, duration: 0, ease: "power1.inOut" });
-      gsap.to(targetH3, { opacity: 0.5, duration: 0, ease: "power1.inOut" });
+      gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
+      gsap.to(targetH3, { opacity: 0.5, duration: 0.3 });
     } else {
-      gsap.to(workTopTxt, { opacity: 1, duration: 0, ease: "power1.inOut" });
-      gsap.to(targetH3, { opacity: 1, duration: 0, ease: "power1.inOut" });
+      gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
+      gsap.to(targetH3, { opacity: 1, duration: 0.3 });
     }
   }
 });
 
-
-//header 
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector('.header_gnb');
-  const mainVideo = document.querySelector('.main_video');
-  const triggerOffset = 570;
-
-  let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
-
-  function handleScroll() {
-    const st = window.scrollY || document.documentElement.scrollTop;
-    const isScrolledPastTrigger = st > mainVideo.offsetTop + triggerOffset;
-
-    header.classList.toggle('hidden', st > lastScrollTop && isScrolledPastTrigger);
-    lastScrollTop = st <= 0 ? 0 : st;
-  }
-
-  function closeHeader() {
-    header.classList.add('hidden');
-  }
-
-  window.addEventListener("scroll", handleScroll, { passive: true });
-
-  header.addEventListener("click", function (event) {
-    closeHeader();
-  });
-});
 
