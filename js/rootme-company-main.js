@@ -62,11 +62,10 @@ gsap
       },
     },
   })
-  .from(".about_txt1", { opacity: 1 })
   .to(".about_txt1", { opacity: 0 })
-  .to(".about_txt2", { opacity: 1 })
+  .to(".about_txt2", { opacity: 1, duration: 2 })
   .to(".about_txt2", { opacity: 0 })
-  .to(".about_txt3", { opacity: 1 });
+  .to(".about_txt3", { opacity: 1, duration: 2 });
 
 
 // work move text
@@ -86,58 +85,14 @@ ScrollTrigger.create({
 
     const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
     if (window.scrollY > workSection.offsetTop) {
-      gsap.to(workTopTxt, { opacity: 0.1, duration: 0 });
-      gsap.to(targetH3, { opacity: 0.5, duration: 0 });
+      gsap.to(workTopTxt, { opacity: 0.1, duration: 0, ease: "power1.inOut" });
+      gsap.to(targetH3, { opacity: 0.5, duration: 0, ease: "power1.inOut" });
     } else {
-      gsap.to(workTopTxt, { opacity: 1, duration: 0 });
-      gsap.to(targetH3, { opacity: 1, duration: 0 });
+      gsap.to(workTopTxt, { opacity: 1, duration: 0, ease: "power1.inOut" });
+      gsap.to(targetH3, { opacity: 1, duration: 0, ease: "power1.inOut" });
     }
   }
 });
-
-
-
-// const workTopTxt = document.querySelector('.work_top_txt');
-// const workSection = document.querySelector('.work');
-// let isScrolling = false;
-
-// function handleScroll() {
-//   if (!isScrolling) {
-//     isScrolling = true;
-//     requestAnimationFrame(() => {
-//       const scrollTop = window.scrollY;
-//       const sectionOffsetTop = workSection.offsetTop;
-//       const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
-
-//       if (scrollTop > (sectionOffsetTop)) {
-//         const translateY = scrollTop - sectionOffsetTop;
-//         workTopTxt.style.transform = `translateY(${translateY}px)`;
-
-//         workTopTxt.style.transition = 'color 0.3s ease';
-//         workTopTxt.style.color = 'var(--color-gray02)';
-
-//         targetH3.style.transition = 'color 0.3s ease';
-//         targetH3.style.webkitTextStroke = '1px var(--color-gray02)';
-//       } else {
-//         workTopTxt.style.transform = 'translateY(0)';
-
-//         workTopTxt.style.transition = 'none';
-//         workTopTxt.style.color = 'var(--color-black)';
-
-//         targetH3.style.transition = 'none';
-//         targetH3.style.webkitTextStroke = '1px var(--color-black)';
-//       }
-
-//       isScrolling = false;
-//     });
-//   }
-// }
-
-// window.addEventListener('scroll', handleScroll);
-
-
-
-
 
 
 //header 
