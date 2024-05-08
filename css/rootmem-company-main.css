@@ -7,19 +7,27 @@
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding: 0 80px;
+    transition: transform 1s ease-in-out;
+}
+.header_gnb.hidden {
+    display: none;
+    transform: translateY(-100%);
 }
 .logo {
     width: 90px;
     height: 32px;
     flex-shrink: 0;
-    padding: 17px 0 17px 80px;
 }
 .logo img {
     width: 90px;
     height: 32px;
 }
 .menubar {
-    padding: 17px 80px 17px 0;
+    padding: 17px 0;
 }
 .header_menu {
     display: flex;
@@ -32,22 +40,25 @@
 }
 .header_menu li a {
     height: 18px;
-    font-size: 16px;
+    font-size: var(--font-size-04);
     font-style: normal;
     font-weight: 900;
     line-height: normal;
     padding: 10px 18px;
 }
 .header_menu li a:hover {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--color-black);
+    color: var(--color-white);
     border-radius: 19px;
 }
 /*** main ***/
+.main {
+    overflow: hidden;
+}
 .main_txt p {
     color: #86868b;
     text-align: center;
-    font-size: 32px;
+    font-size: var(--font-size-07);
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -56,25 +67,26 @@
 }
 .main_txt h2 {
     text-align: center;
-    font-size: 112px;
+    font-size: var(--font-size-12);
     font-style: normal;
     font-weight: 800;
     line-height: normal;
     text-transform: uppercase;
-    margin: 34px 0 0;
+    margin: 34px 0 92px;
 }
+
 .main_video video {
     width: 700px;
-    height: 880px;
+    height: 100vh;
     object-fit: cover;
     flex-shrink: 0;
-    margin: 92px auto 0;
+    margin: 0 auto;
     display: block;
 }
 
 /*** about ***/
 .about {
-    background-color: var(--gray04);
+    background-color: var(--color-gray04);
 }
 .about_container {
     width: 100%;
@@ -111,13 +123,13 @@
     opacity: 0;
 }
 .about_txt span {
-    font-size: 16px;
+    font-size: var(--font-size-04);
     font-weight: 800;
     line-height: normal;
     text-transform: capitalize;
 }
 .about_txt h3 {
-    font-size: 84px;
+    font-size: var(--font-size-09);
     font-weight: 800;
     text-transform: uppercase;
     width: 100%;
@@ -126,20 +138,26 @@
 
 /*** work ***/
 .work {
+    position: relative;
     padding-top: 240px;
     overflow: hidden;
+}
+.work_top_txt {
+    position: sticky;
+    top: 0;
+    z-index: -1;
 }
 
 /* move text */
 .work_top_txt span {
     margin: 0 0 0 340px;
-    font-size: 14px;
+    font-size: var(--font-size-03);
     font-weight: 700;
     text-transform: uppercase;
 }
 .work_move_txt h3 {
     width: 100%;
-    font-size: 116px;
+    font-size: var(--font-size-13);
     white-space: nowrap;
     text-transform: uppercase;
     margin-bottom: 26px;
@@ -149,7 +167,7 @@
 .work_move_txt h3:nth-child(1) {
     margin-top: 42px;
     color: transparent;
-    -webkit-text-stroke: 1px var(--black);
+    -webkit-text-stroke: 1px var(--color-black);
     font-weight: 400;
 }
 .work_move_txt h3:nth-child(2) {
@@ -180,7 +198,7 @@
     flex-direction: column;
 }
 .work_project_info span {
-    font-size: 12px;
+    font-size: var(--font-size-01);
     font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 16px;
@@ -198,12 +216,12 @@
     margin-top: 16px;
 }
 .work_project_btm p {
-    font-size: 20px;
+    font-size: var(--font-size-05);
     font-weight: 700;
     text-transform: uppercase;
 }
 .work_project_btm em {
-    font-size: 20px;
+    font-size: var(--font-size-05);
     font-weight: 700;
     text-transform: uppercase;
     font-style: normal;
@@ -214,14 +232,15 @@
 .work_project_text li {
     padding: 14px 18px;
     margin-bottom: 6px;
-    border: 1px solid var(--black);
-    font-size: 12px;
+    border: 1px solid var(--color-black);
+    font-size: var(--font-size-01);
     font-weight: 700;
     line-height: normal;
     border-radius: 22px;
     width: 100%;
+    background-color: var(--color-gray05);
 }
 .work_project_text li:hover {
-    color: var(--white);
-    background-color: var(--black);
+    color: var(--color-white);
+    background-color: var(--color-black);
 }

@@ -133,13 +133,11 @@
         url("../images/story_2nd_bg.png");
     background-repeat: no-repeat;
     background-size: auto;
-    /* border: 2px solid yellowgreen; */
     width: 100%;
     height: 100%;
 }
 
 .story2_contents {
-    /* border: 3px solid coral; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
