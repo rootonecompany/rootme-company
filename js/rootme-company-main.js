@@ -85,12 +85,12 @@ ScrollTrigger.create({
     gsap.to(workTopTxt, { y: translateY, duration: 0 });
 
     const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
-    if (direction === 1) {
-      gsap.to(workTopTxt, { color: 'var(--color-gray02)' });
-      gsap.to(targetH3, { webkitTextStroke: '1px var(--color-gray02)' });
+    if (window.scrollY > (workSection.offsetTop)) {
+      gsap.to(workTopTxt, { color: 'var(--color-gray02)', duration: 0 });
+      gsap.to(targetH3, { webkitTextStroke: '1px var(--color-gray02)', duration: 0 });
     } else {
-      gsap.to(workTopTxt, { color: 'var(--color-black)' });
-      gsap.to(targetH3, { webkitTextStroke: '1px var(--color-black)' });
+      gsap.to(workTopTxt, { color: 'var(--color-black)', duration: 0 });
+      gsap.to(targetH3, { webkitTextStroke: '1px var(--color-black)', duration: 0 });
     }
   }
 });
