@@ -4,7 +4,6 @@
     width: 100%;
     height: 100%;
     background: #f5f7fa;
-    /* border: 3px solid red; */
 }
 
 #story > span {
@@ -23,7 +22,6 @@
     text-transform: uppercase;
     margin: 73px 80px;
     text-wrap: nowrap;
-    /* border: 3px solid blue; */
 }
 
 .story_title > h1 {
@@ -40,7 +38,6 @@
 }
 
 .box_wrap {
-    /* width: 100%; */
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -90,10 +87,6 @@
     margin-bottom: 44px;
 }
 
-/* .btm_main_txt {
-    
-} */
-
 .btm_main_txt > h4 {
     font-size: 2.8rem;
     font-weight: 800;
@@ -119,44 +112,36 @@
 
 /* story2 - black background */
 .story2 {
-    display: flex;
-    flex-direction: column;
-    background: #000;
-    color: #fff;
-    padding-top: 211px;
-    padding-bottom: 211px;
-    justify-content: center;
-}
-
-.story2_bg_img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("../images/story_2nd_bg.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-    /* border: 2px solid yellowgreen; */
-
     width: 100%;
-    height: 100%;
-}
-
-.story2_contents {
-    /* border: 3px solid coral; */
-    margin: 0 auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.story2 {
+    background: url("../images/story_2nd_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.story2_contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 211px;
+    margin-bottom: 267px;
 }
 
 .story2_main_txt {
-    flex: 1;
-    /* border: 3px solid green; */
-    height: 342px;
-    margin-top: 215px;
-    /* margin-left: 248px; */
-    margin-bottom: 40px;
     white-space: nowrap;
-    overflow: hidden;
-    margin: 80px auto;
 }
 
 .story2_main_txt > h2 {
@@ -172,15 +157,10 @@
 }
 
 .story2_sub_txt {
-    width: 663px;
-    flex: 1;
-    height: 162px;
-    /* margin-left: 722px; */
-    margin-bottom: 165px;
-    /* border: 2px solid yellow; */
     white-space: nowrap;
     overflow: hidden;
-    margin: auto 80px;
+    margin-top: 40px;
+    margin-bottom: 184px;
 }
 
 .story2_sub_txt > h4 {
@@ -189,12 +169,12 @@
 }
 
 .scroll_down {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
-    /* border: 2px solid pink; */
-    margin-top: 165px;
+    animation: ball 0.6s ease-in infinite Alternate;
 }
 
 .scroll_down > span {
@@ -209,17 +189,26 @@
     height: 38px;
 }
 
+/* 바운스볼 애니메이션 */
+@keyframes ball {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: 15px;
+    }
+}
+
 /* brand */
 #brand {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #f5f7fa;
-    /* border: 3px solid red; */
 }
 
 .brand_container {
+    height: 100vh;
     margin-top: 28px;
-    /* border: 3px solid green; */
     margin-left: 80px;
     margin-right: 80px;
 }
@@ -227,25 +216,24 @@
 .brand_header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    /* border: 3px solid purple; */
+    align-items: center;
 }
 
 .brand_header > span {
-    display: block;
     font-size: 2.8rem;
     font-weight: 700;
     text-transform: uppercase;
     word-wrap: break-word;
 }
 
+.brand_header > span:nth-child(2) {
+    padding-right: 150px;
+}
+
 .brand_contents {
     display: flex;
-    /* width: 100%; */
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /* border: 3px solid blue; */
 }
 
 .brand_contents_txt {
@@ -253,12 +241,10 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 80px;
-    /* border: 3px solid red; */
-    margin-top: 361px;
+    margin-top: 333px;
 }
 
 .brand_contents_txt > span {
-    display: inline-block;
     color: #86868b;
     font-size: 3.2rem;
     font-weight: 700;
@@ -267,10 +253,8 @@
 }
 
 .brand_contents_txt > h2 {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     font-size: 10rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -283,28 +267,30 @@
     grid-gap: 1rem;
     justify-content: center;
     align-items: center;
-    margin-bottom: 437px;
+    margin-bottom: 380px;
 }
 
 .logo_item {
     border: 1px solid #cfcfcf;
 }
 
+.logo_item img {
+    padding: 40px 90px;
+}
+
 /* contact */
 #contact {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #f5f7fa;
 }
 
 .contact_container {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .contact_container > span {
-    display: inline-block;
     font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -318,6 +304,7 @@
 }
 
 .contact_txt {
+    width: 100%;
     margin-left: 80px;
     margin-right: 80px;
 }
@@ -354,11 +341,7 @@
 /* footer */
 #footer {
     background: #f5f7fa;
-    /* margin: auto 80px; */
-    margin-left: 80px;
-    margin-right: 80px;
-    /* margin-bottom: 60px; */
-    /* border: 3px solid red; */
+    margin: auto 80px;
 }
 
 /* footer - 패밀리 사이트 */
@@ -370,11 +353,17 @@
 }
 
 .famsite_menubar {
-    border: 1px solid #cfcfcf;
+    /* border: 1px solid #cfcfcf; */
     border-radius: 10px;
     width: 138px;
     height: 140px;
     margin-bottom: 8px;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+
+    /* border: 1px solid transparent; */
 }
 
 .famsite_menubar > ul {
@@ -408,13 +397,15 @@
     font-weight: 800;
     word-wrap: break-word;
     padding: 15px 18px;
-    margin-bottom: 24x;
+    margin-bottom: 24px;
+    cursor: pointer;
 }
 
 .famsite_btn > img {
     width: 12px;
     height: 6px;
     margin-left: 4px;
+    transition: transform 0.5s ease;
 }
 
 /* footer - 주소 */
@@ -438,7 +429,7 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 60px;
-}   
+}
 
 .footer_btm > span {
     font-size: 1.3rem;
