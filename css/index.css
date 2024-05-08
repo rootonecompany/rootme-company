@@ -146,8 +146,6 @@
     align-items: center;
 }
 
-/* 모바일 (임시) */
-
 .story2_main_txt {
     flex: 1;
     /* border: 3px solid green; */
