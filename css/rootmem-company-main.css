@@ -193,6 +193,7 @@
 }
 .project_wrap:nth-child(2) {
     justify-content: right;
+    text-align: right;
 }
 .work_project_info {
     display: flex;
