@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   header.addEventListener("click", function (event) {
     gsap.to(header, { opacity: 0, duration: 0.3 });
     isHeaderHidden = true;
+    gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
   });
 });
 
@@ -112,6 +113,7 @@ ScrollTrigger.create({
   trigger: workSection,
   start: "top top",
   end: "bottom top",
+  scrub: 1,
   onUpdate: () => {
     const translateY = window.scrollY - workSection.offsetTop;
     console.log(translateY)
@@ -121,9 +123,11 @@ ScrollTrigger.create({
     if (window.scrollY > workSection.offsetTop) {
       gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
       gsap.to(targetH3, { opacity: 0.5, duration: 0.3 });
+      gsap.to(workTopTxt, { y: translateY - 80, duration: 0 });
     } else {
       gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
       gsap.to(targetH3, { opacity: 1, duration: 0.3 });
+      gsap.to(workTopTxt, { y: translateY, duration: 0 });
     }
   }
 });
