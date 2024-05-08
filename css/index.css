@@ -87,7 +87,6 @@
 }
 
 .btm_main_txt {
-
 }
 
 .btm_main_txt > h4 {
@@ -97,7 +96,7 @@
     line-height: 1.4;
 }
 
-.box:nth-child(even) .btm_main_txt > h4  {
+.box:nth-child(even) .btm_main_txt > h4 {
     color: #fff;
 }
 
@@ -116,8 +115,6 @@
 .story2 {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    /* height: 100vh; */
     background: #000;
     color: #fff;
     padding-top: 211px;
@@ -135,9 +132,11 @@
 .story2_main_txt {
     display: flex;
     flex-direction: column;
+    height: 342px;
     margin-top: 215px;
     margin-left: 248px;
     margin-bottom: 40px;
+    white-space: nowrap;
 }
 
 .story2_main_txt > h2 {
@@ -145,6 +144,7 @@
     font-weight: 400;
     text-transform: uppercase;
     line-height: 1.2;
+    word-wrap: break-word;
 }
 
 .story2_main_txt > h2:nth-child(2) {
@@ -152,6 +152,8 @@
 }
 
 .story2_sub_txt {
+    width: 663px;
+    height: 162px;
     margin-left: 722px;
     margin-bottom: 165px;
 }
@@ -170,7 +172,6 @@
 
 .scroll_down > span {
     display: flex;
-
     font-size: 1.6rem;
     font-weight: 700;
     word-wrap: break-word;
@@ -178,32 +179,32 @@
 
 .scroll_down > img {
     width: 38px;
-    height: 38px; 
-} 
-
+    height: 38px;
+}
 
 /* brand */
 #brand {
-    width: 100%;
-    height: 100vh;
+    height: 100%;
     background: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .brand_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
     margin-left: 80px;
     margin-right: 80px;
     margin-top: 28px;
-    /* border: 3px solid gray; */
 }
 
 .brand_header {
     display: flex;
     justify-content: space-between;
-    /* border: 3px solid coral; */
+    width: 100%;
 }
 
 .brand_header > span {
@@ -218,16 +219,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    /* background: yellowgreen; */
+    margin-top: 36px;
 }
 
 .brand_contents_txt {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    /* border: 5px solid plum; */
+    align-items: center;
     margin-bottom: 80px;
 }
 
@@ -238,9 +236,15 @@
     font-weight: 700;
     word-wrap: break-word;
     margin-bottom: 36px;
+    margin-top: 361px;
+
 }
 
 .brand_contents_txt > h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     font-size: 10rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -253,7 +257,7 @@
     grid-gap: 1rem;
     justify-content: center;
     align-items: center;
-    /* border: 3px solid seagreen; */
+    margin-bottom: 437px;
 }
 
 .logo_item {
@@ -273,20 +277,18 @@
     width: 242px;
     height: 100px;
     padding: 10px;
-    /* border: 2px solid skyblue; */
 }
 
 .logo_item_inner > img {
     width: auto;
     height: 100%;
     padding: 10px;
-    /* border: 2px solid salmon; */
 }
 
 /* contact */
 #contact {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: #f5f7fa;
 }
 
@@ -294,9 +296,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* height: 100vh; */
-    /* border: 3px solid red; */
-    /* margin: auto 80px; */
 }
 
 .contact_container > span {
@@ -314,8 +313,6 @@
 }
 
 .contact_txt {
-    /* margin-bottom: 483px; */
-    /* border: 3px solid skyblue; */
     margin-left: 80px;
     margin-right: 80px;
 }
@@ -332,14 +329,21 @@
 
 .contact_main_txt > h2 {
     font-size: 10rem;
+    line-height: 1.2;
 }
 
 .contact_sub_txt {
-    font-size: 2rem;
-    font-weight: 700;
-    word-wrap: break-word;
+    width: 100%;
     margin-left: 80px;
     margin-bottom: 133px;
+    margin-top: 36px;
+}
+
+.contact_sub_txt > p {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    word-wrap: break-word;
 }
 
 .contact_sub_txt > p:nth-child(2) {
@@ -350,7 +354,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    /* border: 3px solid green; */
     margin-left: 80px;
     margin-right: 80px;
     margin-bottom: 40px;
@@ -407,16 +410,25 @@
 #footer {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     height: 90px;
-    /* background: #f5f7fa; */
+    background: #f5f7fa;
     margin: auto 80px;
-    background: orange;
 }
 
 .footer > span {
     font-size: 1.3rem;
     font-weight: 700;
     word-wrap: break-word;
+    white-space: nowrap;
     margin-bottom: 60px;
-    border: 2px solid red;
+}
+
+/* footer 미디어 쿼리 적용 (임시) */
+@media screen and (max-width: 768px) {
+    #footer {
+        justify-content: center;
+        margin: auto;
+        padding: 0 20px; /* 좌우 여백을 조정합니다. */
+    }
 }
