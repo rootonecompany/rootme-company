@@ -167,7 +167,8 @@
 .work_move_txt h3:nth-child(1) {
     margin-top: 42px;
     color: transparent;
-    -webkit-text-stroke: 1px var(--color-black);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
     font-weight: 400;
 }
 .work_move_txt h3:nth-child(2) {
@@ -226,10 +227,12 @@
     text-transform: uppercase;
     font-style: normal;
 }
-.work_project_text {
+.work_project_text ul {
     margin: 48px 20px 0;
+    width: 150px;
 }
 .work_project_text li {
+    display: inline-block;
     padding: 14px 18px;
     margin-bottom: 6px;
     border: 1px solid var(--color-black);
@@ -237,7 +240,6 @@
     font-weight: 700;
     line-height: normal;
     border-radius: 22px;
-    width: 100%;
     background-color: var(--color-gray05);
 }
 .work_project_text li:hover {

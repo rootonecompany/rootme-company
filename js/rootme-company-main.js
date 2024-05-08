@@ -62,11 +62,11 @@ gsap
       },
     },
   })
-  .from(".about_txt1", { opacity: 1, y: 0 })
-  .to(".about_txt1", { opacity: 0, y: -50 })
-  .to(".about_txt2", { opacity: 1, y: 0, })
-  .to(".about_txt2", { opacity: 0, y: -50 })
-  .to(".about_txt3", { opacity: 1, y: 0, });
+  .from(".about_txt1", { opacity: 1 })
+  .to(".about_txt1", { opacity: 0 })
+  .to(".about_txt2", { opacity: 1 })
+  .to(".about_txt2", { opacity: 0 })
+  .to(".about_txt3", { opacity: 1 });
 
 
 // work move text
@@ -85,12 +85,12 @@ ScrollTrigger.create({
     gsap.to(workTopTxt, { y: translateY, duration: 0 });
 
     const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
-    if (window.scrollY > (workSection.offsetTop)) {
-      gsap.to(workTopTxt, { color: 'var(--color-gray02)', duration: 0 });
-      gsap.to(targetH3, { webkitTextStroke: '1px var(--color-gray02)', duration: 0 });
+    if (window.scrollY > workSection.offsetTop) {
+      gsap.to(workTopTxt, { opacity: 0.1, duration: 0 });
+      gsap.to(targetH3, { opacity: 0.5, duration: 0 });
     } else {
-      gsap.to(workTopTxt, { color: 'var(--color-black)', duration: 0 });
-      gsap.to(targetH3, { webkitTextStroke: '1px var(--color-black)', duration: 0 });
+      gsap.to(workTopTxt, { opacity: 1, duration: 0 });
+      gsap.to(targetH3, { opacity: 1, duration: 0 });
     }
   }
 });
