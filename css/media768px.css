@@ -1,2 +1,70 @@
 @media (max-width: 768px) {
+    html {
+        font-size: 75%;
+    }
+    /* header */
+    .header_gnb {
+        padding: 0 40px;
+    }
+
+    /* main */
+    .main_txt p {
+        letter-spacing: -0.44px;
+        margin: 128px 0 0;
+    }
+    .main_txt h2 {
+        margin: 24px 0 66px;
+    }
+    .main_video video {
+        width: 480px;
+    }
+
+    /* about */
+    .about_txt1 {
+        background-size: 400px 400px;
+    }
+    .about_txt2 {
+        background-size: 400px 400px;
+    }
+    .about_txt3 {
+        background-size: 400px 400px;
+    }
+    .about_txt h3 {
+        margin-top: 34px;
+        letter-spacing: -0.84px;
+    }
+
+    /* work */
+    .work {
+        padding-top: 180px;
+    }
+    .work_top_txt span {
+        margin: 0 0 0 140px;
+    }
+    .work_move_txt h3 {
+        margin-bottom: 12px;
+    }
+    .work_move_txt h3:nth-child(1) {
+        margin-top: 28px;
+    }
+
+    /* project box */
+    .work_project_box {
+        margin-top: 190px;
+    }
+    .project_wrap {
+        margin: 0 40px 180px;
+    }
+    .work_project_info img {
+        width: 400px;
+        height: 400px;
+    }
+    .work_project_btm {
+        width: 400px;
+        margin-top: 14px;
+    }
+    .work_project_text ul {
+        margin: 44px 16px 0;
+        width: 150px;
+    }
 }

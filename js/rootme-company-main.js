@@ -1,8 +1,8 @@
 // 페이지 새로고침 시 맨 위로 이동
-function scrollToTop() {
-  window.scrollTo(0, 0);
-}
-window.onbeforeunload = scrollToTop;
+// function scrollToTop() {
+//   window.scrollTo(0, 0);
+// }
+// window.onbeforeunload = scrollToTop;
 
 //GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -115,19 +115,21 @@ ScrollTrigger.create({
   end: "bottom top",
   scrub: 1,
   onUpdate: () => {
-    const translateY = window.scrollY - workSection.offsetTop;
-    console.log(translateY)
-    gsap.to(workTopTxt, { y: translateY, duration: 0 });
 
+    const translateY = window.scrollY - workSection.offsetTop;
+    // const centerPosition = (window.innerHeight - workTopTxt.offsetHeight) / 2;
     const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
+
     if (window.scrollY > workSection.offsetTop) {
       gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
-      gsap.to(targetH3, { opacity: 0.5, duration: 0.3 });
-      gsap.to(workTopTxt, { y: translateY - 80, duration: 0 });
+      gsap.to(targetH3, { opacity: 0.6, duration: 0.3 });
+      // gsap.to(workTopTxt, { y: centerPosition, duration: 0 });
+      gsap.to(workTopTxt, { y: translateY, duration: 0 });
     } else {
       gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
       gsap.to(targetH3, { opacity: 1, duration: 0.3 });
       gsap.to(workTopTxt, { y: translateY, duration: 0 });
+
     }
   }
 });
