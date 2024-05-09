@@ -7,20 +7,6 @@
     --color-gray04: #eff1f5;
     --color-gray05: #f5f7fa;
     --color-white: #fff;
-
-    --font-size-01: 1.2rem;
-    --font-size-02: 1.3rem;
-    --font-size-03: 1.4rem;
-    --font-size-04: 1.6rem;
-    --font-size-05: 2rem;
-    --font-size-06: 2.8rem;
-    --font-size-07: 3.2rem;
-    --font-size-08: 3.4rem;
-    --font-size-09: 8.4rem;
-    --font-size-10: 9.2rem;
-    --font-size-11: 10rem;
-    --font-size-12: 11.2rem;
-    --font-size-13: 11.6rem;
 }
 
 html,
@@ -32,4 +18,5 @@ body {
 }
 section {
     min-height: 100vh;
+    overflow: hidden;
 }

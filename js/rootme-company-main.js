@@ -60,7 +60,8 @@ const main_video = gsap.timeline();
 main_video.to(".main_video_object", {
   scale: 1,
   width: "100vw",
-  duration: 2,
+  height: "100vh",
+  duration: 1.5,
   scrub: 1,
 });
 
@@ -109,6 +110,7 @@ const workSection = document.querySelector('.work');
 
 gsap.set(workTopTxt, { y: 0 });
 
+
 ScrollTrigger.create({
   trigger: workSection,
   start: "top top",
@@ -118,17 +120,18 @@ ScrollTrigger.create({
 
     const translateY = window.scrollY - workSection.offsetTop;
     // const centerPosition = (window.innerHeight - workTopTxt.offsetHeight) / 2;
+    const translateSetY = translateY < 0 ? 0 : translateY
     const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
 
     if (window.scrollY > workSection.offsetTop) {
       gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
       gsap.to(targetH3, { opacity: 0.6, duration: 0.3 });
       // gsap.to(workTopTxt, { y: centerPosition, duration: 0 });
-      gsap.to(workTopTxt, { y: translateY, duration: 0 });
+      gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
     } else {
       gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
       gsap.to(targetH3, { opacity: 1, duration: 0.3 });
-      gsap.to(workTopTxt, { y: translateY, duration: 0 });
+      gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
 
     }
   }

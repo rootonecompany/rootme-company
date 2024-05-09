@@ -39,7 +39,7 @@
     gap: 22px;
 }
 .header_menu li a {
-    font-size: var(--font-size-04);
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
@@ -53,11 +53,17 @@
 /*** main ***/
 .main {
     overflow: hidden;
+    align-items: center;
+}
+.main div {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
 }
 .main_txt p {
     color: var(--color-gray01);
     text-align: center;
-    font-size: var(--font-size-07);
+    font-size: 3.2rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -66,7 +72,7 @@
 }
 .main_txt h2 {
     text-align: center;
-    font-size: var(--font-size-12);
+    font-size: 11.2rem;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
@@ -74,8 +80,20 @@
     margin: 34px 0 92px;
 }
 
+/* 임시 */
+@media (max-width: 930px) {
+    .main_txt h2 {
+        font-size: 8rem;
+    }
+}
+
+.main_video {
+    text-align: center;
+    overflow: hidden;
+}
 .main_video video {
     display: block;
+    /* max-width: 100%; */
     width: 700px;
     height: 100vh;
     object-fit: cover;
@@ -86,13 +104,14 @@
 /*** about ***/
 .about {
     background-color: var(--color-gray04);
+    width: 100%;
+    height: 100%;
 }
 .about_container {
-    display: grid;
     position: relative;
     width: 100%;
     height: 100%;
-    place-items: center;
+    align-items: center;
 }
 .about_box {
     display: flex;
@@ -100,15 +119,21 @@
     width: auto;
     align-items: center;
 }
+.about_txt {
+    margin: 0 auto;
+    text-align: center;
+}
 .about_txt1 {
     background: url(../images/about1.png) 50% / contain no-repeat;
     background-size: 560px 560px;
+    width: 100%;
     height: 100vh;
     text-align: center;
 }
 .about_txt2 {
     background: url(../images/about2.png) 50% / contain no-repeat;
     background-size: 560px 560px;
+    width: 100%;
     height: 100vh;
     text-align: center;
     opacity: 0;
@@ -116,25 +141,37 @@
 .about_txt3 {
     background: url(../images/about3.png) 50% / contain no-repeat;
     background-size: 560px 560px;
+    width: 100%;
     height: 100vh;
     text-align: center;
     opacity: 0;
 }
 .about_txt span {
-    font-size: var(--font-size-04);
+    font-size: 1.6rem;
     font-weight: 800;
     text-align: center;
     line-height: normal;
     text-transform: capitalize;
 }
 .about_txt h3 {
-    font-size: var(--font-size-09);
+    font-size: 8.4rem;
     font-weight: 800;
     text-transform: uppercase;
     width: 100%;
     margin-top: 45px;
     letter-spacing: -1.68px;
     text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .about_txt h3 {
+        font-size: 6.5rem;
+    }
+}
+@media (max-width: 930px) {
+    .about_txt h3 {
+        font-size: 5rem;
+    }
 }
 
 /*** work ***/
@@ -152,7 +189,7 @@
 /* move text */
 .work_top_txt span {
     margin: 0 0 0 340px;
-    font-size: var(--font-size-03);
+    font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
     line-height: normal;
@@ -160,7 +197,7 @@
 .work_move_txt h3 {
     display: inline-block;
     width: 100%;
-    font-size: var(--font-size-13);
+    font-size: 11.6rem;
     white-space: nowrap;
     text-transform: uppercase;
     margin-bottom: 26px;
@@ -203,7 +240,7 @@
     flex-direction: column;
 }
 .work_project_info span {
-    font-size: var(--font-size-01);
+    font-size: 1.2rem;
     font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 16px;
@@ -222,13 +259,13 @@
     margin-top: 16px;
 }
 .work_project_btm p {
-    font-size: var(--font-size-05);
+    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     line-height: normal;
 }
 .work_project_btm em {
-    font-size: var(--font-size-05);
+    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     font-style: normal;
@@ -243,7 +280,7 @@
     padding: 14px 18px;
     margin-bottom: 6px;
     border: 1px solid var(--color-black);
-    font-size: var(--font-size-01);
+    font-size: 1.2rem;
     font-weight: 700;
     line-height: normal;
     border-radius: 22px;
