@@ -17,9 +17,33 @@
         font-size: 6.8rem;
     }
     .main_video video {
-        /* width: 480px; */
+        width: 480px;
     }
 
+    .menu-btn {
+        display: block;
+    }
+
+    /* 일반 메뉴를 감춤 */
+    .menubar {
+        display: none;
+    }
+    .header_menu {
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+        gap: 44px;
+    }
+    .header_menu li a {
+        font-size: 2.6rem;
+        padding: 0;
+        color: var(--color-white);
+    }
+    .header_menu li a:hover {
+        background-color: transparent;
+        color: var(--color-white);
+        text-decoration: 1px underline white;
+    }
     /* about */
     .about_txt1 {
         background-size: 400px 400px;

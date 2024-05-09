@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
 // main video
 const main_video = gsap.timeline();
 
