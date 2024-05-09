@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="./css/responsive.css" />
         <link rel="stylesheet" href="./css/media768px.css" />
         <link rel="stylesheet" href="./css/media360px.css" />
+        <link rel="stylesheet" href="./css/animation.css" />
 
         <!-- main js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
@@ -21,6 +22,9 @@
         <!-- Lenis -->
         <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
         <script defer src="./js/rootme-company-main.js"></script>
+
+        <!-- animation -->
+        <script src="./js/animation.js"></script>
 
         <title>rootme-company</title>
     </head>
@@ -205,7 +209,7 @@
                                 </div>
                                 <div class="box_btm">
                                     <div class="star_icon">
-                                        <img src="./images/star.png" />
+                                        <img src="./images/star_bk.png" />
                                     </div>
                                     <div class="btm_main_txt">
                                         <h4>최고의 전문가들이 모여 혁신적인</h4>
@@ -222,7 +226,8 @@
                                 </div>
                                 <div class="box_btm">
                                     <div class="star_icon">
-                                        <img src="./images/star.png" />
+                                        <img src="./images/star_wh.png" />
+                                        <img src="./images/star_gray.png" />
                                     </div>
                                     <div class="btm_main_txt">
                                         <h4>바움루트미 다운 접근으로</h4>
@@ -239,7 +244,9 @@
                                 </div>
                                 <div class="box_btm">
                                     <div class="star_icon">
-                                        <img src="./images/star.png" />
+                                        <img src="./images/star_bk.png" />
+                                        <img src="./images/star_gray.png" />
+                                        <img src="./images/star_lightgray.png" />
                                     </div>
                                     <div class="btm_main_txt">
                                         <h4>우리는 최소한의 원칙으로 최대한의</h4>
@@ -256,7 +263,10 @@
                                 </div>
                                 <div class="box_btm">
                                     <div class="star_icon">
-                                        <img src="./images/star.png" />
+                                        <img src="./images/star_wh.png" />
+                                        <img src="./images/star_lightgray.png" />
+                                        <img src="./images/star_gray.png" />
+                                        <img src="./images/star_darkgray.png" />
                                     </div>
                                     <div class="btm_main_txt">
                                         <h4>열린생각과 유연한 태도로</h4>
@@ -269,23 +279,23 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- story2 -->
                     <div class="story2">
-                        <div class="story2_bg_img">
-                            <div class="story2_contents">
-                                <div class="story2_main_txt">
-                                    <h2>anyone can easily access</h2>
-                                    <h2>we pursue and aim for</h2>
-                                    <h2>excellent service.</h2>
-                                </div>
-                                <div class="story2_sub_txt">
-                                    <h4>어렵고 누구나 따라할 수 없는 기술을 제공하고</h4>
-                                    <h4>자랑하는 회사가 아니라 누구나 쉽게 접근할 수</h4>
-                                    <h4>있는 서비스를 추구하고 지향합니다.</h4>
-                                </div>
-                                <div class="scroll_down">
-                                    <span>Scroll Down</span>
-                                    <img src="./images/scroll_down.png" />
-                                </div>
+                        <div class="story2_contents">
+                            <div class="story2_main_txt">
+                                <h2>anyone can easily access</h2>
+                                <h2>we pursue and aim for</h2>
+                                <h2>excellent service.</h2>
+                            </div>
+                            <div class="story2_sub_txt">
+                                <h4>어렵고 누구나 따라할 수 없는 기술을 제공하고</h4>
+                                <h4>자랑하는 회사가 아니라 누구나 쉽게 접근할 수</h4>
+                                <h4>있는 서비스를 추구하고 지향합니다.</h4>
+                            </div>
+                            <div class="scroll_down">
+                                <span>Scroll Down</span>
+                                <img src="./images/scroll_down.png" />
                             </div>
                         </div>
                     </div>
@@ -355,7 +365,7 @@
                 <section id="contact">
                     <div class="contact_container">
                         <span>(our innovation)</span>
-                        <div class="contact_image">
+                        <div class="contact_img">
                             <img src="./images/people.png" />
                         </div>
                         <div class="contact_txt">
@@ -369,29 +379,29 @@
                                 <p>(rootone@baumrootme.com)</p>
                             </div>
                         </div>
+                        <div class="contact_famsite">
+                            <div class="famsite_menubar">
+                                <ul>
+                                    <li>비유바움</li>
+                                    <li>RM 엔터</li>
+                                    <li>신우 네트워크</li>
+                                </ul>
+                            </div>
+                            <button type="button" id="famsite_btn" class="famsite_btn">
+                                패밀리 사이트
+                                <img src="./images/arrow_down.png" />
+                            </button>
+                        </div>
+                        <div class="contact_address">
+                            <p>서울시 강남구 남부순환로 2621,</p>
+                            <p>디앤오강남빌딩 12층</p>
+                        </div>
                     </div>
                 </section>
             </main>
 
             <!-- footer -->
             <footer id="footer" class="footer">
-                <div class="footer_famsite">
-                    <div class="famsite_menubar">
-                        <ul>
-                            <li>비유바움</li>
-                            <li>RM 엔터</li>
-                            <li>신우 네트워크</li>
-                        </ul>
-                    </div>
-                    <button type="button" id="famsite_btn" class="famsite_btn">
-                        패밀리 사이트
-                        <img src="./images/arrow_down.png" />
-                    </button>
-                </div>
-                <div class="footer_address">
-                    <p>서울시 강남구 남부순환로 2621,</p>
-                    <p>디앤오강남빌딩 12층</p>
-                </div>
                 <div class="footer_btm">
                     <span>@2024</span>
                     <span>Copyright ⓒBaumRootme Corp. All rights reserved.</span>

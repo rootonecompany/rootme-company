@@ -1,0 +1,66 @@
+/* 바운스볼 애니메이션 */
+@keyframes ball {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: 15px;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        top: 40px;
+        animation-timing-function: ease-in;
+    }
+    50% {
+        top: 120px;
+        height: 40px;
+        animation-timing-function: ease-out;
+    }
+    55% {
+        top: 150px;
+        height: 25px;
+        animation-timing-function: ease-in;
+    }
+    65% {
+        top: 120px;
+        height: 40px;
+        animation-timing-function: ease-out;
+    }
+    95% {
+        top: 40px;
+        animation-timing-function: ease-in;
+    }
+    100% {
+        top: 40px;
+        animation-timing-function: ease-in;
+    }
+}
+
+.circle {
+    animation: bounce 1s infinite;
+}
+@keyframes scroll_down {
+    0% {
+        top: 40px;
+    }
+    50% {
+        top: 120px;
+        height: 40px;
+    }
+    55% {
+        top: 150px;
+        height: 25px;
+    }
+    65% {
+        top: 120px;
+        height: 40px;
+    }
+    95% {
+        top: 40px;
+    }
+    100% {
+        top: 40px;
+    }
+}
