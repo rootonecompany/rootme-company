@@ -14,7 +14,7 @@
         font-size: 3.8rem;
     }
     .main_video video {
-        width: 260px;
+        /* width: 260px; */
     }
 
     /* about */
@@ -53,5 +53,47 @@
     }
 
     /* project box */
-    /* 수정사항이 많아서 내일 작업 필요 */
+    .work_project_box {
+        margin-top: 160px;
+    }
+    .project_wrap {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px 88px;
+    }
+    .project_wrap:nth-child(2) {
+        justify-content: left;
+        text-align: left;
+        flex-direction: column-reverse;
+    }
+    .work_project_info span {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .work_project_info img {
+        width: 320px;
+        height: 320px;
+    }
+    .work_project_btm {
+        width: 320px;
+        margin-top: 10px;
+    }
+    .work_project_btm p {
+        font-size: 1.3rem;
+    }
+    .work_project_btm em {
+        font-size: 1.3rem;
+    }
+    .work_project_text ul {
+        margin: 20px 0 0;
+        width: 320px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    .work_project_text li {
+        padding: 10px 12px;
+        margin-bottom: 4px;
+        font-size: 1rem;
+    }
 }

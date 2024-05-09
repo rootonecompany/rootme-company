@@ -50,16 +50,8 @@
     color: var(--color-white);
     border-radius: 19px;
 }
+
 /*** main ***/
-.main {
-    overflow: hidden;
-    align-items: center;
-}
-.main div {
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-}
 .main_txt p {
     color: var(--color-gray01);
     text-align: center;
@@ -89,7 +81,6 @@
 
 .main_video {
     text-align: center;
-    overflow: hidden;
 }
 .main_video video {
     display: block;
