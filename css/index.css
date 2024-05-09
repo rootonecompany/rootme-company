@@ -1,9 +1,15 @@
 /* story */
 /* story1 - box container */
-#story {
-    width: 100%;
-    height: 100%;
+#story { /* main-content-1 */
+    /* width: 100%;
+    height: 100%; */
     background: #f5f7fa;
+
+/* 수정 중 */
+border: 3px solid black;
+width: 100vw;
+height: 300vh;
+
 }
 
 #story > span {
@@ -28,37 +34,94 @@
     font-size: 10rem;
 }
 
-.story1 {
+.story1 { /* sticky */
     display: flex;
     width: 100%;
     height: 100vh;
     background: url("../images/story_1st_bg.png");
     background-size: cover;
     background-repeat: no-repeat;
+
+    /* 수정 중 */
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    border: 2px solid blue;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.box_wrap {
+.box_wrap { /* card-frame */
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-left: 232px;
     gap: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+
+
+    /* 수정 중 */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 3px solid pink;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* transform: translateX(100vw); */
 }
 
-.box {
-    background: #fff;
+.box { /* card */
+    background: var(--color-white);
     width: 608px;
     height: 608px;
-    overflow: hidden;
+    /* animation: boxSlide 20s linear infinite; */
+
+
+    /* 수정 중 */
+    /* height: 30%; */
+    min-height: 200px;
+    /* width: 18%; */
+    border: 2px solid hotpink;
+
+    transform-style: preserve-3d;
+    position: relative;
+    transition: translateX(100vw);
 }
 
+/* .reverse .box {
+    transform: translateX(calc(608px * 4));
+    animation: boxSlideReverse 20s linear infinite;
+}
+
+@keyframes boxSlide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(calc(-608px * 4));
+    }
+}
+
+@keyframes boxSlideReverse {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(calc(608px * 4));
+    }
+} */
+
 .box:nth-child(even) {
-    background: #000;
+    background: var(--color-black);
 }
 
 .box_top {
     margin-left: 60px;
     margin-top: 56px;
+    margin-right: 191px;
 }
 
 .box_top > span {
@@ -69,7 +132,7 @@
 }
 
 .box:nth-child(even) .box_top > span {
-    color: var(--white);
+    color: var(--color-white);
     font-size: 2rem;
     font-weight: 700;
     text-transform: capitalize;
@@ -81,10 +144,13 @@
 }
 
 .star_icon {
-    width: 36px;
-    height: 36px;
+    display: flex;
+    justify-content: space-between;
     margin-top: 220px;
     margin-bottom: 44px;
+    gap: 12px;
+    width: 36px;
+    height: 36px;
 }
 
 .btm_main_txt > h4 {
@@ -95,7 +161,7 @@
 }
 
 .box:nth-child(even) .btm_main_txt > h4 {
-    color: #fff;
+    color: var(--color-white);
 }
 
 .btm_sub_txt {
@@ -107,10 +173,10 @@
 }
 
 .box:nth-child(even) .btm_sub_txt > span {
-    color: #fff;
+    color: var(--color-white);
 }
 
-/* story2 - black background */
+/* story2 */
 .story2 {
     width: 100%;
     height: 100vh;
@@ -128,7 +194,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .story2_contents {
@@ -174,7 +240,7 @@
     align-items: center;
     justify-content: center;
     gap: 14px;
-    animation: ball 0.6s ease-in infinite Alternate;
+    animation: ball 0.4s ease-in infinite Alternate;
 }
 
 .scroll_down > span {
@@ -187,16 +253,6 @@
 .scroll_down > img {
     width: 38px;
     height: 38px;
-}
-
-/* 바운스볼 애니메이션 */
-@keyframes ball {
-    0% {
-        top: 0px;
-    }
-    100% {
-        top: 15px;
-    }
 }
 
 /* brand */
@@ -281,13 +337,15 @@
 /* contact */
 #contact {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: #f5f7fa;
 }
 
 .contact_container {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    margin: auto 80px;
 }
 
 .contact_container > span {
@@ -296,34 +354,31 @@
     text-transform: uppercase;
     word-wrap: break-word;
     margin-left: 340px;
+    margin-top: 121px;
     margin-bottom: 42px;
 }
 
-.contact_image {
-    margin: auto 80px;
+.contact_img {
+    margin-bottom: 52px;
 }
 
 .contact_txt {
     width: 100%;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-bottom: 133px;
 }
 
-.contact_main_txt {
-    font-weight: 400;
-    text-transform: uppercase;
-    word-wrap: break-word;
-    margin-top: 52px;
-}
+/* .contact_main_txt {
+} */
 
 .contact_main_txt > h2 {
     font-size: 10rem;
     line-height: 1.2;
+    font-weight: 400;
+    text-transform: uppercase;
+    word-wrap: break-word;
 }
 
 .contact_sub_txt {
-    width: 100%;
-    margin-bottom: 133px;
     margin-top: 36px;
 }
 
@@ -338,22 +393,17 @@
     margin-bottom: 32px;
 }
 
-/* footer */
-#footer {
-    background: #f5f7fa;
-    margin: auto 80px;
-}
-
-/* footer - 패밀리 사이트 */
-.footer_famsite {
+.contact_famsite {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-bottom: 40px;
+
+    border: 3px solid salmon;
 }
 
 .famsite_menubar {
-    /* border: 1px solid #cfcfcf; */
+    /* display: none; */
     border-radius: 10px;
     width: 138px;
     height: 140px;
@@ -363,7 +413,7 @@
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
 
-    /* border: 1px solid transparent; */
+    border: 3px solid purple;
 }
 
 .famsite_menubar > ul {
@@ -397,7 +447,6 @@
     font-weight: 800;
     word-wrap: break-word;
     padding: 15px 18px;
-    margin-bottom: 24px;
     cursor: pointer;
 }
 
@@ -408,8 +457,7 @@
     transition: transform 0.5s ease;
 }
 
-/* footer - 주소 */
-.footer_address {
+.contact_address {
     display: flex;
     flex-direction: column;
     text-align: right;
@@ -417,18 +465,23 @@
     line-height: 1.4;
 }
 
-.footer_address > p {
+.contact_address > p {
     font-size: 1.3rem;
     font-weight: 700;
     word-wrap: break-word;
 }
 
-/* footer - bottom */
+/* footer */
+#footer {
+    background: #f5f7fa;
+    margin: auto 80px;
+    padding-bottom: 60px;
+}
+
 .footer_btm {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 60px;
 }
 
 .footer_btm > span {
@@ -436,7 +489,6 @@
     font-weight: 700;
     word-wrap: break-word;
     white-space: nowrap;
-    margin-bottom: 60px;
 }
 
 /* footer 미디어 쿼리 적용 (임시) */
@@ -444,6 +496,6 @@
     #footer {
         justify-content: center;
         margin: auto;
-        padding: 0 20px; /* 좌우 여백을 조정 */
+        padding: 0 20px;
     }
 }
