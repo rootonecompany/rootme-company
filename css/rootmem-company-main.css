@@ -206,7 +206,7 @@
     text-transform: uppercase;
     margin-bottom: 20px;
     line-height: normal;
-    /* animation: introMove1 30s linear infinite; */
+    animation: introMove1 30s linear infinite;
 }
 .work_move_txt h3:nth-child(1) {
     margin-top: 42px;
@@ -216,7 +216,7 @@
     font-weight: 400;
 }
 .work_move_txt h3:nth-child(2) {
-    /* animation: introMove2 30s linear infinite; */
+    animation: introMove2 30s linear infinite;
     font-weight: 900;
 }
 .work_move_txt h3:nth-child(3) {
