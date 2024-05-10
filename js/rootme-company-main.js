@@ -46,10 +46,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", handleScroll, { passive: true });
 
-  header.addEventListener("click", function (event) {
+  function handleClick() {
+    if (window.innerWidth <= 768) {
+      return;
+    }
     gsap.to(header, { opacity: 0, duration: 0.3 });
     isHeaderHidden = true;
     gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
+
+  }
+});
+
+
+//토글 메뉴바
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuBar = document.querySelector('.menubar');
+  const header = document.querySelector('.header_gnb');
+
+
+  menuToggle.addEventListener('click', function () {
+    menuBar.classList.toggle('active');
+    this.classList.toggle('active');
+    header.classList.toggle('active')
+
+    const iconImg = menuToggle.querySelector('img');
+    const logo = document.querySelector('.logo img');
+
+    if (iconImg.src.includes('toggleopen.svg')) {
+      iconImg.src = './images/toggleclose.svg';
+      logo.src = './images/logoclose.png';
+    } else {
+      iconImg.src = './images/toggleopen.svg';
+      logo.src = './images/logo.png';
+    }
   });
 });
 
@@ -115,7 +145,7 @@ gsap.set(workTopTxt, { y: 0 });
 ScrollTrigger.create({
   trigger: workSection,
   start: "top top",
-  end: "bottom top",
+  end: "bottom bottom",
   scrub: 1,
   onUpdate: () => {
 
