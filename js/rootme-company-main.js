@@ -126,7 +126,7 @@ ScrollTrigger.create({
 
     if (window.scrollY > workSection.offsetTop) {
       gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
-      gsap.to(targetH3, { opacity: 0.6, duration: 0.3 });
+      gsap.to(targetH3, { opacity: 0.8, duration: 0.3 });
       // gsap.to(workTopTxt, { y: centerPosition, duration: 0 });
       gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
     } else {
