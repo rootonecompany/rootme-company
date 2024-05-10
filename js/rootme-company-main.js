@@ -24,9 +24,8 @@ gsap.ticker.lagSmoothing(0);
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector('.header_gnb');
   const mainVideo = document.querySelector('.main_video');
-  const triggerOffset = 560;
+  const triggerOffset = 550;
   let isHeaderHidden = false;
-
   let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
   function handleScroll() {
@@ -46,12 +45,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", handleScroll, { passive: true });
 
-  header.addEventListener("click", function (event) {
+  function handleClick() {
+    if (window.innerWidth <= 768) {
+      return;
+    }
     gsap.to(header, { opacity: 0, duration: 0.3 });
     isHeaderHidden = true;
     gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
+
+  }
+});
+
+
+//토글 메뉴바
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuBar = document.querySelector('.menubar');
+  const header = document.querySelector('.header_gnb');
+
+  menuToggle.addEventListener('click', function () {
+    menuBar.classList.toggle('active');
+    header.classList.toggle('active');
+
+    const iconImg = menuToggle.querySelector('img');
+    const logo = document.querySelector('.logo img');
+
+    if (iconImg.src.includes('toggleopen.svg')) {
+      iconImg.src = './images/toggleclose.svg';
+      logo.src = './images/logoclose.png';
+    } else {
+      iconImg.src = './images/toggleopen.svg';
+      logo.src = './images/logo.png';
+    }
+  });
+
+  // li click 위치 이동 시 자동으로 menubar 닫히게 
+  const menuItems = document.querySelectorAll('.header_menu li');
+  menuItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      menuBar.classList.remove('active');
+      menuToggle.classList.remove('active');
+      header.classList.remove('active');
+
+      const iconImg = menuToggle.querySelector('img');
+      const logo = document.querySelector('.logo img');
+
+      iconImg.src = './images/toggleopen.svg';
+      logo.src = './images/logo.png';
+    });
   });
 });
+
 
 
 
@@ -115,7 +159,7 @@ gsap.set(workTopTxt, { y: 0 });
 ScrollTrigger.create({
   trigger: workSection,
   start: "top top",
-  end: "bottom top",
+  end: "bottom bottom",
   scrub: 1,
   onUpdate: () => {
 
@@ -126,7 +170,7 @@ ScrollTrigger.create({
 
     if (window.scrollY > workSection.offsetTop) {
       gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
-      gsap.to(targetH3, { opacity: 0.6, duration: 0.3 });
+      gsap.to(targetH3, { opacity: 0.8, duration: 0.3 });
       // gsap.to(workTopTxt, { y: centerPosition, duration: 0 });
       gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
     } else {

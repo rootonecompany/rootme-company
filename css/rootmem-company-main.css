@@ -9,7 +9,7 @@
     height: 72px;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 999;
     padding: 0 80px;
     transition: transform 1s ease-in-out;
 }
@@ -51,7 +51,15 @@
     border-radius: 19px;
 }
 
+/* 토글 */
+.menu-toggle {
+    display: none;
+}
+
 /*** main ***/
+.main {
+    overflow: hidden;
+}
 .main_txt p {
     color: var(--color-gray01);
     text-align: center;
@@ -70,13 +78,6 @@
     line-height: normal;
     text-transform: uppercase;
     margin: 34px 0 92px;
-}
-
-/* 임시 */
-@media (max-width: 930px) {
-    .main_txt h2 {
-        font-size: 8rem;
-    }
 }
 
 .main_video {
@@ -115,14 +116,14 @@
     text-align: center;
 }
 .about_txt1 {
-    background: url(../images/about1.png) 50% / contain no-repeat;
+    background: url(../images/about1.png) 50% / contain no-repeat center;
     background-size: 560px 560px;
     width: 100%;
     height: 100vh;
     text-align: center;
 }
 .about_txt2 {
-    background: url(../images/about2.png) 50% / contain no-repeat;
+    background: url(../images/about2.png) 50% / contain no-repeat center;
     background-size: 560px 560px;
     width: 100%;
     height: 100vh;
@@ -130,51 +131,63 @@
     opacity: 0;
 }
 .about_txt3 {
-    background: url(../images/about3.png) 50% / contain no-repeat;
+    background: url(../images/about3.png) 50% / contain no-repeat center;
     background-size: 560px 560px;
     width: 100%;
     height: 100vh;
     text-align: center;
     opacity: 0;
 }
-.about_txt span {
+.about_txt_top {
     font-size: 1.6rem;
     font-weight: 800;
     text-align: center;
     line-height: normal;
     text-transform: capitalize;
 }
-.about_txt h3 {
+.about_txt_bottom {
+    position: relative;
+}
+.about_txt_bottom span {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}
+.about_box:nth-child(2) > .about_txt > .about_txt_bottom span {
+    left: -32px;
+}
+.about_txt_bottom h3 {
     font-size: 8.4rem;
     font-weight: 800;
     text-transform: uppercase;
     width: 100%;
     margin-top: 45px;
     letter-spacing: -1.68px;
+    line-height: 1.3;
     text-align: center;
-}
-
-@media (max-width: 1200px) {
-    .about_txt h3 {
-        font-size: 6.5rem;
-    }
-}
-@media (max-width: 930px) {
-    .about_txt h3 {
-        font-size: 5rem;
-    }
 }
 
 /*** work ***/
 .work {
     position: relative;
-    padding-top: 240px;
-    overflow: hidden;
+    width: 100%;
+    margin-top: 240px;
 }
 .work_top_txt {
+    display: flex;
     position: sticky;
     top: 0;
-    z-index: -1;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 /* move text */
@@ -191,9 +204,9 @@
     font-size: 11.6rem;
     white-space: nowrap;
     text-transform: uppercase;
-    margin-bottom: 26px;
+    margin-bottom: 20px;
     line-height: normal;
-    animation: introMove1 30s linear infinite;
+    /* animation: introMove1 30s linear infinite; */
 }
 .work_move_txt h3:nth-child(1) {
     margin-top: 42px;
@@ -203,11 +216,12 @@
     font-weight: 400;
 }
 .work_move_txt h3:nth-child(2) {
-    animation: introMove2 30s linear infinite;
+    /* animation: introMove2 30s linear infinite; */
     font-weight: 900;
 }
 .work_move_txt h3:nth-child(3) {
     font-weight: 350;
+    margin-bottom: 0;
 }
 
 /* project box */
@@ -215,11 +229,12 @@
     display: flex;
     margin-top: 340px;
     flex-direction: column;
+    z-index: 2;
 }
 .project_wrap {
     display: flex;
     flex-direction: row;
-    margin: 0 80px 225px;
+    margin: 0 80px 340px;
     justify-content: left;
 }
 .project_wrap:nth-child(2) {
@@ -242,6 +257,7 @@
     height: 860px;
     object-fit: cover;
     box-shadow: 0px 26px 50px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }
 .work_project_btm {
     display: flex;
@@ -264,7 +280,7 @@
 }
 .work_project_text ul {
     margin: 48px 20px 0;
-    width: 150px;
+    width: 180px;
 }
 .work_project_text li {
     display: inline-block;
@@ -275,9 +291,9 @@
     font-weight: 700;
     line-height: normal;
     border-radius: 22px;
-    background-color: var(--color-gray05);
+    background-color: transparent;
 }
-.work_project_text li:hover {
-    color: var(--color-white);
+.work_project_text li:nth-child(2) {
     background-color: var(--color-black);
+    color: var(--color-white);
 }
