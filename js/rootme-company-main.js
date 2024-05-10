@@ -24,9 +24,8 @@ gsap.ticker.lagSmoothing(0);
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector('.header_gnb');
   const mainVideo = document.querySelector('.main_video');
-  const triggerOffset = 560;
+  const triggerOffset = 550;
   let isHeaderHidden = false;
-
   let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
   function handleScroll() {
@@ -64,11 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBar = document.querySelector('.menubar');
   const header = document.querySelector('.header_gnb');
 
-
   menuToggle.addEventListener('click', function () {
     menuBar.classList.toggle('active');
-    this.classList.toggle('active');
-    header.classList.toggle('active')
+    header.classList.toggle('active');
 
     const iconImg = menuToggle.querySelector('img');
     const logo = document.querySelector('.logo img');
@@ -81,7 +78,24 @@ document.addEventListener('DOMContentLoaded', function () {
       logo.src = './images/logo.png';
     }
   });
+
+  // li click 위치 이동 시 자동으로 menubar 닫히게 
+  const menuItems = document.querySelectorAll('.header_menu li');
+  menuItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      menuBar.classList.remove('active');
+      menuToggle.classList.remove('active');
+      header.classList.remove('active');
+
+      const iconImg = menuToggle.querySelector('img');
+      const logo = document.querySelector('.logo img');
+
+      iconImg.src = './images/toggleopen.svg';
+      logo.src = './images/logo.png';
+    });
+  });
 });
+
 
 
 
