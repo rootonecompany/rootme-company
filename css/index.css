@@ -29,7 +29,7 @@ span {
     padding: 42px 0;
 }
 
-.story_txt_container h5:nth-child(2) {
+.story_txt_container h5 bold {
     font-weight: 900;
 }
 
@@ -91,8 +91,8 @@ span {
     color: var(--color-black);
     font-size: 2.8rem;
     font-weight: 800;
-    margin-top: 44px;
-    margin-bottom: 87px;
+    margin: 44px auto 87px auto;
+    line-height: 31px;
 }
 
 .story_card_btm span {
@@ -117,6 +117,7 @@ span {
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    line-height: 114px;
 }
 
 .story_background_content h5 {
@@ -124,6 +125,10 @@ span {
     font-weight: 400;
     color: var(--color-white);
     margin-top: 426px;
+}
+
+.story_background_content h5 bold {
+    font-weight: 900;
 }
 
 .story_background_content p {
@@ -179,10 +184,10 @@ span {
 
 .brand_content_txt {
     text-align: center;
+    color: var(--color-black);
 }
 
 .brand_content_txt span {
-    color: #86868b;
     font-size: 3.2rem;
 }
 
@@ -190,6 +195,10 @@ span {
     font-size: 10rem;
     font-weight: 900;
     padding: 36px;
+}
+.brand_content_txt h5 span {
+    font-size: 10rem;
+    font-weight: 400;
 }
 
 .brand_logo_wrap {
@@ -240,6 +249,12 @@ span {
     font-size: 10rem;
     font-weight: 400;
     margin-bottom: 36px;
+}
+
+.contact_container h5 bold {
+    font-size: 10rem;
+    font-weight: 900;
+    margin-bottom: 36px;   
 }
 
 .contact_container p {

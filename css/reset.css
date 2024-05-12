@@ -2,25 +2,25 @@
 
 @font-face {
     font-family: "NanumSquareNeo";
-    src: url(../fonts/NanumSquareNeo/NanumSquareNeoOTF-Bd.otf);
+    src: url(../fonts/NanumSquareNeo/NanumSquareNeoOTF-Rg.otf);
     font-style: normal;
     font-weight: 400;
 }
 @font-face {
     font-family: "NanumSquareNeo";
-    src: url(../fonts/NanumSquareNeo/NanumSquareNeoOTF-Eb.otf);
+    src: url(../fonts/NanumSquareNeo/NanumSquareNeoOTF-Bd.otf);
     font-style: normal;
     font-weight: 700;
 }
 @font-face {
     font-family: "NanumSquareNeo";
-    src: url(../fonts/NanumSquareNeo/NanumSquareNeoOTF-Hv.otf);
+    src: url(../fonts/NanumSquareNeo/NanumSquareNeoOTF-Eb.otf);
     font-style: normal;
     font-weight: 800;
 }
 @font-face {
     font-family: "NanumSquareNeo";
-    src: url(../fonts/NanumSquareNeo/NanumSquareNeoOTF-Rg.otf);
+    src: url(../fonts/NanumSquareNeo/NanumSquareNeoOTF-Hv.otf);
     font-style: normal;
     font-weight: 900;
 }
