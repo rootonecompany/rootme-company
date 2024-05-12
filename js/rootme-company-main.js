@@ -24,6 +24,8 @@ gsap.ticker.lagSmoothing(0);
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector('.header_gnb');
   const mainVideo = document.querySelector('.main_video');
+  const menuBar = document.querySelector('.menubar');
+  const menuToggle = document.querySelector('.menu-toggle');
   const triggerOffset = 550;
   let isHeaderHidden = false;
   let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -31,37 +33,22 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleScroll() {
     const st = window.scrollY || document.documentElement.scrollTop;
     const isScrolledPastTrigger = st > mainVideo.offsetTop + triggerOffset;
+    const isMenuActive = menuBar.classList.contains('active');
 
-    if (!isHeaderHidden && st > lastScrollTop && isScrolledPastTrigger) {
-      gsap.to(header, { opacity: 0, duration: 0.3 });
-      isHeaderHidden = true;
-    } else if (isHeaderHidden && st < lastScrollTop) {
-      gsap.to(header, { opacity: 1, duration: 0.3 });
-      isHeaderHidden = false;
+    if (!isMenuActive) {
+      if (!isHeaderHidden && st > lastScrollTop && isScrolledPastTrigger) {
+        gsap.to(header, { opacity: 0, duration: 0.3 });
+        isHeaderHidden = true;
+      } else if (isHeaderHidden && st < lastScrollTop) {
+        gsap.to(header, { opacity: 1, duration: 0.3 });
+        isHeaderHidden = false;
+      }
     }
 
     lastScrollTop = st <= 0 ? 0 : st;
   }
 
   window.addEventListener("scroll", handleScroll, { passive: true });
-
-  function handleClick() {
-    if (window.innerWidth <= 768) {
-      return;
-    }
-    gsap.to(header, { opacity: 0, duration: 0.3 });
-    isHeaderHidden = true;
-    gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
-
-  }
-});
-
-
-//토글 메뉴바
-document.addEventListener('DOMContentLoaded', function () {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menuBar = document.querySelector('.menubar');
-  const header = document.querySelector('.header_gnb');
 
   menuToggle.addEventListener('click', function () {
     menuBar.classList.toggle('active');
@@ -79,12 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // li click 위치 이동 시 자동으로 menubar 닫히게 
   const menuItems = document.querySelectorAll('.header_menu li');
   menuItems.forEach(function (item) {
     item.addEventListener('click', function () {
       menuBar.classList.remove('active');
-      menuToggle.classList.remove('active');
       header.classList.remove('active');
 
       const iconImg = menuToggle.querySelector('img');
@@ -95,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
 
 
 

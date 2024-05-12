@@ -26,9 +26,7 @@
     width: 90px;
     height: 32px;
 }
-.menubar {
-    padding: 17px 0;
-}
+
 .header_menu {
     display: flex;
     list-style: none;
@@ -49,6 +47,9 @@
     background-color: var(--color-black);
     color: var(--color-white);
     border-radius: 19px;
+}
+.header_menu li:nth-child(6) {
+    display: none;
 }
 
 /* 토글 */
