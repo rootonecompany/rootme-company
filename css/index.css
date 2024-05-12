@@ -38,6 +38,7 @@ span {
     background: url("../images/story_bg1.png");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -183,6 +184,10 @@ span {
     font-weight: 700;
 }
 
+.brand_header span:nth-child(2) {
+    padding-right: 150px;
+}
+
 .brand_content_wrap {
     display: flex;
     flex-direction: column;
@@ -232,12 +237,11 @@ span {
 .contact_container {
     display: flex;
     flex-direction: column;
-
     margin-top: 101px;
 }
 
 .contact_container span {
-    margin-left: 340px;
+    margin-left: calc(340px - 80px);
     font-size: 1.4rem;
     font-weight: 700;
 }
@@ -248,7 +252,7 @@ span {
 }
 
 .contact_container_txt {
-    margin-bottom: 277px;
+    margin-bottom: 129px;
 }
 
 .contact_container h5 {
@@ -279,6 +283,7 @@ footer {
     flex-direction: column;
 }
 
+/* 드롭다운 메뉴 */
 .footer_dropdown {
     position: relative;
     display: flex;
@@ -286,43 +291,52 @@ footer {
 }
 
 .footer_dropdown_btn {
-    /* position: relative; */
     background: #e4e6ea;
     border: none;
     border-radius: 10px;
     font-size: 1.3rem;
     font-weight: 800;
-    padding: 15px 18px;
+    padding: 15px 20px;
     cursor: pointer;
+    margin-top: 140px;
     margin-bottom: 40px;
-    width: 138px;
-    height: 44px;
 }
 
 .footer_dropdown_btn img {
     width: 12px;
     height: 6px;
-    margin-left: 4px;
+    margin-left: 12px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
 }
 
-/* 드롭다운 컨텐츠(기본적으로 숨김) */
 .footer_dropdown_content {
-    /* visibility: hidden; */
-
+    display: none;
     position: absolute;
+    z-index: 1;
     border: 1px solid #cfcfcf;
     border-radius: 10px;
     margin-top: -230px;
 }
 
-.footer_dropdown_content ul li {
+.footer_dropdown_content a {
+    display: block;
     font-size: 1.4rem;
     border-bottom: 1px solid #cfcfcf;
     padding: 14px 25px;
     text-align: center;
 }
-.footer_dropdown_content ul li:nth-child(3) {
+
+.footer_dropdown_content a:nth-child(3) {
     border-bottom: none;
+}
+
+.footer_dropdown:hover .footer_dropdown_content {
+    display: block;
+}
+
+.footer_dropdown_btn:hover img {
+    transform: translateY(-50%) rotate(-180deg);
 }
 
 .footer_btm {
