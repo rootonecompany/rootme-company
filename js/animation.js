@@ -1,8 +1,3 @@
-(() => {
-    console.log(window.innerWidth);
-    console.log(window.innerHeight);
-})();
-
 // 카드 스크롤 애니메이션
 class CardFlipOnScroll {
     constructor(storyCardWrap, sticky) {
