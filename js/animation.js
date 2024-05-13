@@ -59,8 +59,6 @@ window.addEventListener("scroll", () => {
 window.addEventListener("resize", () => {
     cardFlipOnScroll.init();
 });
-<<<<<<< HEAD
-=======
 
 // 드롭다운 메뉴
 function dropdownFunction() {
@@ -79,4 +77,3 @@ window.onclick = function (event) {
         }
     }
 };
->>>>>>> test
