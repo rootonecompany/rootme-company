@@ -195,21 +195,23 @@ span {
 
 .brand_content_txt {
     text-align: center;
-    color: var(--color-black);
 }
 
-.brand_content_txt span {
+.brand_content_txt > span {
     font-size: 3.2rem;
+    color: var(--color-gray01);
 }
 
 .brand_content_txt h5 {
     font-size: 10rem;
     font-weight: 900;
     padding: 36px;
+    color: var(--color-black);
 }
-.brand_content_txt h5 span {
+.brand_content_txt h5 > span {
     font-size: 10rem;
     font-weight: 400;
+    color: var(--color-black);
 }
 
 .brand_logo_wrap {
@@ -264,7 +266,7 @@ span {
 .contact_container h5 bold {
     font-size: 10rem;
     font-weight: 900;
-    margin-bottom: 36px;   
+    margin-bottom: 36px;
 }
 
 .contact_container p {
@@ -349,6 +351,10 @@ footer {
     font-size: 1.3rem;
     font-weight: 700;
     text-align: right;
+}
+
+.footer_btm_address > p {
+    line-height: 14px;
 }
 
 .footer_btm_address p:nth-child(2) {
