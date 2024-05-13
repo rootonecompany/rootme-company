@@ -1,58 +1,61 @@
-// drop up
-document.addEventListener("DOMContentLoaded", function () {
-    var famsiteBtn = document.getElementById("famsite_btn");
-    var famsiteMenu = document.querySelector(".famsite_menubar");
-    var arrowImg = famsiteBtn.querySelector("img");
+// 카드 스크롤 애니메이션
+class CardFlipOnScroll {
+    constructor(storyCardWrap, sticky) {
+        this.storyCardWrap = storyCardWrap;
+        this.sticky = sticky;
+        this.cards = storyCardWrap.querySelectorAll(".story_card");
+        this.length = this.cards.length;
 
-    famsiteBtn.addEventListener("click", function () {
-        var maxHeight = famsiteMenu.style.maxHeight;
+        this.start = 0;
+        this.end = 0;
+        this.step = 0;
+    }
 
-        if (maxHeight === "0px") {
-            famsiteMenu.style.maxHeight = "140px";
-            famsiteMenu.style.border = "1px solid #cfcfcf";
-            arrowImg.style.transform = "rotate(-180deg)";
-        } else {
-            famsiteMenu.style.maxHeight = "0px";
-            famsiteMenu.style.border = "1px solid transparent";
-            arrowImg.style.transform = "";
-        }
-    });
-});
+    init() {
+        this.start = this.storyCardWrap.offsetTop;
+        this.end = this.storyCardWrap.offsetTop + this.storyCardWrap.offsetHeight - innerHeight;
+        this.step = (this.end - this.start) / (this.length * 2);
+    }
 
-// box 애니메이션
-// let lastScrollTop = 0;
+    animate() {
+        this.cards.forEach((card, i) => {
+            const s = this.start + this.step * i;
+            const e = s + this.step * (this.length + 1);
 
-// window.addEventListener(
-//     "scroll",
-//     function () {
-//         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-//         if (currentScroll > lastScrollTop) {
-//             document.querySelector(".box_wrap").classList.remove("reverse");
-//         } else {
-//             document.querySelector(".box_wrap").classList.add("reverse");
-//         }
-//         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-//     },
-//     false
-// );
-
-// box 애니메이션 수정 중
-window.addEventListener('scroll', () => {
-  sliding();
-});
-const slideContainer = document.querySelector('.story')// 전체 또는 story (?)
-const stickyBox = document.querySelector('.story1');
-const boxWrap = document.querySelector('.box_wrap');
-const boxs = document.querySelectorAll('.box')
-const boxLength = boxs.length;
-
-const containerHeight = slideContainer.offsetHeight - stickyBox.offsetHeight;
-
-function sliding() {
-  const ratio = scrollY / (containerHeight / 2);
-  if (ratio < 1) {
-    boxWrap.style.transform = `translateX(${100 - ratio * 100}vw)`;
-  } else {
-    boxWrap.style.transform = `translateX(0vw)`;
-  }
+            if (scrollY <= s) {
+                card.style.transform = `
+                  perspective(100vw)
+                  translateX(100vw)
+              `;
+            } else if (scrollY > s && scrollY <= e - this.step) {
+                card.style.transform = `
+                  perspective(100vw)
+                  translateX(${100 + ((scrollY - s) / (e - s)) * -100}vw)
+              `;
+            } else if (scrollY > e - this.step && scrollY <= e) {
+                card.style.transform = `
+                  perspective(100vw)
+                  translateX(${100 + ((scrollY - s) / (e - s)) * -100}vw)
+              `;
+            } else if (scrollY > e) {
+                card.style.transform = `
+                perspective(100vw)
+                translateX(0vw)
+              `;
+            }
+        });
+    }
 }
+
+const storyCardWrap = document.querySelector(".story_card_wrap");
+const sticky = document.querySelector(".sticky");
+const cardFlipOnScroll = new CardFlipOnScroll(storyCardWrap, sticky);
+cardFlipOnScroll.init();
+
+window.addEventListener("scroll", () => {
+    cardFlipOnScroll.animate();
+});
+
+window.addEventListener("resize", () => {
+    cardFlipOnScroll.init();
+});
