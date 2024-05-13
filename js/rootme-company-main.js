@@ -136,6 +136,9 @@ gsap
   .to(".about_txt2", { opacity: 0 })
   .to(".about_txt3", { opacity: 1, duration: 2 });
 
+window.addEventListener("resize", () => {
+  ScrollTrigger.refresh();
+})
 
 
 // work move text
