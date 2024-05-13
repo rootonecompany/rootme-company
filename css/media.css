@@ -132,7 +132,7 @@
         font-size: 1.2rem;
     }
     .work_project_info img {
-        width: 400px;
+        min-width: 400px;
         height: 400px;
     }
     .work_project_btm {
@@ -233,7 +233,7 @@
         margin-bottom: 10px;
     }
     .work_project_info img {
-        width: 320px;
+        min-width: 320px;
         height: 320px;
     }
     .work_project_btm {
