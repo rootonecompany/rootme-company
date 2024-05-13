@@ -94,7 +94,7 @@ main_video.to(".main_video_object", {
   scale: 1,
   width: "100vw",
   height: "100vh",
-  duration: 1.5,
+  duration: 2,
   scrub: 1,
 });
 
