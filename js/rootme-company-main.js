@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
       logo.src = './images/logo.png';
     });
   });
+  window.addEventListener("resize", ScrollTrigger.update);
 });
 
 
@@ -86,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // main video
+
 const main_video = gsap.timeline();
 
 main_video.to(".main_video_object", {
@@ -100,7 +102,7 @@ ScrollTrigger.create({
   animation: main_video,
   trigger: ".main_video",
   start: "top top",
-  end: "bottom top",
+  end: "bottom center",
   scrub: true,
   pin: true,
   anticipatePin: 1,
@@ -133,6 +135,7 @@ gsap
   .to(".about_txt2", { opacity: 1, duration: 2 })
   .to(".about_txt2", { opacity: 0 })
   .to(".about_txt3", { opacity: 1, duration: 2 });
+
 
 
 // work move text
