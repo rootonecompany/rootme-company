@@ -1,3 +1,8 @@
+(() => {
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+})();
+
 // 카드 스크롤 애니메이션
 class CardFlipOnScroll {
     constructor(storyCardWrap, sticky) {
@@ -13,8 +18,7 @@ class CardFlipOnScroll {
 
     init() {
         this.start = this.storyCardWrap.offsetTop;
-        this.end =
-            this.storyCardWrap.offsetTop + this.storyCardWrap.offsetHeight - innerHeight;
+        this.end = this.storyCardWrap.offsetTop + this.storyCardWrap.offsetHeight - innerHeight;
         this.step = (this.end - this.start) / (this.length * 2);
     }
 
@@ -60,3 +64,21 @@ window.addEventListener("scroll", () => {
 window.addEventListener("resize", () => {
     cardFlipOnScroll.init();
 });
+
+// 드롭다운 메뉴
+function dropdownFunction() {
+    document.getElementById("myDropdownContent").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+    if (!event.target.matches(".footer_dropdown_btn")) {
+        var dropdowns = document.getElementsByClassName("footer_dropdown_content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+            }
+        }
+    }
+};
