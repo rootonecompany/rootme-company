@@ -1,63 +1,20 @@
-// 카드 스크롤 애니메이션
-class CardFlipOnScroll {
-    constructor(storyCardWrap, sticky) {
-        this.storyCardWrap = storyCardWrap;
-        this.sticky = sticky;
-        this.cards = storyCardWrap.querySelectorAll(".story_card");
-        this.length = this.cards.length;
+// gsap 스크롤 트리거
+gsap.registerPlugin(ScrollTrigger);
 
-        this.start = 0;
-        this.end = 0;
-        this.step = 0;
-    }
+let sections = gsap.utils.toArray(".story_card");
 
-    init() {
-        this.start = this.storyCardWrap.offsetTop;
-        this.end = this.storyCardWrap.offsetTop + this.storyCardWrap.offsetHeight - innerHeight;
-        this.step = (this.end - this.start) / (this.length * 2);
-    }
-
-    animate() {
-        this.cards.forEach((card, i) => {
-            const s = this.start + this.step * i;
-            const e = s + this.step * (this.length + 1);
-
-            if (scrollY <= s) {
-                card.style.transform = `
-                  perspective(100vw)
-                  translateX(100vw)
-              `;
-            } else if (scrollY > s && scrollY <= e - this.step) {
-                card.style.transform = `
-                  perspective(100vw)
-                  translateX(${100 + ((scrollY - s) / (e - s)) * -100}vw)
-              `;
-            } else if (scrollY > e - this.step && scrollY <= e) {
-                card.style.transform = `
-                  perspective(100vw)
-                  translateX(${100 + ((scrollY - s) / (e - s)) * -100}vw)
-              `;
-            } else if (scrollY > e) {
-                card.style.transform = `
-                perspective(100vw)
-                translateX(0vw)
-              `;
-            }
-        });
-    }
-}
-
-const storyCardWrap = document.querySelector(".story_card_wrap");
-const sticky = document.querySelector(".sticky");
-const cardFlipOnScroll = new CardFlipOnScroll(storyCardWrap, sticky);
-cardFlipOnScroll.init();
-
-window.addEventListener("scroll", () => {
-    cardFlipOnScroll.animate();
-});
-
-window.addEventListener("resize", () => {
-    cardFlipOnScroll.init();
+gsap.to(sections, {
+    xPercent: -100 * sections.length,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".story_card_wrap",
+        pin: true,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 2,
+        snap: 1 / (sections.length - 1),
+    },
+    x: 500,
 });
 
 // 드롭다운 메뉴
