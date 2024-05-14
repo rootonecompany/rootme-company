@@ -12,7 +12,6 @@
     z-index: 999;
     padding: 0 80px;
     transition: transform 1s ease-in-out;
-    color: red;
 }
 .header_gnb.hidden {
     display: none;
