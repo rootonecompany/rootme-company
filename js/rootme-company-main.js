@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
       logo.src = './images/logo.png';
     });
   });
+  window.addEventListener("resize", ScrollTrigger.update);
 });
 
 
@@ -86,13 +87,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // main video
+
 const main_video = gsap.timeline();
 
 main_video.to(".main_video_object", {
   scale: 1,
   width: "100vw",
   height: "100vh",
-  duration: 1.5,
+  duration: 2,
   scrub: 1,
 });
 
@@ -100,7 +102,7 @@ ScrollTrigger.create({
   animation: main_video,
   trigger: ".main_video",
   start: "top top",
-  end: "bottom top",
+  end: "bottom center",
   scrub: true,
   pin: true,
   anticipatePin: 1,
@@ -133,6 +135,10 @@ gsap
   .to(".about_txt2", { opacity: 1, duration: 2 })
   .to(".about_txt2", { opacity: 0 })
   .to(".about_txt3", { opacity: 1, duration: 2 });
+
+window.addEventListener("resize", () => {
+  ScrollTrigger.refresh();
+})
 
 
 // work move text

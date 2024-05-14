@@ -68,10 +68,13 @@
 
     /*toggle */
     .menubar {
-        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s linear;
     }
     .menubar.active {
-        display: block;
+        visibility: visible;
+        opacity: 1;
     }
     .menu-toggle {
         display: block;
@@ -132,11 +135,14 @@
         font-size: 1.2rem;
     }
     .work_project_info img {
-        width: 400px;
-        height: 400px;
+        max-width: 400px;
+        min-width: 320px;
+        width: 100%;
+        height: 100%;
     }
     .work_project_btm {
-        width: 400px;
+        max-width: 400px;
+        width: 100%;
         margin-top: 14px;
     }
     .work_project_btm p {
@@ -233,11 +239,13 @@
         margin-bottom: 10px;
     }
     .work_project_info img {
-        width: 320px;
-        height: 320px;
+        max-width: 320px;
+        width: 100%;
+        height: 100%;
     }
     .work_project_btm {
-        width: 320px;
+        max-width: 320px;
+        width: 100%;
         margin-top: 10px;
     }
     .work_project_btm p {
