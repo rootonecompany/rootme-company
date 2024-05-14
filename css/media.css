@@ -4,9 +4,10 @@
         position: relative;
     }
     .header_gnb {
+        background-color: transparent;
         padding: 0 40px;
         justify-content: space-between;
-        /* transition: background-color 0.5s linear; */
+        transition: all 0.3s linear;
     }
     .header_gnb.active {
         background-color: var(--color-black);

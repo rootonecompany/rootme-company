@@ -156,14 +156,12 @@ ScrollTrigger.create({
   onUpdate: () => {
 
     const translateY = window.scrollY - workSection.offsetTop;
-    // const centerPosition = (window.innerHeight - workTopTxt.offsetHeight) / 2;
     const translateSetY = translateY < 0 ? 0 : translateY
     const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
 
-    if (window.scrollY > workSection.offsetTop) {
+    if (window.scrollY >= workSection.offsetTop) {
       gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
       gsap.to(targetH3, { opacity: 0.8, duration: 0.3 });
-      // gsap.to(workTopTxt, { y: centerPosition, duration: 0 });
       gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
     } else {
       gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
