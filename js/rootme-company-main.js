@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainVideo = document.querySelector('.main_video');
   const menuBar = document.querySelector('.menubar');
   const menuToggle = document.querySelector('.menu-toggle');
-  const menubg = document.querySelector('.header_menu');
+  const menubg = document.querySelector('.header');
   const triggerOffset = 550;
   let isHeaderHidden = false;
   let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   menuToggle.addEventListener('click', function () {
     menuBar.classList.toggle('active');
-    header.classList.toggle('active');
     menubg.classList.toggle('active');
 
     const iconImg = menuToggle.querySelector('img');
@@ -72,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
   menuItems.forEach(function (item) {
     item.addEventListener('click', function () {
       menuBar.classList.remove('active');
-      header.classList.remove('active');
       menubg.classList.remove('active');
 
       const iconImg = menuToggle.querySelector('img');
@@ -84,8 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   window.addEventListener("resize", ScrollTrigger.update);
 });
-
-
 
 
 

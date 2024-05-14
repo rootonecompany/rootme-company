@@ -52,15 +52,20 @@
     /* header */
     .header {
         position: relative;
+        background-color: transparent;
+        transition: background-color 0.3s linear;
+    }
+    .header.active {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-black);
+        z-index: 1000;
     }
     .header_gnb {
-        background-color: transparent;
         padding: 0 40px;
         justify-content: space-between;
-        transition: all 0.3s linear;
-    }
-    .header_gnb.active {
-        background-color: var(--color-black);
     }
     .header_menu {
         position: absolute;
@@ -68,17 +73,17 @@
         right: 50%;
         flex-direction: column;
         transform: translateX(50%);
-        background-color: transparent;
+        /* background-color: transparent; */
         color: var(--color-white);
         width: 100%;
         height: 100vh;
         align-items: start;
         justify-content: start;
         gap: 0;
-        transition: all 0.3s linear;
+        /* transition: background-color 0.3s linear; */
     }
     .header_menu.active {
-        background-color: var(--color-black);
+        /* background-color: var(--color-black); */
     }
     .header_menu li {
         padding: 44px 0 0 48px;
@@ -114,7 +119,9 @@
         font-size: 6.8rem;
     }
     .main_video video {
-        width: 480px;
+        max-width: 480px;
+        min-width: 260px;
+        width: 100%;
     }
 
     .menu-btn {
@@ -226,6 +233,15 @@
         font-size: 5.3rem;
     }
     /* about */
+    .about_txt1 {
+        background-size: 300px 300px;
+    }
+    .about_txt2 {
+        background-size: 300px 300px;
+    }
+    .about_txt3 {
+        background-size: 300px 300px;
+    }
     .about_txt_top {
         font-size: 1.1rem;
     }
@@ -306,7 +322,7 @@
         margin: 30px 0 0;
         width: 100%;
         flex-wrap: wrap;
-        gap: 4px;
+        gap: 5px;
     }
     .work_project_text li {
         padding: 10px 12px;
@@ -343,6 +359,16 @@
     }
 }
 @media (max-width: 420px) {
+    /* about */
+    .about_txt1 {
+        background-size: 270px 270px;
+    }
+    .about_txt2 {
+        background-size: 270px 270px;
+    }
+    .about_txt3 {
+        background-size: 270px 270px;
+    }
     .about_txt h3 {
         font-size: 2.3rem;
     }
@@ -363,7 +389,8 @@
         font-size: 3.8rem;
     }
     .main_video video {
-        width: 260px;
+        max-width: 260px;
+        width: 100%;
     }
 
     /* about */
