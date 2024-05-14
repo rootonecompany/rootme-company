@@ -233,6 +233,13 @@
         margin-top: 31px;
         letter-spacing: -0.64px;
     }
+    /* work */
+    .work_project_btm p {
+        font-size: 1.5rem;
+    }
+    .work_project_btm em {
+        font-size: 1.5rem;
+    }
 }
 @media (max-width: 550px) {
     /* work */
@@ -316,15 +323,20 @@
     }
     .about_txt_bottom span {
         left: -2px;
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
     .about_box:nth-child(2) > .about_txt > .about_txt_bottom span {
         left: -18px;
     }
     .about_txt h3 {
-        font-size: 2.3rem;
+        font-size: 2.7rem;
         margin-top: 29px;
         letter-spacing: -0.54px;
+    }
+}
+@media (max-width: 420px) {
+    .about_txt h3 {
+        font-size: 2.3rem;
     }
 }
 @media (max-width: 360px) {
