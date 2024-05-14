@@ -11,7 +11,7 @@ gsap.to(sections, {
         pin: true,
         start: "top top",
         end: "bottom bottom",
-        scrub: 2,
+        scrub: 3,
         snap: 1 / (sections.length - 1),
     },
     x: 500,
