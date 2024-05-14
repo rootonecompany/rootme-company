@@ -11,7 +11,7 @@
     align-items: center;
     z-index: 999;
     padding: 0 80px;
-    transition: transform 1s ease-in-out;
+    transition: transform 1s linear;
 }
 .header_gnb.hidden {
     display: none;
