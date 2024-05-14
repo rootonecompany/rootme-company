@@ -3,7 +3,7 @@
 
 @media screen and (max-width: 360px) {
     .inner_wrap {
-        margin: auto 20px;
+        padding: 0 20px;
     }
 
     h5,
@@ -98,48 +98,34 @@
 
     /* story - 스크롤 다운 페이지 */
     .story_background_wrap {
-        background-image: url("../images/story_bg2.png");
-        background-size: 100% 100%;
         height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 178px 20px;
     }
 
     .story_background_content {
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
-        line-height: 114px;
     }
 
     .story_background_content h5 {
         font-size: 2.4rem;
-        margin-top: 426px;
+        line-height: 125%;
     }
 
     .story_background_content h5 bold {
-        font-weight: 900;
     }
 
     .story_background_content p {
-        font-size: 3.4rem;
-        font-weight: 700;
-        color: var(--color-white);
-        margin-top: 40px;
-        margin-left: 474px;
-        margin-bottom: 130px;
-        line-height: 54px;
+        font-size: 1.4rem;
+        line-height: 157%;
+        padding: 18px 0;
+        margin-left: 0;
     }
 
     .story_scroll_icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        margin-bottom: 230px;
-        /* bounce 애니메이션 */
-        position: relative;
+        display: none;
     }
 
     .story_scroll_icon span {
@@ -153,7 +139,6 @@
     .story_scroll_icon img {
         width: 38px;
         height: 38px;
-        /* bounce 애니메이션 */
         position: absolute;
         top: 20px;
         left: calc(50% + 60px);
@@ -165,7 +150,7 @@
     }
 
     .brand_header span {
-        font-size: 1.2em;
+        font-size: 1.2rem;
         margin-top: 10px;
     }
 
@@ -206,6 +191,9 @@
     }
 
     .contact_container span {
+        display: inline-block;
+        margin-left: calc(48px - 20px);
+        width: 100%;
         font-size: 1rem;
     }
 
@@ -238,9 +226,7 @@
 
     /* footer */
     footer {
-        padding-bottom: 60px;
         display: flex;
-        flex-direction: column;
     }
 
     /* 드롭다운 메뉴 */
@@ -301,14 +287,13 @@
 
     .footer_btm {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .footer_btm p {
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-align: right;
+        font-size: 1rem;
+        text-align: left;
     }
 
     .footer_btm_address p:nth-child(2) {
