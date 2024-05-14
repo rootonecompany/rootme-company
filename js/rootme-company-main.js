@@ -1,8 +1,3 @@
-// 페이지 새로고침 시 맨 위로 이동
-// function scrollToTop() {
-//   window.scrollTo(0, 0);
-// }
-// window.onbeforeunload = scrollToTop;
 
 //GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -26,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainVideo = document.querySelector('.main_video');
   const menuBar = document.querySelector('.menubar');
   const menuToggle = document.querySelector('.menu-toggle');
+  const menubg = document.querySelector('.header');
   const triggerOffset = 550;
   let isHeaderHidden = false;
   let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -52,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   menuToggle.addEventListener('click', function () {
     menuBar.classList.toggle('active');
-    header.classList.toggle('active');
+    menubg.classList.toggle('active');
 
     const iconImg = menuToggle.querySelector('img');
     const logo = document.querySelector('.logo img');
@@ -70,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   menuItems.forEach(function (item) {
     item.addEventListener('click', function () {
       menuBar.classList.remove('active');
-      header.classList.remove('active');
+      menubg.classList.remove('active');
 
       const iconImg = menuToggle.querySelector('img');
       const logo = document.querySelector('.logo img');
@@ -84,10 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-// main video
-
+// main videos
 const main_video = gsap.timeline();
 
 main_video.to(".main_video_object", {
@@ -106,6 +99,7 @@ ScrollTrigger.create({
   scrub: true,
   pin: true,
   anticipatePin: 1,
+
 });
 
 
