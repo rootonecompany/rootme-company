@@ -119,9 +119,7 @@
         font-size: 6.8rem;
     }
     .main_video video {
-        max-width: 480px;
-        min-width: 260px;
-        width: 100%;
+        width: 480px;
     }
 
     .menu-btn {
@@ -389,8 +387,7 @@
         font-size: 3.8rem;
     }
     .main_video video {
-        max-width: 260px;
-        width: 100%;
+        width: 260px;
     }
 
     /* about */

@@ -1,8 +1,3 @@
-// 페이지 새로고침 시 맨 위로 이동
-// function scrollToTop() {
-//   window.scrollTo(0, 0);
-// }
-// window.onbeforeunload = scrollToTop;
 
 //GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -85,8 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// main video
-
+// main videos
 const main_video = gsap.timeline();
 
 main_video.to(".main_video_object", {
@@ -105,6 +99,7 @@ ScrollTrigger.create({
   scrub: true,
   pin: true,
   anticipatePin: 1,
+
 });
 
 
