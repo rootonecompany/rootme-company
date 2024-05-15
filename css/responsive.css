@@ -1,160 +1,170 @@
-@media screen and (min-width: 768px) {
-}
-
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 768px) {
     .inner_wrap {
-        padding: 0 20px;
-    }
-
-    h5,
-    span {
-        text-transform: uppercase;
-        word-wrap: break-word;
+        padding: 0 40px;
     }
 
     /* story */
-    #story {
-        display: flex;
-        flex-direction: column;
-    }
-
     .story_txt_container {
         margin-top: 120px;
     }
 
     .story_txt_container span {
-        margin-left: calc(48px - 20px);
-        font-size: 1rem;
+        margin-left: calc(140px - 40px);
+        font-size: 1.4rem;
     }
 
     .story_txt_container h5 {
-        font-size: 3rem;
-        padding: 22px 0;
+        font-size: 4.8rem;
+        line-height: 1.2;
+        padding: 28px 0;
     }
 
     /* story - 카드 박스 페이지 */
-
-    /* story - 스크롤 페이지 */
-    .story_story_wrap {
-        height: 100vh;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
+    .story_card_wrap {
+        width: 100%;
+        height: 100%;
     }
 
-    .story_story_content {
+    .story_card_sticky {
+        top: 30%;
+        transform: translateX(12%);
+    }
+
+    .story_card_frame {
+        gap: 24px;
+    }
+
+    .story_card {
+        background: var(--color-white);
+        width: 100%;
+        height: 100%;
+    }
+
+    .story_card:nth-child(even) {
+        background: var(--color-black);
+    }
+
+    .story_card_inner {
+        margin: 32px;
+        gap: 125px;
+    }
+
+    .story_card_top > span {
+        padding-right: calc(191px - 60px);
+        font-size: 1.2rem;
+    }
+
+    .story_card_icon {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        width: 28px;
+        height: 28px;
+        gap: 12px;
+    }
+
+    .story_card_btm h5 {
+        font-size: 2rem;
+        margin: 24px auto 43px auto;
+    }
+
+    .story_card_btm span {
+        font-size: 1rem;
+    }
+
+    /* story - 스토리 페이지 */
+    .story_story_wrap {
+        height: 100%;
+        padding-top: 20%;
+        justify-content: space-evenly;
     }
 
     .story_story_content h5 {
-        font-size: 2.4rem;
-        line-height: 125%;
+        font-size: 4.2rem;
+        line-height: 1.4;
     }
 
     .story_story_content p {
-        font-size: 1.4rem;
-        line-height: 157%;
-        padding: 18px 0;
-        margin-left: 0;
+        font-size: 2.4rem;
+        padding: 40px;
+        margin-left: calc(124px - 40px);
+        padding-top: 2%;
+        padding-bottom: 14%;
     }
 
     .story_scroll_icon {
         display: none;
     }
 
-    .story_scroll_icon span {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--color-white);
-        text-transform: capitalize;
-        text-align: center;
-    }
-
-    .story_scroll_icon img {
-        width: 38px;
-        height: 38px;
-        position: absolute;
-        top: 20px;
-        left: calc(50% + 60px);
-    }
-
     /* brand */
     .brand_header {
-        margin-bottom: 160px;
+        margin-bottom: 196px;
     }
 
     .brand_header span {
-        font-size: 1.2rem;
-        margin-top: 10px;
+        margin-top: 16px;
+        font-size: 1.8rem;
     }
 
     .brand_header span:nth-child(2) {
-        padding-right: 10px;
-        margin-left: -50px;
+        padding-right: 150px;
     }
 
     .brand_content_txt > span {
-        font-size: 1.6rem;
+        font-size: 2.2rem;
     }
 
     .brand_content_txt h5 {
-        font-size: 3rem;
-        padding: 18px;
+        font-size: 5.2rem;
+        padding: 24px;
     }
+
     .brand_content_txt h5 > span {
-        font-size: 3rem;
+        font-size: 5.2rem;
     }
 
     .brand_logo_wrap {
-        margin: 32px auto;
+        margin-top: calc(56px - 24px);
+        margin-bottom: 258px;
     }
 
     .brand_logo_container {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 0.5rem;
-    }
-
-    .brand_logo_inner img {
-        padding: 10px 25px;
+        grid-gap: 1rem;
     }
 
     /* contact */
     .contact_container {
         display: flex;
         flex-direction: column;
+        /* margin-top: 101px; */
     }
 
     .contact_container span {
-        display: inline-block;
-        margin-left: calc(48px - 20px);
-        width: 100%;
-        font-size: 1rem;
+        margin-left: calc(140px - 40px);
+        font-size: 1.4rem;
     }
 
-    .contact_container img {
-        margin-top: 22px;
-        margin-bottom: 24px;
+    .contact_img {
+        margin: 28px 0 36px 0;
+        height: 400px;
     }
 
     .contact_container_txt {
-        margin-bottom: 160px;
+        margin-bottom: 0;
     }
 
-    .contact_container h5 {
-        font-size: 3rem;
-        margin-bottom: 36px;
+    .contact_container_txt h5 {
+        font-size: 5.2rem;
+        margin-bottom: 32px;
     }
 
-    .contact_container h5 bold {
-        font-size: 3rem;
-        margin-bottom: 36px;
+    .contact_container_txt h5 bold {
+        font-size: 5.2rem;
     }
 
-    .contact_container p {
-        font-size: 1.2rem;
+    .contact_container_txt p {
+        font-size: 1.6rem;
+        font-weight: 700;
     }
 
     .contact_container p:nth-child(3) {
@@ -163,77 +173,53 @@
 
     /* footer */
     footer {
+        padding-bottom: 60px;
         display: flex;
+        flex-direction: column;
+        position: relative;
     }
 
     /* 드롭다운 메뉴 */
     .footer_dropdown {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .footer_dropdown_btn {
-        background: #e4e6ea;
-        border: none;
-        border-radius: 10px;
-        font-size: 1.3rem;
-        font-weight: 800;
-        padding: 15px 20px;
-        cursor: pointer;
-        margin-top: 140px;
-        margin-bottom: 40px;
+        position: absolute;
+        margin-top: -50px;
+        z-index: 2;
     }
 
     .footer_dropdown_btn img {
         width: 12px;
         height: 6px;
         margin-left: 12px;
-        flex-shrink: 0;
-        transition: transform 0.3s ease;
     }
 
     .footer_dropdown_content {
         display: none;
         position: absolute;
         z-index: 1;
-        border: 1px solid #cfcfcf;
-        border-radius: 10px;
         margin-top: -230px;
     }
 
-    .footer_dropdown_content a {
-        display: block;
-        font-size: 1.4rem;
-        border-bottom: 1px solid #cfcfcf;
-        padding: 14px 25px;
-        text-align: center;
-    }
-
-    .footer_dropdown_content a:nth-child(3) {
-        border-bottom: none;
-    }
-
-    .footer_dropdown:hover .footer_dropdown_content {
-        display: block;
-    }
-
-    .footer_dropdown_btn:hover img {
-        transform: translateY(-50%) rotate(-180deg);
-    }
-
     .footer_btm {
-        display: flex;
         flex-direction: column;
         align-items: flex-start;
+        z-index: 1;
     }
 
     .footer_btm p {
-        font-size: 1rem;
-        text-align: left;
+        font-size: 1.3rem;
+        text-align: start;
+        padding: 6px 0;
+    }
+
+    .footer_btm_address > p {
+        line-height: 1.2;
+    }
+
+    .footer_btm_address p:nth-child(1) {
+        margin-top: 118px;
     }
 
     .footer_btm_address p:nth-child(2) {
-        margin-top: 16px;
+        margin-top: 0px;
     }
 }
