@@ -88,8 +88,7 @@ span {
 }
 
 .story_card:nth-child(even) h5,
-.story_card:nth-child(even) span,
-.story_card:nth-child(even) p {
+.story_card:nth-child(even) span {
     color: var(--color-white);
 }
 
@@ -288,6 +287,7 @@ span {
 .contact_container p {
     font-size: 2rem;
     font-weight: 700;
+    line-height: 1.4;
 }
 
 .contact_container p:nth-child(3) {
