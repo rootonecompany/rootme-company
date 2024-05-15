@@ -181,7 +181,7 @@
     .footer_dropdown {
         position: absolute;
         margin-top: -50px;
-        z-index: 2;
+        /* z-index: 2; */
     }
 
     .footer_dropdown_btn img {
@@ -193,14 +193,14 @@
     .footer_dropdown_content {
         display: none;
         position: absolute;
-        z-index: 1;
+        /* z-index: 2; */
         margin-top: -230px;
     }
 
     .footer_btm {
         flex-direction: column;
         align-items: flex-start;
-        z-index: 1;
+        /* z-index: 1; */
     }
 
     .footer_btm p {
@@ -389,7 +389,7 @@
     .footer_dropdown {
         position: absolute;
         margin-top: -50px;
-        z-index: 2;
+        /* z-index: 2; */
     }
 
     .footer_dropdown_btn img {
@@ -401,14 +401,14 @@
     .footer_dropdown_content {
         display: none;
         position: absolute;
-        z-index: 1;
+        /* z-index: 1; */
         margin-top: -230px;
     }
 
     .footer_btm {
         flex-direction: column;
         align-items: flex-start;
-        z-index: 1;
+        /* z-index: 1; */
     }
 
     .footer_btm p {

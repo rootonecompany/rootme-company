@@ -246,7 +246,7 @@ span {
 }
 
 .brand_logo_inner img {
-    min-width: 100%;
+    min-width: 20%;
 }
 
 /* contact */
@@ -330,7 +330,7 @@ footer {
 .footer_dropdown_content {
     display: none;
     position: absolute;
-    z-index: 1;
+    /* z-index: 1; */
     border: 1px solid #cfcfcf;
     border-radius: 10px;
     margin-top: -230px;
@@ -350,6 +350,12 @@ footer {
 
 .footer_dropdown_btn:focus .footer_dropdown_content {
     display: block;
+}
+
+.footer_dropdown_content a:hover {
+    background-color: var(--color-gray04);
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px #ddd;
 }
 
 .show {
