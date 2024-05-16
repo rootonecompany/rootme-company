@@ -1,7 +1,5 @@
-
 //GSAP
 gsap.registerPlugin(ScrollTrigger);
-
 
 // scroll
 const lenis = new Lenis();
@@ -9,172 +7,166 @@ const lenis = new Lenis();
 lenis.on("scroll", ScrollTrigger.update);
 
 gsap.ticker.add((time) => {
-  lenis.raf(time * 700);
+    lenis.raf(time * 700);
 });
 
 gsap.ticker.lagSmoothing(0);
 
-
 //header
 document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector('.header_gnb');
-  const mainVideo = document.querySelector('.main_video');
-  const menuBar = document.querySelector('.menubar');
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menubg = document.querySelector('.header');
-  const triggerOffset = 530;
-  let isHeaderHidden = false;
-  let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+    const header = document.querySelector(".header_gnb");
+    const mainVideo = document.querySelector(".main_video");
+    const menuBar = document.querySelector(".menubar");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menubg = document.querySelector(".header");
+    const triggerOffset = 530;
+    let isHeaderHidden = false;
+    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
-  function handleScroll() {
-    const st = window.scrollY || document.documentElement.scrollTop;
-    const isScrolledPastTrigger = st > mainVideo.offsetTop + triggerOffset;
-    const isMenuActive = menuBar.classList.contains('active');
+    function handleScroll() {
+        const st = window.scrollY || document.documentElement.scrollTop;
+        const isScrolledPastTrigger = st > mainVideo.offsetTop + triggerOffset;
+        const isMenuActive = menuBar.classList.contains("active");
 
-    if (!isMenuActive) {
-      if (!isHeaderHidden && st > lastScrollTop && isScrolledPastTrigger) {
-        gsap.to(header, { y: '-100%', duration: 0.3 });
-        isHeaderHidden = true;
-      } else if (isHeaderHidden && st < lastScrollTop) {
-        gsap.to(header, { y: 0, duration: 0.3 });
-        isHeaderHidden = false;
-      }
+        if (!isMenuActive) {
+            if (!isHeaderHidden && st > lastScrollTop && isScrolledPastTrigger) {
+                gsap.to(header, { y: "-100%", duration: 0.8 });
+                isHeaderHidden = true;
+            } else if (isHeaderHidden && st < lastScrollTop) {
+                gsap.to(header, { y: 0, duration: 0.8 });
+                isHeaderHidden = false;
+            }
+        }
+
+        lastScrollTop = st <= 0 ? 0 : st;
     }
 
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    lastScrollTop = st <= 0 ? 0 : st;
-  }
+    menuToggle.addEventListener("click", function () {
+        menuBar.classList.toggle("active");
+        menubg.classList.toggle("active");
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
+        const iconImg = menuToggle.querySelector("img");
+        const logo = document.querySelector(".logo img");
 
-  menuToggle.addEventListener('click', function () {
-    menuBar.classList.toggle('active');
-    menubg.classList.toggle('active');
-
-
-    const iconImg = menuToggle.querySelector('img');
-    const logo = document.querySelector('.logo img');
-
-    if (iconImg.src.includes('toggleopen.svg')) {
-      iconImg.src = './images/toggleclose.svg';
-      logo.src = './images/logoclose.png';
-    } else {
-      iconImg.src = './images/toggleopen.svg';
-      logo.src = './images/logo.png';
-    }
-  });
-
-  const menuItems = document.querySelectorAll('.header_menu li');
-  menuItems.forEach(function (item) {
-    item.addEventListener('click', function () {
-      menuBar.classList.remove('active');
-      menubg.classList.remove('active');
-
-
-      const iconImg = menuToggle.querySelector('img');
-      const logo = document.querySelector('.logo img');
-
-      iconImg.src = './images/toggleopen.svg';
-      logo.src = './images/logo.png';
+        if (iconImg.src.includes("toggleopen.svg")) {
+            iconImg.src = "./images/toggleclose.svg";
+            logo.src = "./images/logoclose.png";
+        } else {
+            iconImg.src = "./images/toggleopen.svg";
+            logo.src = "./images/logo.png";
+        }
     });
-  });
-  window.addEventListener("resize", ScrollTrigger.update);
+
+    const menuItems = document.querySelectorAll(".header_menu li");
+    menuItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+            menuBar.classList.remove("active");
+            menubg.classList.remove("active");
+
+            const iconImg = menuToggle.querySelector("img");
+            const logo = document.querySelector(".logo img");
+
+            iconImg.src = "./images/toggleopen.svg";
+            logo.src = "./images/logo.png";
+        });
+    });
+    window.addEventListener("resize", ScrollTrigger.update);
 });
-
-
 
 // main videos
 const main_video = gsap.timeline();
 
 main_video.to(".main_video_object", {
-  scale: 1,
-  width: "100vw",
-  height: "100vh",
-  duration: 2,
-  scrub: 1,
+    scale: 1,
+    width: "100vw",
+    height: "100vh",
+    duration: 2,
+    scrub: 1,
 });
 
 ScrollTrigger.create({
-  animation: main_video,
-  trigger: ".main_video",
-  start: "top top",
-  end: "bottom center",
-  scrub: true,
-  pin: true,
-  anticipatePin: 1,
-
+    animation: main_video,
+    trigger: ".main_video",
+    start: "top top",
+    end: "bottom center",
+    scrub: true,
+    pin: true,
+    anticipatePin: 1,
 });
 
-
 // about
-gsap
-  .timeline({
+gsap.timeline({
     scrollTrigger: {
-      trigger: ".about",
-      start: "top top",
-      end: "bottom top",
-      pin: true,
-      scrub: 1,
-      onEnter: () => {
-        gsap.to(".about", {
-          opacity: 1,
-        });
-      },
-      onEnterBack: () => {
-        gsap.to(".work", {
-          y: 30,
-          opacity: 1,
-        });
-      },
+        trigger: ".about",
+        start: "top top",
+        end: "bottom top",
+        pin: true,
+        scrub: 1,
+        onEnter: () => {
+            gsap.to(".about", {
+                opacity: 1,
+            });
+        },
+        onEnterBack: () => {
+            gsap.to(".work", {
+                y: 30,
+                opacity: 1,
+            });
+        },
     },
-  })
-  .to(".about_txt1", { opacity: 0 })
-  .to(".about_txt2", { opacity: 1, duration: 2 })
-  .to(".about_txt2", { opacity: 0 })
-  .to(".about_txt3", { opacity: 1, duration: 2 });
+})
+    .to(".about_txt1", { opacity: 0 })
+    .to(".about_txt2", { opacity: 1, duration: 2 })
+    .to(".about_txt2", { opacity: 0 })
+    .to(".about_txt3", { opacity: 1, duration: 2 });
 
 window.addEventListener("resize", () => {
-  ScrollTrigger.refresh();
-})
-
+    ScrollTrigger.refresh();
+});
 
 // work move text
-const workTopTxt = document.querySelector('.work_top_txt');
-const workSection = document.querySelector('.work');
+const workTopTxt = document.querySelector(".work_top_txt");
+const workSection = document.querySelector(".work");
 
 gsap.set(workTopTxt, { y: 0 });
 
-
 ScrollTrigger.create({
-  trigger: workSection,
-  start: "top top",
-  end: "bottom bottom",
-  scrub: 1,
-  onUpdate: () => {
+    trigger: workSection,
+    start: "top top",
+    end: "bottom bottom",
+    scrub: 1,
+    onUpdate: () => {
+        const translateY = window.scrollY - workSection.offsetTop;
+        const translateSetY = translateY < 0 ? 0 : translateY;
+        const targetH3 = document.querySelector(".work_move_txt h3:nth-child(1)");
 
-    const translateY = window.scrollY - workSection.offsetTop;
-    const translateSetY = translateY < 0 ? 0 : translateY
-    const targetH3 = document.querySelector('.work_move_txt h3:nth-child(1)');
-
-    if (window.scrollY >= workSection.offsetTop) {
-      gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
-      gsap.to(targetH3, { opacity: 0.8, duration: 0.3 });
-      gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
-    } else {
-      gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
-      gsap.to(targetH3, { opacity: 1, duration: 0.3 });
-      gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
-
-    }
-  }
+        if (window.scrollY >= workSection.offsetTop) {
+            gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
+            gsap.to(targetH3, { opacity: 0.8, duration: 0.3 });
+            gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
+        } else {
+            gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
+            gsap.to(targetH3, { opacity: 1, duration: 0.3 });
+            gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
+        }
+    },
 });
 
+gsap.utils.toArray(".fadein").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top 70%",
+        toggleClass: "fade-in",
+    });
+});
 
-gsap.utils.toArray('.fade-in').forEach(elem => {
-  ScrollTrigger.create({
-    trigger: elem,
-    start: 'top 70%',
-    end: 'bottom 20%',
-    toggleClass: 'fade-in',
-  });
+gsap.utils.toArray(".fade-out").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top 70%",
+        end: "bottom 20%",
+        toggleClass: "fade-out",
+    });
 });
