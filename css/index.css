@@ -27,7 +27,7 @@ span {
 }
 
 .story_txt_container span {
-    margin-left: calc(340px - 80px);
+    margin-left: 15%;
     font-size: 1.4rem;
 }
 
@@ -36,6 +36,7 @@ span {
     font-weight: 400;
     line-height: 1.15;
     padding: 42px 0;
+    text-size-adjust: auto;
 }
 
 .story_txt_container h5 bold {
@@ -44,13 +45,9 @@ span {
 
 /* story - 카드 박스 페이지 */
 .story_card_wrap {
-    background: url("../images/story_bg1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url("../images/story_bg1.png") no-repeat center/cover;
     height: 1400px;
     position: relative;
-
     justify-content: center;
     align-items: center;
 }
@@ -58,7 +55,7 @@ span {
 .story_card_sticky {
     position: sticky;
     top: 50%;
-    transform: translateX(30%) translateY(-50%);
+    transform: translateX(11%) translateY(-50%);
 }
 
 .story_card_frame {
@@ -112,7 +109,7 @@ span {
     font-size: 2.8rem;
     font-weight: 800;
     margin: 44px auto 87px auto;
-    line-height: 31px;
+    line-height: 1.35;
 }
 
 .story_card_btm span {
@@ -139,6 +136,14 @@ span {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
+}
+
+@keyframes reveal {
+    0% {
+        transform: translateY(100%);
+    }
 }
 
 .story_story_content h5 {
@@ -146,9 +151,11 @@ span {
     font-weight: 400;
     color: var(--color-white);
     line-height: 114px;
-
     display: flex;
     flex-direction: column;
+
+    display: inline-block;
+    animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
 .story_story_content span {
@@ -251,21 +258,24 @@ span {
 
 .brand_logo_inner {
     border: 1px solid #cfcfcf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .brand_logo_inner img {
     min-width: 20%;
+    max-width: 100%;
+    width: 80%;
+    height: 100%;
+    padding: 8%;
 }
 
 /* contact */
-/* .contact_container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 101px;
-} */
-
 .contact_container span {
-    margin-left: calc(340px - 80px);
+    margin-left: 15%;
     font-size: 1.4rem;
     font-weight: 700;
 }
@@ -340,6 +350,7 @@ footer {
     position: absolute;
     z-index: 1;
     border: 1px solid #cfcfcf;
+    background: var(--color-white);
     border-radius: 10px;
     margin-top: -230px;
 }
@@ -362,8 +373,7 @@ footer {
 
 .footer_dropdown_content a:hover {
     background-color: var(--color-gray04);
-    border-radius: 7px;
-    box-shadow: 1px 1px 3px #ddd;
+    border-radius: 8px;
 }
 
 .show {

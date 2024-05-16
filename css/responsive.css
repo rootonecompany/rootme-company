@@ -50,7 +50,7 @@
     }
 
     .story_card_top > span {
-        padding-right: calc(191px - 60px);
+        padding-right: calc(191px - 105px);
         font-size: 1.2rem;
     }
 
@@ -172,9 +172,6 @@
 
     /* footer */
     footer {
-        padding-bottom: 60px;
-        display: flex;
-        flex-direction: column;
         position: relative;
     }
 
@@ -191,7 +188,6 @@
     }
 
     .footer_dropdown_content {
-        display: none;
         position: absolute;
         z-index: 2;
         margin-top: -230px;
@@ -245,11 +241,10 @@
     /* story - card box 페이지 */
     .story_card_wrap {
         background-position: center;
-        height: 100vh;
     }
 
     .story_card_sticky {
-        top: 15%;
+        top: 30%;
         transform: translateX(30%);
     }
 
@@ -380,9 +375,6 @@
 
     /* footer */
     footer {
-        padding-bottom: 60px;
-        display: flex;
-        flex-direction: column;
         position: relative;
     }
 
@@ -399,7 +391,6 @@
     }
 
     .footer_dropdown_content {
-        display: none;
         position: absolute;
         z-index: 1;
         margin-top: -230px;
