@@ -4,17 +4,22 @@ gsap.registerPlugin(ScrollTrigger);
 let sections = gsap.utils.toArray(".story_card");
 
 gsap.to(sections, {
-    xPercent: -100 * sections.length,
+    xPercent: -65 * sections.length,
     ease: "none",
     scrollTrigger: {
         trigger: ".story_card_wrap",
         pin: true,
-        start: "top top",
+        start: "center center",
         end: "bottom top",
         pin: true,
         pinSpacing: true,
         scrub: 2,
         snap: 1 / (sections.length - 1),
+        onComplete: function () {
+            setTimeout(function () {
+                gsap.to(window, { scrollTo: { y: "+=100" }, duration: 1 }, 10000);
+            });
+        },
     },
     x: 500,
 });
@@ -36,3 +41,5 @@ window.onclick = function (event) {
         }
     }
 };
+
+// 텍스트 애니메이션
