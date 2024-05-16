@@ -146,7 +146,6 @@ span {
     line-height: 114px;
     display: flex;
     flex-direction: column;
-    display: inline-block;
 }
 
 .story_story_content span {
