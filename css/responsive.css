@@ -172,9 +172,6 @@
 
     /* footer */
     footer {
-        padding-bottom: 60px;
-        display: flex;
-        flex-direction: column;
         position: relative;
     }
 
@@ -191,7 +188,6 @@
     }
 
     .footer_dropdown_content {
-        display: none;
         position: absolute;
         z-index: 2;
         margin-top: -230px;
@@ -379,9 +375,6 @@
 
     /* footer */
     footer {
-        padding-bottom: 60px;
-        display: flex;
-        flex-direction: column;
         position: relative;
     }
 
@@ -398,7 +391,6 @@
     }
 
     .footer_dropdown_content {
-        display: none;
         position: absolute;
         z-index: 1;
         margin-top: -230px;
