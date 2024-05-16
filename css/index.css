@@ -20,11 +20,6 @@ span {
     transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
 }
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-    z-index: 2;
-}
 
 .story_txt_container span {
     margin-left: 15%;
@@ -138,6 +133,9 @@ span {
     justify-content: center;
     overflow: hidden;
     margin: 0 auto;
+    opacity: 0;
+    transform: translateY(110px);
+    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .story_story_content h5 {
@@ -195,6 +193,9 @@ span {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 361px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .brand_header span {
@@ -215,6 +216,9 @@ span {
 
 .brand_content_txt {
     text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .brand_content_txt > span {
@@ -237,6 +241,9 @@ span {
 .brand_logo_wrap {
     margin-top: 80px;
     margin-bottom: 258px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .brand_logo_container {
@@ -270,15 +277,24 @@ span {
     font-size: 1.4rem;
     font-weight: 700;
 }
-
+.container_imgBox {
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.4s ease;
+}
 .contact_img {
     margin: 42px 0 52px 0;
     height: 490px;
     object-fit: cover;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .contact_container_txt {
     margin-bottom: 129px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .contact_container h5 {
@@ -395,22 +411,14 @@ footer {
     margin-top: 16px;
 }
 
-/* 반응형 적용할 때 중간 값 설정 */
-/* @media screen and (max-width: 1680px) {
-    .story_txt_container h5 {
-        font-size: 7rem;
-    }
+/* scroll text up */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 2;
 }
-@media screen and (max-width: 1200px) {
-    .inner_wrap {
-        padding: 0 40px;
-    }
-    .story_txt_container h5 {
-        font-size: 5rem;
-    }
+.fade-out {
+    opacity: 0;
+    transform: translateY(110px);
+    z-index: 2;
 }
-@media screen and (max-width: 960px) {
-    .story_txt_container h5 {
-        font-size: 4.8rem;
-    }
-} */

@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!isMenuActive) {
       if (!isHeaderHidden && st > lastScrollTop && isScrolledPastTrigger) {
-        gsap.to(header, { y: '-100%', duration: 0.3 });
+        gsap.to(header, { y: '-100%', duration: 0.8 });
         isHeaderHidden = true;
       } else if (isHeaderHidden && st < lastScrollTop) {
-        gsap.to(header, { y: 0, duration: 0.3 });
+        gsap.to(header, { y: 0, duration: 0.8 });
         isHeaderHidden = false;
       }
     }
@@ -170,11 +170,23 @@ ScrollTrigger.create({
 });
 
 
-gsap.utils.toArray('.fade-in').forEach(elem => {
+gsap.utils.toArray('.fadein').forEach(elem => {
+  ScrollTrigger.create({
+    trigger: elem,
+    start: 'top 70%',
+    toggleClass: 'fade-in',
+  });
+
+});
+
+
+
+
+gsap.utils.toArray('.fade-out').forEach(elem => {
   ScrollTrigger.create({
     trigger: elem,
     start: 'top 70%',
     end: 'bottom 20%',
-    toggleClass: 'fade-in',
+    toggleClass: 'fade-out',
   });
 });
