@@ -33,13 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!isMenuActive) {
       if (!isHeaderHidden && st > lastScrollTop && isScrolledPastTrigger) {
-        gsap.to(header, { opacity: 0, duration: 0.3 });
+        gsap.to(header, { y: '-100%', duration: 0.3 });
         isHeaderHidden = true;
       } else if (isHeaderHidden && st < lastScrollTop) {
-        gsap.to(header, { opacity: 1, duration: 0.3 });
+        gsap.to(header, { y: 0, duration: 0.3 });
         isHeaderHidden = false;
       }
     }
+
 
     lastScrollTop = st <= 0 ? 0 : st;
   }
@@ -169,3 +170,11 @@ ScrollTrigger.create({
 });
 
 
+gsap.utils.toArray('.fade-in').forEach(elem => {
+  ScrollTrigger.create({
+    trigger: elem,
+    start: 'top 70%',
+    end: 'bottom 20%',
+    toggleClass: 'fade-in',
+  });
+});
