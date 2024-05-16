@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuBar = document.querySelector('.menubar');
   const menuToggle = document.querySelector('.menu-toggle');
   const menubg = document.querySelector('.header');
-  const triggerOffset = 550;
+  const triggerOffset = 530;
   let isHeaderHidden = false;
   let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuBar.classList.toggle('active');
     menubg.classList.toggle('active');
 
+
     const iconImg = menuToggle.querySelector('img');
     const logo = document.querySelector('.logo img');
 
@@ -67,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     item.addEventListener('click', function () {
       menuBar.classList.remove('active');
       menubg.classList.remove('active');
+
 
       const iconImg = menuToggle.querySelector('img');
       const logo = document.querySelector('.logo img');

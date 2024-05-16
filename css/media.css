@@ -73,20 +73,17 @@
         right: 50%;
         flex-direction: column;
         transform: translateX(50%);
-        /* background-color: transparent; */
         color: var(--color-white);
         width: 100%;
         height: 100vh;
         align-items: start;
         justify-content: start;
         gap: 0;
-        /* transition: background-color 0.3s linear; */
-    }
-    .header_menu.active {
-        /* background-color: var(--color-black); */
     }
     .header_menu li {
-        padding: 44px 0 0 48px;
+        padding: 44px 0 0 41px;
+        margin-bottom: 7px;
+        overflow: hidden;
     }
     .header_menu li:nth-child(1) {
         padding-top: 68px;
@@ -95,19 +92,52 @@
         display: block;
         position: absolute;
         bottom: 115px;
+        font-size: 1rem;
     }
 
     .header_menu li a {
         font-size: 2.6rem;
         padding: 0;
     }
-    .header_menu li:hover {
+    .header_menu li a:hover {
+        color: var(--color-white);
         text-decoration: underline var(--color-white);
         text-underline-offset: 6px;
     }
     .header_menu li:nth-child(6):hover {
         text-decoration: none;
     }
+
+    /* test */
+
+    .letter {
+        display: inline-block;
+        animation: reveal 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    }
+    .header_menu li:nth-child(1) .letter {
+        animation: reveal cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+    }
+
+    .header_menu li:nth-child(2) .letter {
+        animation: reveal cubic-bezier(0.77, 0, 0.175, 1) 0.7s forwards;
+    }
+
+    .header_menu li:nth-child(3) .letter {
+        animation: reveal cubic-bezier(0.77, 0, 0.175, 1) 0.9s forwards;
+    }
+
+    .header_menu li:nth-child(4) .letter {
+        animation: reveal cubic-bezier(0.77, 0, 0.175, 1) 1.1s forwards;
+    }
+
+    .header_menu li:nth-child(5) .letter {
+        animation: reveal cubic-bezier(0.77, 0, 0.175, 1) 1.3s forwards;
+    }
+
+    .header_menu li:nth-child(6) .letter {
+        animation: reveal cubic-bezier(0.77, 0, 0.175, 1) 1.4s forwards;
+    }
+
     /* main */
     .main_txt p {
         letter-spacing: -0.44px;
@@ -128,13 +158,10 @@
 
     /*toggle */
     .menubar {
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 0s linear;
+        display: none;
     }
     .menubar.active {
-        visibility: visible;
-        opacity: 1;
+        display: block;
     }
     .menu-toggle {
         display: block;
