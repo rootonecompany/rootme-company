@@ -132,10 +132,13 @@ span {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+<<<<<<< HEAD
     margin: 0 auto;
     opacity: 0;
     transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
+=======
+>>>>>>> main
 }
 
 .story_story_content h5 {
@@ -145,7 +148,6 @@ span {
     line-height: 114px;
     display: flex;
     flex-direction: column;
-    display: inline-block;
 }
 
 .story_story_content span {
@@ -157,6 +159,7 @@ span {
     font-weight: 700;
     color: var(--color-white);
     padding: 40px;
+    margin-left: 240px;
     line-height: 158.82%;
     padding-top: 2%;
     padding-bottom: 14%;
