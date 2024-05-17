@@ -42,21 +42,15 @@ span {
 .story_card_wrap {
     background: url("../images/story_bg1.png") no-repeat center/cover;
     height: 1400px;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-}
-
-.story_card_sticky {
-    position: sticky;
-    top: 50%;
-    transform: translateX(11%) translateY(-50%);
+    display: flex;
 }
 
 .story_card_frame {
     display: flex;
+    align-items: center;
     gap: 32px;
     white-space: nowrap;
+    padding: 10%;
 }
 
 .story_card {
@@ -117,20 +111,19 @@ span {
 /* story - 스토리 페이지 */
 .story_story_wrap {
     background-image: url("../images/story_bg2.png");
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
+    background-size: cover;
+    background-position: center;
     height: 1400px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 20%;
+    justify-content: center;
 }
 
 .story_story_content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     overflow: hidden;
     margin: 0 auto;
     opacity: 0;
@@ -142,9 +135,11 @@ span {
     font-size: 9.2rem;
     font-weight: 400;
     color: var(--color-white);
-    line-height: 123.913%;
-    display: flex;
-    flex-direction: column;
+    padding: 40px 0;
+    line-height: 1.25;
+}
+.story_story_content h5 br.mobile {
+    display: none;
 }
 
 .story_story_content span {
@@ -155,10 +150,8 @@ span {
     font-size: 3.4rem;
     font-weight: 700;
     color: var(--color-white);
-    padding: 40px;
-    line-height: 158.82%;
-    padding-top: 2%;
-    padding-bottom: 14%;
+    line-height: 1.58;
+    padding: 0 0 0 20%;
     white-space: nowrap;
 }
 
@@ -299,7 +292,7 @@ span {
 .contact_container h5 {
     font-size: 10rem;
     font-weight: 400;
-    margin-bottom: 36px;
+    line-height: 1.15;
 }
 
 .contact_container h5 bold {
@@ -312,6 +305,7 @@ span {
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.4;
+    margin-top: 36px;
 }
 
 .contact_container p:nth-child(3) {
