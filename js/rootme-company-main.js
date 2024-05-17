@@ -84,54 +84,87 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // main videos
-const main_video = gsap.timeline();
 
-main_video.to(".main_video_object", {
-  scale: 1,
-  width: "100vw",
-  height: "100vh",
-  duration: 2,
-  scrub: 1,
-});
+const main = document.querySelector('.main');
+const mainVideo = document.querySelector('.main_video');
+const mainVideoInner = document.querySelector('.main_video_inner');
+const video = document.querySelector('.main_video_object')
+const mm = gsap.matchMedia();
 
-ScrollTrigger.create({
-  animation: main_video,
-  trigger: ".main_video",
-  start: "top top",
-  end: "bottom center",
-  scrub: true,
-  pin: true,
-  anticipatePin: 1,
 
-});
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: main,
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+    invalidateOnRefresh: true,
+
+    onUpdate: (self) => {
+      gsap.set(mainVideo, {
+        clipPath: `inset(0 calc(${1 - self.progress
+          } * ((100% - 70rem) / 2))`,
+
+      })
+    }
+  }
+})
+
+tl.to(main, {
+  scrollTrigger: {
+    trigger: mainVideo,
+    start: "top top",
+    end: () => "+=" + video.clientHeight,
+    pin: true,
+  }
+})
+
 
 
 // about
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".about",
-      start: "top top",
-      end: "bottom top",
-      pin: true,
-      scrub: 1,
-      onEnter: () => {
-        gsap.to(".about", {
-          opacity: 1,
-        });
-      },
-      onEnterBack: () => {
-        gsap.to(".work", {
-          y: 30,
-          opacity: 1,
-        });
-      },
-    },
-  })
-  .to(".about_txt1", { opacity: 0 })
-  .to(".about_txt2", { opacity: 1, duration: 2 })
-  .to(".about_txt2", { opacity: 0 })
-  .to(".about_txt3", { opacity: 1, duration: 2 });
+// gsap
+//   .timeline({
+//     scrollTrigger: {
+//       trigger: ".about",
+//       start: "top top",
+//       end: "bottom top",
+//       pin: true,
+//       scrub: 1,
+//       onEnter: () => {
+//         gsap.to(".about", {
+//           opacity: 1,
+//         });
+//       },
+//       onEnterBack: () => {
+//         gsap.to(".work", {
+//           y: 30,
+//           opacity: 1,
+//         });
+//       },
+//     },
+//   })
+//   .to(".about_txt1", { opacity: 0 })
+//   .to(".about_txt2", { opacity: 1, duration: 2 })
+//   .to(".about_txt2", { opacity: 0 })
+//   .to(".about_txt3", { opacity: 1, duration: 2 });
+
+const aboutAni = gsap.timeline();
+aboutAni.from(".about_container .about_txt1", { autoAlpha: 0, duration: 0, y: 50 }, "+=1")
+  .from(".about_container .about_txt2", { autoAlpha: 0, duration: 0, y: 50 }, "+=1")
+  .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0, y: 50 }, "+=1")
+
+
+ScrollTrigger.create({
+  animation: aboutAni,
+  trigger: ".about_container",
+  start: "top top",
+  end: "+=2500",
+  scrub: true,
+  pin: true,
+  markers: false,
+  anticipatePin: 1
+});
+
 
 window.addEventListener("resize", () => {
   ScrollTrigger.refresh();
@@ -180,13 +213,3 @@ gsap.utils.toArray('.fadein').forEach(elem => {
 });
 
 
-
-
-gsap.utils.toArray('.fade-out').forEach(elem => {
-  ScrollTrigger.create({
-    trigger: elem,
-    start: 'top 70%',
-    end: 'bottom 20%',
-    toggleClass: 'fade-out',
-  });
-});

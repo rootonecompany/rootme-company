@@ -132,13 +132,10 @@ span {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-<<<<<<< HEAD
     margin: 0 auto;
     opacity: 0;
     transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
-=======
->>>>>>> main
 }
 
 .story_story_content h5 {
@@ -289,9 +286,6 @@ span {
     margin: 42px 0 52px 0;
     height: 490px;
     object-fit: cover;
-    opacity: 0;
-    transform: translateY(110px);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .contact_container_txt {
