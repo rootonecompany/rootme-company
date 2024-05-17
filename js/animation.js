@@ -8,7 +8,7 @@ gsap.to(sections, {
         trigger: ".story_card_wrap",
         pin: true,
         start: "center center",
-        end: "bottom top",
+        end: "bottom bottom",
         pinSpacing: true,
         scrub: 2,
         snap: 1 / (sections.length - 1),

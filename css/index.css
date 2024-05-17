@@ -193,8 +193,8 @@ span {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 361px;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
@@ -216,8 +216,8 @@ span {
 
 .brand_content_txt {
     text-align: center;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
@@ -241,8 +241,8 @@ span {
 .brand_logo_wrap {
     margin-top: 80px;
     margin-bottom: 258px;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
@@ -278,22 +278,23 @@ span {
     font-weight: 700;
 }
 .container_imgBox {
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
 }
 .contact_img {
     margin: 42px 0 52px 0;
     height: 490px;
     object-fit: cover;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .contact_container_txt {
     margin-bottom: 129px;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
@@ -349,7 +350,9 @@ footer {
     height: 6px;
     margin-left: 12px;
     flex-shrink: 0;
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(110px);
+    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .footer_dropdown_content {
@@ -415,10 +418,5 @@ footer {
 .fade-in {
     opacity: 1;
     transform: translateY(0);
-    z-index: 2;
-}
-.fade-out {
-    opacity: 0;
-    transform: translateY(110px);
     z-index: 2;
 }
