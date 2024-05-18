@@ -19,19 +19,14 @@
 // });
 
 // 드롭다운 메뉴
-function dropdownFunction() {
-    document.getElementById("myDropdownContent").classList.toggle("show");
-}
+const myDropDownBtn = document.getElementById("footer_dropdown_btn");
+const myDropdownContent = document.getElementById("myDropdownContent");
 
-window.onclick = function (event) {
-    if (!event.target.matches(".footer_dropdown_btn")) {
-        var dropdowns = document.getElementsByClassName("footer_dropdown_content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-                openDropdown.classList.remove("show");
-            }
-        }
-    }
-};
+window.addEventListener("click", () => {
+    myDropdownContent.classList.remove("show");
+});
+
+myDropDownBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    myDropdownContent.classList.toggle("show");
+});
