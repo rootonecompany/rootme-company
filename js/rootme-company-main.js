@@ -105,10 +105,35 @@ const tl = gsap.timeline({
         clipPath: `inset(0 calc(${1 - self.progress
           } * ((100% - 70rem) / 2))`,
 
-      })
+      });
     }
   }
-})
+});
+
+  mm.add("(min-width: 1920px)", () => {
+      gsap.set(mainVideo, {
+        clipPath: `inset(0 calc(${1 - self.progress
+          } * ((100% - 70rem) / 2))`,
+      })
+  });
+  mm.add("(min-width: 768px) and (max-width: 1920px)", () => {
+    gsap.set(mainVideo, {
+      clipPath: `inset(0 calc(${1 - self.progress
+        } * ((100% - 70rem) / 2))`,
+    })
+  });
+  mm.add("(min-width: 360px) and (max-width: 768px)", () => {
+    gsap.set(mainVideo, {
+      clipPath: `inset(0 calc(${1 - self.progress
+        } * ((100% - 48rem) / 2))`,
+    })
+  });
+  mm.add("(max-width: 360px)", () => {
+    gsap.set(mainVideo, {
+      clipPath: `inset(0 calc(${1 - self.progress
+        } * ((100% - 26rem) / 2))`,
+    })
+  });
 
 tl.to(main, {
   scrollTrigger: {
@@ -149,16 +174,16 @@ tl.to(main, {
 //   .to(".about_txt3", { opacity: 1, duration: 2 });
 
 const aboutAni = gsap.timeline();
-aboutAni.from(".about_container .about_txt1", { autoAlpha: 0, duration: 0, y: 50 }, "+=1")
-  .from(".about_container .about_txt2", { autoAlpha: 0, duration: 0, y: 50 }, "+=1")
-  .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0, y: 50 }, "+=1")
+aboutAni.from(".about_container .about_txt1", { autoAlpha: 1, duration: 0 }, "+=1")
+  .from(".about_container .about_txt2", { autoAlpha: 0, duration: 0 }, "+=1")
+  .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0 }, "+=1")
 
 
 ScrollTrigger.create({
   animation: aboutAni,
   trigger: ".about_container",
   start: "top top",
-  end: "+=2500",
+  end: "+=1500",
   scrub: true,
   pin: true,
   markers: false,
