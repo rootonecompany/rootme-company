@@ -49,13 +49,14 @@
     }
 
     /* story - 스토리 페이지 */
-    .story_story_wrap {
-        padding-top: 20%;
-    }
-
     .story_story_content h5 {
         font-size: 7.5rem;
     }
+
+    .story_story_content h5 br.mobile_block {
+        display: block;
+    }
+
     .story_story_content p {
         font-size: 3.4rem;
         margin-left: 28%;
@@ -88,6 +89,7 @@
         font-size: 7.5rem;
         padding: 36px;
     }
+
     .brand_content_txt h5 > span {
         font-size: 7.5rem;
     }
@@ -109,17 +111,16 @@
         margin-bottom: 129px;
     }
 
-    .contact_container h5 {
+    .contact_container_txt h5 {
+        font-size: 7.5rem;
+    }
+
+    .contact_container_txt h5 bold {
         font-size: 7.5rem;
         margin-bottom: 36px;
     }
 
-    .contact_container h5 bold {
-        font-size: 7.5rem;
-        margin-bottom: 36px;
-    }
-
-    .contact_container p {
+    .contact_container_txt p {
         font-size: 2rem;
     }
 
@@ -156,10 +157,6 @@
         gap: 220px;
     }
 
-    .story_card_frame {
-        padding: 28%;
-    }
-
     .story_card_top > span {
         padding-right: calc(191px - 60px);
         font-size: 2rem;
@@ -180,13 +177,18 @@
     }
 
     .story_story_content h5 {
-        font-size: 5rem;
+        font-size: 5.2rem;
     }
+
     .story_story_content p {
         font-size: 2.8rem;
     }
 
     /* brand */
+    .brand_header {
+        margin-bottom: 290px;
+    }
+
     .brand_header span {
         font-size: 2.2rem;
     }
@@ -200,7 +202,7 @@
     }
 
     .brand_content_txt h5 {
-        font-size: 5rem;
+        font-size: 5.2rem;
         padding: 25px;
     }
     .brand_content_txt h5 > span {
@@ -216,15 +218,15 @@
         font-size: 1.4rem;
     }
 
-    .contact_container h5 {
+    .contact_container_txt h5 {
         font-size: 5rem;
     }
 
-    .contact_container h5 bold {
+    .contact_container_txt h5 bold {
         font-size: 5rem;
     }
 
-    .contact_container p {
+    .contact_container_txt p {
         font-size: 2rem;
     }
 }
@@ -255,12 +257,31 @@
         gap: 220px;
     }
 
-    .story_card_frame {
-        padding: 30%;
+    .story_card_inner {
+        margin: 45px;
+        gap: 180px;
+    }
+
+    .story_card_top span {
+        font-size: 16rem;
+        padding-right: 150px;
+    }
+
+    .story_card_icon {
+        width: 32px;
+        height: 32px;
+    }
+    .story_card_btm h5 {
+        font-size: 24rem;
+        margin: 34px auto 65px auto;
+    }
+
+    .story_card_btm span {
+        font-size: 12rem;
     }
 
     .story_card_top > span {
-        padding-right: calc(191px - 60px);
+        padding-right: 100px;
         font-size: 2rem;
     }
     .story_card_icon {
@@ -279,10 +300,11 @@
     }
 
     .story_story_content h5 {
-        font-size: 4.5rem;
+        font-size: 4.3rem;
     }
+
     .story_story_content p {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         margin-left: 15%;
     }
 
@@ -316,16 +338,21 @@
         font-size: 1.4rem;
     }
 
-    .contact_container h5 {
+    .contact_container_txt h5 {
         font-size: 4.5rem;
     }
 
-    .contact_container h5 bold {
+    .contact_container_txt h5 bold {
         font-size: 4.5rem;
     }
 
-    .contact_container p {
+    .contact_container_txt p {
         font-size: 1.8rem;
+        margin-top: 32px;
+    }
+
+    .contact_container p:nth-child(3) {
+        margin-top: 28px;
     }
 
     .contact_img {
@@ -349,8 +376,7 @@
     }
 
     .story_txt_container h5 {
-        font-size: 4.8rem;
-        line-height: 1.2;
+        font-size: 4.2rem;
         padding: 28px 0;
     }
 
@@ -403,6 +429,7 @@
     .story_story_content h5 {
         font-size: 4.2rem;
         line-height: 1.4;
+        padding: 18px 0;
     }
 
     .story_story_content p {
@@ -438,7 +465,7 @@
     }
 
     .brand_header span:nth-child(2) {
-        padding-right: 150px;
+        padding-right: 100px;
     }
 
     .brand_content_txt > span {
@@ -455,7 +482,6 @@
     }
 
     .brand_logo_wrap {
-        margin-top: calc(56px - 24px);
         margin-bottom: 220px;
     }
 
@@ -495,10 +521,6 @@
 
     .contact_container_txt p {
         font-size: 1.6rem;
-    }
-
-    .contact_container p:nth-child(3) {
-        margin-top: 28px;
     }
 
     /* footer */
@@ -547,6 +569,210 @@
 
     .footer_btm_address p:nth-child(2) {
         margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .story_txt_container span {
+        font-size: 1.2rem;
+    }
+
+    .story_txt_container h5 {
+        font-size: 3.4rem;
+    }
+
+    .story_story_content h5 {
+        font-size: 4rem;
+        padding: 15px 0;
+    }
+
+    .story_story_content p {
+        font-size: 2rem;
+    }
+
+    .story_story_content h5 br {
+        display: none;
+    }
+
+    .story_story_content h5 br.mobile {
+        display: block;
+    }
+
+    .story_story_content p {
+        font-size: 1.6rem;
+        padding: 0;
+        margin-left: 0;
+    }
+
+    .brand_content_txt span {
+        font-size: 1.6rem;
+    }
+
+    .brand_header span {
+        font-size: 1.4rem;
+    }
+
+    .brand_content_txt h5 {
+        font-size: 4rem;
+    }
+
+    .brand_content_txt > h5 > span {
+        font-size: 4rem;
+    }
+
+    .contact_container span {
+        margin-left: 50px;
+        font-size: 1.2rem;
+    }
+
+    .contact_img {
+        margin: 32px 0 34px 0;
+    }
+
+    .contact_container_txt h5 {
+        font-size: 4rem;
+    }
+
+    .contact_container_txt h5 bold {
+        font-size: 4rem;
+        margin-top: 22px;
+    }
+
+    .contact_container_txt p:nth-child(3) {
+        margin-top: 20px;
+    }
+
+    .container_imgBox span {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 585px) {
+    .inner_wrap {
+        padding: 0 20px;
+    }
+
+    .story_txt_container span {
+        margin-left: 7%;
+    }
+
+    .story_txt_container h5 {
+        font-size: 3rem;
+    }
+
+    .story_story_content h5 {
+        font-size: 3.5rem;
+    }
+
+    .story_story_content p {
+        margin-left: -50px;
+    }
+
+    .brand_header span {
+        font-size: 1.2rem;
+    }
+
+    /* contact */
+    .contact_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact_container span {
+        margin-left: calc(48px - 20px);
+        font-size: 1rem;
+    }
+
+    .contact_img {
+        margin: 22px 0 24px 0;
+        height: 400px;
+    }
+
+    .contact_container_txt h5 {
+        font-size: 3rem;
+        margin-bottom: 22px;
+    }
+
+    .contact_container_txt h5 bold {
+        font-size: 3rem;
+    }
+
+    .contact_container_txt p {
+        font-size: 1.2rem;
+    }
+
+    .contact_container p {
+        margin-top: 0;
+    }
+
+    .contact_container p:nth-child(3) {
+        margin-top: 20px;
+    }
+
+    /* footer */
+    footer {
+        position: relative;
+    }
+
+    .footer_dropdown {
+        position: absolute;
+        margin-top: -60px;
+        z-index: 2;
+    }
+
+    .footer_dropdown_btn img {
+        width: 12px;
+        height: 6px;
+        margin-left: 12px;
+    }
+
+    .footer_dropdown_content {
+        position: absolute;
+        z-index: 1;
+        margin-top: -230px;
+    }
+
+    .footer_btm {
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1;
+    }
+
+    .footer_btm p {
+        font-size: 1rem;
+        text-align: start;
+        padding: 6px 0;
+    }
+
+    .footer_btm_address p:nth-child(1) {
+        margin-top: 111px;
+        line-height: 1.4;
+    }
+
+    .footer_btm_address p:nth-child(2) {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .brand_content_txt h5 {
+        font-size: 3.2rem;
+    }
+
+    .brand_content_txt h5 span {
+        font-size: 3.2rem;
+    }
+
+    .story_txt_container h5 br.mobile {
+        display: block;
+    }
+
+    .story_txt_container h5 br.mobile_block {
+        display: none;
+    }
+
+    .story_story_content h5 {
+        font-size: 2.8rem;
     }
 }
 
@@ -612,7 +838,6 @@
     /* story - 스토리 페이지 */
     .story_story_wrap {
         height: 560px;
-        padding-top: 20%;
         justify-content: space-evenly;
     }
 
@@ -626,15 +851,13 @@
     }
 
     .story_story_content h5 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         line-height: 1.4;
         padding: 18px 0;
     }
 
     .story_story_content p {
         font-size: 1.4rem;
-        padding: 0;
-        margin-left: -50px;
     }
 
     /* brand */
