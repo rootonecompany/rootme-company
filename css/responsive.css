@@ -314,7 +314,7 @@
     }
 
     .brand_header span:nth-child(2) {
-        padding-right: 150px;
+        padding-right: 100px;
     }
 
     .brand_content_txt > span {
@@ -612,6 +612,10 @@
         font-size: 1.4rem;
     }
 
+    .brand_header span:nth-child(2) {
+        padding-right: 70px;
+    }
+
     .brand_content_txt h5 {
         font-size: 4rem;
     }
@@ -773,6 +777,10 @@
 
     .story_story_content h5 {
         font-size: 2.8rem;
+    }
+
+    .story_story_content p {
+        margin-left: 0;
     }
 }
 
