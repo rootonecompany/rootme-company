@@ -26,6 +26,17 @@ document.addEventListener("DOMContentLoaded", function () {
   let isHeaderHidden = false;
   let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
+  function updateMenuDisplay() {
+    menuBar.classList.remove('active');
+    menubg.classList.remove('active');
+
+    const iconImg = menuToggle.querySelector('img');
+    const logo = document.querySelector('.logo img');
+
+    iconImg.src = './images/toggleopen.svg';
+    logo.src = './images/logo.png';
+  }
+
   function handleScroll() {
     const st = window.scrollY || document.documentElement.scrollTop;
     const isScrolledPastTrigger = st > mainVideo.offsetTop + triggerOffset;
@@ -41,16 +52,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-
     lastScrollTop = st <= 0 ? 0 : st;
   }
 
+  function handleResize() {
+    if (window.innerWidth > 768) {
+      updateMenuDisplay();
+    }
+    ScrollTrigger.update();
+  }
+
   window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", handleResize);
 
   menuToggle.addEventListener('click', function () {
     menuBar.classList.toggle('active');
     menubg.classList.toggle('active');
-
 
     const iconImg = menuToggle.querySelector('img');
     const logo = document.querySelector('.logo img');
@@ -66,31 +83,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const menuItems = document.querySelectorAll('.header_menu li');
   menuItems.forEach(function (item) {
-    item.addEventListener('click', function () {
-      menuBar.classList.remove('active');
-      menubg.classList.remove('active');
+    item.addEventListener('click', updateMenuDisplay);
+  });
 
-
-      const iconImg = menuToggle.querySelector('img');
-      const logo = document.querySelector('.logo img');
-
-      iconImg.src = './images/toggleopen.svg';
-      logo.src = './images/logo.png';
+  document.querySelectorAll('.header_menu a').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
-  window.addEventListener("resize", ScrollTrigger.update);
 });
 
 
-
 // main videos
-
 const main = document.querySelector('.main');
 const mainVideo = document.querySelector('.main_video');
-const mainVideoInner = document.querySelector('.main_video_inner');
-const video = document.querySelector('.main_video_object')
+const video = document.querySelector('.main_video_object');
 const mm = gsap.matchMedia();
 
+const setClipPath = (progress, size) => {
+  const clipPathValue = `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`;
+  gsap.set(mainVideo, { clipPath: clipPathValue });
+};
 
 const tl = gsap.timeline({
   scrollTrigger: {
@@ -99,41 +118,19 @@ const tl = gsap.timeline({
     end: "bottom top",
     scrub: true,
     invalidateOnRefresh: true,
-
     onUpdate: (self) => {
-      gsap.set(mainVideo, {
-        clipPath: `inset(0 calc(${1 - self.progress
-          } * ((100% - 70rem) / 2))`,
-
-      });
-    }
-  }
+      if (window.innerWidth >= 1920) {
+        setClipPath(self.progress, '70rem');
+      } else if (window.innerWidth >= 768) {
+        setClipPath(self.progress, '70rem');
+      } else if (window.innerWidth >= 360) {
+        setClipPath(self.progress, '48rem');
+      } else {
+        setClipPath(self.progress, '26rem');
+      }
+    },
+  },
 });
-
-  mm.add("(min-width: 1920px)", () => {
-      gsap.set(mainVideo, {
-        clipPath: `inset(0 calc(${1 - self.progress
-          } * ((100% - 70rem) / 2))`,
-      })
-  });
-  mm.add("(min-width: 768px) and (max-width: 1920px)", () => {
-    gsap.set(mainVideo, {
-      clipPath: `inset(0 calc(${1 - self.progress
-        } * ((100% - 70rem) / 2))`,
-    })
-  });
-  mm.add("(min-width: 360px) and (max-width: 768px)", () => {
-    gsap.set(mainVideo, {
-      clipPath: `inset(0 calc(${1 - self.progress
-        } * ((100% - 48rem) / 2))`,
-    })
-  });
-  mm.add("(max-width: 360px)", () => {
-    gsap.set(mainVideo, {
-      clipPath: `inset(0 calc(${1 - self.progress
-        } * ((100% - 26rem) / 2))`,
-    })
-  });
 
 tl.to(main, {
   scrollTrigger: {
@@ -141,42 +138,17 @@ tl.to(main, {
     start: "top top",
     end: () => "+=" + video.clientHeight,
     pin: true,
-  }
-})
+  },
+});
+
 
 
 
 // about
-// gsap
-//   .timeline({
-//     scrollTrigger: {
-//       trigger: ".about",
-//       start: "top top",
-//       end: "bottom top",
-//       pin: true,
-//       scrub: 1,
-//       onEnter: () => {
-//         gsap.to(".about", {
-//           opacity: 1,
-//         });
-//       },
-//       onEnterBack: () => {
-//         gsap.to(".work", {
-//           y: 30,
-//           opacity: 1,
-//         });
-//       },
-//     },
-//   })
-//   .to(".about_txt1", { opacity: 0 })
-//   .to(".about_txt2", { opacity: 1, duration: 2 })
-//   .to(".about_txt2", { opacity: 0 })
-//   .to(".about_txt3", { opacity: 1, duration: 2 });
-
 const aboutAni = gsap.timeline();
 aboutAni.from(".about_container .about_txt1", { autoAlpha: 1, duration: 0 }, "+=1")
-  .from(".about_container .about_txt2", { autoAlpha: 0, duration: 0 }, "+=1")
-  .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0 }, "+=1")
+  .from(".about_container .about_txt2", { autoAlpha: 0, duration: 0 }, 2)
+  .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0 }, 6)
 
 
 ScrollTrigger.create({
@@ -228,6 +200,8 @@ ScrollTrigger.create({
 });
 
 
+
+// scroll up text
 gsap.utils.toArray('.fadein').forEach(elem => {
   ScrollTrigger.create({
     trigger: elem,
