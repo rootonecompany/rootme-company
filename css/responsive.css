@@ -95,7 +95,11 @@
     }
 
     .brand_logo_wrap {
-        margin-top: 40px;
+        margin-top: 20px;
+    }
+
+    .brand_logo_container {
+        grid-gap: 2rem;
     }
 
     /* contact */
@@ -205,12 +209,13 @@
         font-size: 5.2rem;
         padding: 25px;
     }
+
     .brand_content_txt h5 > span {
         font-size: 5rem;
     }
 
-    .brand_logo_wrap {
-        margin-top: 20px;
+    .brand_logo_container {
+        grid-gap: 1.4rem;
     }
 
     /* contact */
@@ -325,12 +330,17 @@
         font-size: 4.5rem;
         padding: 25px;
     }
+
     .brand_content_txt h5 > span {
         font-size: 4.5rem;
     }
 
     .brand_logo_wrap {
         margin-top: 20px;
+    }
+
+    .brand_logo_container {
+        grid-gap: 1.2rem;
     }
 
     /* contact */
@@ -488,7 +498,7 @@
     .brand_logo_container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1rem;
+        grid-gap: 2rem;
     }
 
     /* contact */
@@ -676,6 +686,10 @@
         font-size: 1.2rem;
     }
 
+    .brand_logo_container {
+        grid-gap: 1.6rem;
+    }
+
     /* contact */
     .contact_container {
         display: flex;
@@ -765,6 +779,10 @@
 
     .brand_content_txt h5 span {
         font-size: 3.2rem;
+    }
+
+    .brand_logo_container {
+        grid-gap: 1.2rem;
     }
 
     .story_txt_container h5 br.mobile {
@@ -902,7 +920,7 @@
 
     .brand_logo_container {
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1rem;
+        grid-gap: 0.8rem;
     }
 
     /* contact */
