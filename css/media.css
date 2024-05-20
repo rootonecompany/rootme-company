@@ -16,7 +16,7 @@
         font-size: 6.3rem;
     }
 }
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
     /* header */
     .header_menu li a {
         font-size: 1.4rem;
@@ -24,7 +24,7 @@
     /* main */
     .main_txt p {
         letter-spacing: -0.54px;
-        margin: 168px 0 0;
+        margin: 240px 0 0;
         font-size: 2.7rem;
     }
     .main_txt h2 {
@@ -137,21 +137,6 @@
     .header_menu li:nth-child(6) .letter {
         animation: reveal cubic-bezier(0.77, 0, 0.175, 1) 1.4s forwards;
     }
-
-    /* main */
-    .main_txt p {
-        letter-spacing: -0.44px;
-        margin: 128px 0 0;
-        font-size: 2.2rem;
-    }
-    .main_txt h2 {
-        margin: 24px 0 66px;
-        font-size: 6.8rem;
-    }
-    .main_video video {
-        width: 480px;
-    }
-
     .menu-btn {
         display: block;
     }
@@ -167,6 +152,20 @@
         display: block;
         position: absolute;
         right: 40px;
+    }
+
+    /* main */
+    .main_txt p {
+        letter-spacing: -0.44px;
+        margin: 200px 0 0;
+        font-size: 2.2rem;
+    }
+    .main_txt h2 {
+        margin: 24px 0 66px;
+        font-size: 6.8rem;
+    }
+    .main_video {
+        clip-path: inset(0 calc((100% - 48rem) / 2));
     }
 
     /* about */
@@ -250,7 +249,7 @@
     /* main */
     .main_txt p {
         letter-spacing: -0.38px;
-        margin: 104px 0 0;
+        margin: 176px 0 0;
         font-size: 1.9rem;
     }
     .main_txt h2 {
@@ -359,7 +358,7 @@
     /* main */
     .main_txt p {
         letter-spacing: -0.35px;
-        margin: 92px 0 0;
+        margin: 164px 0 0;
         font-size: 1.7rem;
     }
     .main_txt h2 {
@@ -406,17 +405,15 @@
     /* main */
     .main_txt p {
         letter-spacing: -0.32px;
-        padding: 80px 0 0;
         font-size: 1.6rem;
     }
     .main_txt h2 {
         margin: 18px 0 38px;
         font-size: 3.8rem;
     }
-    .main_video video {
-        width: 260px;
+    .main_video {
+        clip-path: inset(0 calc((100% - 26rem) / 2));
     }
-
     /* about */
     .about_txt1 {
         background-size: 220px 220px;
