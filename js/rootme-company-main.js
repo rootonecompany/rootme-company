@@ -23,6 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let isHeaderHidden = false;
     let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
+    function updateMenuDisplay() {
+        menuBar.classList.remove("active");
+        menubg.classList.remove("active");
+
+        const iconImg = menuToggle.querySelector("img");
+        const logo = document.querySelector(".logo img");
+
+        iconImg.src = "./images/toggleopen.svg";
+        logo.src = "./images/logo.png";
+    }
+
     function handleScroll() {
         const st = window.scrollY || document.documentElement.scrollTop;
         const isScrolledPastTrigger = st > mainVideo.offsetTop + triggerOffset;
@@ -41,7 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
         lastScrollTop = st <= 0 ? 0 : st;
     }
 
+    function handleResize() {
+        if (window.innerWidth > 768) {
+            updateMenuDisplay();
+        }
+        ScrollTrigger.update();
+    }
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
 
     menuToggle.addEventListener("click", function () {
         menuBar.classList.toggle("active");
@@ -61,66 +80,80 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const menuItems = document.querySelectorAll(".header_menu li");
     menuItems.forEach(function (item) {
-        item.addEventListener("click", function () {
-            menuBar.classList.remove("active");
-            menubg.classList.remove("active");
+        item.addEventListener("click", updateMenuDisplay);
+    });
 
-            const iconImg = menuToggle.querySelector("img");
-            const logo = document.querySelector(".logo img");
+    document.querySelectorAll(".header_menu a").forEach(function (anchor) {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
 
-            iconImg.src = "./images/toggleopen.svg";
-            logo.src = "./images/logo.png";
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+            }
         });
     });
-    window.addEventListener("resize", ScrollTrigger.update);
 });
 
 // main videos
-const main_video = gsap.timeline();
+const main = document.querySelector(".main");
+const mainVideo = document.querySelector(".main_video");
+const video = document.querySelector(".main_video_object");
+const mm = gsap.matchMedia();
 
-main_video.to(".main_video_object", {
-    scale: 1,
-    width: "100vw",
-    height: "100vh",
-    duration: 2,
-    scrub: 1,
+const setClipPath = (progress, size) => {
+    const clipPathValue = `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`;
+    gsap.set(mainVideo, { clipPath: clipPathValue });
+};
+
+const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: main,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+            if (window.innerWidth >= 1920) {
+                setClipPath(self.progress, "70rem");
+            } else if (window.innerWidth >= 768) {
+                setClipPath(self.progress, "70rem");
+            } else if (window.innerWidth >= 360) {
+                setClipPath(self.progress, "48rem");
+            } else {
+                setClipPath(self.progress, "26rem");
+            }
+        },
+    },
 });
 
-ScrollTrigger.create({
-    animation: main_video,
-    trigger: ".main_video",
-    start: "top top",
-    end: "bottom center",
-    scrub: true,
-    pin: true,
-    anticipatePin: 1,
+tl.to(main, {
+    scrollTrigger: {
+        trigger: mainVideo,
+        start: "top top",
+        end: () => "+=" + video.clientHeight,
+        pin: true,
+    },
 });
 
 // about
-gsap.timeline({
-    scrollTrigger: {
-        trigger: ".about",
-        start: "top top",
-        end: "bottom top",
-        pin: true,
-        scrub: 1,
-        onEnter: () => {
-            gsap.to(".about", {
-                opacity: 1,
-            });
-        },
-        onEnterBack: () => {
-            gsap.to(".work", {
-                y: 30,
-                opacity: 1,
-            });
-        },
-    },
-})
-    .to(".about_txt1", { opacity: 0 })
-    .to(".about_txt2", { opacity: 1, duration: 2 })
-    .to(".about_txt2", { opacity: 0 })
-    .to(".about_txt3", { opacity: 1, duration: 2 });
+const aboutAni = gsap.timeline();
+aboutAni
+    .from(".about_container .about_txt1", { autoAlpha: 1, duration: 0 }, "+=1")
+    .from(".about_container .about_txt2", { autoAlpha: 0, duration: 0 }, 2)
+    .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0 }, 6);
+
+ScrollTrigger.create({
+    animation: aboutAni,
+    trigger: ".about_container",
+    start: "top top",
+    end: "+=1500",
+    scrub: true,
+    pin: true,
+    markers: false,
+    anticipatePin: 1,
+});
 
 window.addEventListener("resize", () => {
     ScrollTrigger.refresh();
@@ -154,19 +187,11 @@ ScrollTrigger.create({
     },
 });
 
+// scroll up text
 gsap.utils.toArray(".fadein").forEach((elem) => {
     ScrollTrigger.create({
         trigger: elem,
         start: "top 70%",
         toggleClass: "fade-in",
-    });
-});
-
-gsap.utils.toArray(".fade-out").forEach((elem) => {
-    ScrollTrigger.create({
-        trigger: elem,
-        start: "top 70%",
-        end: "bottom 20%",
-        toggleClass: "fade-out",
     });
 });
