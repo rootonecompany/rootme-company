@@ -103,7 +103,10 @@ const video = document.querySelector(".main_video_object");
 const mm = gsap.matchMedia();
 
 const setClipPath = (progress, size) => {
-    const clipPathValue = `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`;
+    const clipPathValue =
+        progress === 1
+            ? `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`
+            : `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)) round 2rem)`;
     gsap.set(mainVideo, { clipPath: clipPathValue });
 };
 
@@ -112,15 +115,17 @@ const tl = gsap.timeline({
         trigger: main,
         start: "top top",
         end: "bottom top",
-        scrub: true,
+        scrub: 0.5,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
             if (window.innerWidth >= 1920) {
-                setClipPath(self.progress, "70rem");
+                setClipPath(self.progress, "68rem");
             } else if (window.innerWidth >= 768) {
-                setClipPath(self.progress, "70rem");
-            } else if (window.innerWidth >= 360) {
+                setClipPath(self.progress, "68rem");
+            } else if (window.innerWidth >= 550) {
                 setClipPath(self.progress, "48rem");
+            } else if (window.innerWidth >= 360) {
+                setClipPath(self.progress, "34rem");
             } else {
                 setClipPath(self.progress, "26rem");
             }
