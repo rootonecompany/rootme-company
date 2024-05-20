@@ -4,48 +4,9 @@
     }
 
     /* story */
-    .story_txt_container {
-        margin-top: 120px;
-    }
-    .fade-in {
-        opacity: 1;
-        transform: translateY(0);
-        z-index: 2;
-    }
-
-    .story_txt_container span {
-        margin-left: 15%;
-        font-size: 1.4rem;
-    }
-
     .story_txt_container h5 {
         font-size: 7.5rem;
         padding: 42px 0;
-    }
-
-    /* story - 카드 박스 페이지 */
-    .story_card_inner {
-        margin: 56px 60px;
-        gap: 220px;
-    }
-
-    .story_card_top > span {
-        padding-right: calc(191px - 60px);
-        font-size: 2rem;
-    }
-    .story_card_icon {
-        width: 36px;
-        height: 36px;
-        gap: 12px;
-    }
-
-    .story_card_btm h5 {
-        font-size: 2.8rem;
-        margin: 44px auto 87px auto;
-    }
-
-    .story_card_btm span {
-        font-size: 1.4rem;
     }
 
     /* story - 스토리 페이지 */
@@ -58,10 +19,7 @@
     }
 
     .story_story_content p {
-        font-size: 3.4rem;
         margin-left: 28%;
-        line-height: 1.58;
-        padding: 2%;
     }
 
     .story_scroll_icon {
@@ -73,21 +31,12 @@
         font-size: 2.5rem;
     }
 
-    .brand_header span:nth-child(2) {
-        padding-right: 150px;
-    }
-
-    .brand_content_txt {
-        text-align: center;
-    }
-
     .brand_content_txt > span {
         font-size: 2.8rem;
     }
 
     .brand_content_txt h5 {
         font-size: 7.5rem;
-        padding: 36px;
     }
 
     .brand_content_txt h5 > span {
@@ -103,16 +52,8 @@
     }
 
     /* contact */
-    .contact_container span {
-        font-size: 1.4rem;
-    }
-
     .contact_img {
         height: 460px;
-    }
-
-    .contact_container_txt {
-        margin-bottom: 129px;
     }
 
     .contact_container_txt h5 {
@@ -123,23 +64,9 @@
         font-size: 7.5rem;
         margin-bottom: 36px;
     }
-
-    .contact_container_txt p {
-        font-size: 2rem;
-    }
-
-    /* footer */
-    .footer_dropdown_btn img {
-        margin-left: 12px;
-        transition: transform 0.3s ease;
-    }
 }
 
 @media screen and (max-width: 1260px) {
-    .inner_wrap {
-        padding: 0 60px;
-    }
-
     /* story */
     .story_txt_container {
         margin-top: 120px;
@@ -147,39 +74,13 @@
 
     .story_txt_container span {
         margin-left: 11%;
-        font-size: 1.4rem;
     }
 
     .story_txt_container h5 {
         font-size: 5rem;
-        padding: 42px 0;
     }
 
     /* story - 카드 박스 페이지 */
-    .story_card_inner {
-        margin: 56px 60px;
-        gap: 220px;
-    }
-
-    .story_card_top > span {
-        padding-right: calc(191px - 60px);
-        font-size: 2rem;
-    }
-    .story_card_icon {
-        width: 36px;
-        height: 36px;
-        gap: 12px;
-    }
-
-    .story_card_btm h5 {
-        font-size: 2.8rem;
-        margin: 44px auto 87px auto;
-    }
-
-    .story_card_btm span {
-        font-size: 1.4rem;
-    }
-
     .story_story_content h5 {
         font-size: 5.2rem;
     }
@@ -189,10 +90,6 @@
     }
 
     /* brand */
-    .brand_header {
-        margin-bottom: 290px;
-    }
-
     .brand_header span {
         font-size: 2.2rem;
     }
@@ -219,28 +116,13 @@
     }
 
     /* contact */
-    .contact_container span {
-        font-size: 1.4rem;
-    }
-
-    .contact_container_txt h5 {
-        font-size: 5rem;
-    }
-
+    .contact_container_txt h5,
     .contact_container_txt h5 bold {
         font-size: 5rem;
-    }
-
-    .contact_container_txt p {
-        font-size: 2rem;
     }
 }
 
 @media screen and (max-width: 960px) {
-    .inner_wrap {
-        padding: 0 45px;
-    }
-
     /* story */
     .story_txt_container {
         margin-top: 100px;
@@ -248,7 +130,6 @@
 
     .story_txt_container span {
         margin-left: 11%;
-        font-size: 1.3rem;
     }
 
     .story_txt_container h5 {
@@ -382,7 +263,7 @@
 
     .story_txt_container span {
         margin-left: calc(140px - 40px);
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .story_txt_container h5 {
@@ -401,7 +282,7 @@
 
     .story_card_frame {
         gap: 24px;
-        padding-left: 15%;
+        padding-left: 8%;
     }
 
     .story_card_inner {
@@ -691,10 +572,10 @@
     }
 
     /* contact */
-    .contact_container {
+    /* .contact_container {
         display: flex;
         flex-direction: column;
-    }
+    } */
 
     .contact_container span {
         margin-left: calc(48px - 20px);
@@ -803,22 +684,13 @@
 }
 
 @media screen and (max-width: 360px) {
-    .inner_wrap {
-        padding: 0 20px;
-    }
-
     /* story */
-    .story_txt_container {
-        margin-top: 120px;
-    }
-
     .story_txt_container span {
         margin-left: calc(48px - 20px);
         font-size: 1rem;
     }
 
     .story_txt_container h5 {
-        font-size: 3rem;
         padding: 22px 0;
     }
 
@@ -827,18 +699,12 @@
     }
 
     /* story - card box 페이지 */
-    .story_card_wrap {
-        background-position: center;
-    }
-
     .story_card_frame {
-        gap: 24px;
-        padding: 27%;
+        padding: 7%;
     }
 
     .story_card_inner {
         margin: 26px;
-        gap: 125px;
     }
 
     .story_card_top > span {
@@ -857,29 +723,15 @@
         margin: 20px auto 43px auto;
     }
 
-    .story_card_btm span {
-        font-size: 1rem;
-    }
-
     /* story - 스토리 페이지 */
     .story_story_wrap {
         height: 560px;
-        justify-content: space-evenly;
-    }
-
-    .story_story_content h5 br {
-        display: none;
-    }
-
-    .story_story_content h5 br.mobile,
-    .story_story_content h5 br.mobile_block {
-        display: block;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     .story_story_content h5 {
         font-size: 2.4rem;
-        line-height: 1.4;
-        padding: 18px 0;
     }
 
     .story_story_content p {
@@ -887,21 +739,12 @@
     }
 
     /* brand */
-    .brand_header {
-        margin-bottom: 196px;
-    }
-
     .brand_header span {
         margin-top: 10px;
-        font-size: 1.2rem;
     }
 
     .brand_header span:nth-child(2) {
         padding-right: 40px;
-    }
-
-    .brand_content_txt > span {
-        font-size: 1.6rem;
     }
 
     .brand_content_txt h5 {
@@ -919,7 +762,6 @@
     }
 
     .brand_logo_container {
-        grid-template-columns: repeat(2, 1fr);
         grid-gap: 0.8rem;
     }
 
@@ -929,23 +771,8 @@
         flex-direction: column;
     }
 
-    .contact_container span {
-        margin-left: calc(48px - 20px);
-        font-size: 1rem;
-    }
-
-    .contact_img {
-        margin: 22px 0 24px 0;
-        height: 400px;
-    }
-
     .contact_container_txt h5 {
-        font-size: 3rem;
         margin-bottom: 22px;
-    }
-
-    .contact_container_txt h5 bold {
-        font-size: 3rem;
     }
 
     .contact_container_txt p {
@@ -956,21 +783,7 @@
         margin-top: 0;
     }
 
-    .contact_container p:nth-child(3) {
-        margin-top: 20px;
-    }
-
     /* footer */
-    footer {
-        position: relative;
-    }
-
-    .footer_dropdown {
-        position: absolute;
-        margin-top: -60px;
-        z-index: 2;
-    }
-
     .footer_dropdown_btn img {
         width: 12px;
         height: 6px;
@@ -981,26 +794,5 @@
         position: absolute;
         z-index: 1;
         margin-top: -230px;
-    }
-
-    .footer_btm {
-        flex-direction: column;
-        align-items: flex-start;
-        z-index: 1;
-    }
-
-    .footer_btm p {
-        font-size: 1rem;
-        text-align: start;
-        padding: 6px 0;
-    }
-
-    .footer_btm_address p:nth-child(1) {
-        margin-top: 111px;
-        line-height: 1.4;
-    }
-
-    .footer_btm_address p:nth-child(2) {
-        margin-top: 0px;
     }
 }

@@ -54,6 +54,10 @@ span {
     height: 100vh;
     display: flex;
     align-items: center;
+
+    position: sticky;
+    top: 0;
+    width: 100%;
 }
 
 .story_card_frame {
@@ -62,10 +66,22 @@ span {
     gap: 32px;
     white-space: nowrap;
     padding: 10%;
+
+    position: absolute;
+    /* width: 95vw; */
+    height: 30vw;
+    justify-content: space-between;
 }
 
 .story_card {
     background: var(--color-white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: perspective(100vw) translateX(100vw);
 }
 
 .story_card:nth-child(even) {
@@ -180,6 +196,7 @@ span {
     font-weight: 700;
     color: var(--color-white);
     text-transform: capitalize;
+    font-style: normal;
 }
 
 .story_scroll_img {
