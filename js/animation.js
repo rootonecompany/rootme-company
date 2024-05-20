@@ -60,10 +60,10 @@ class CardFlipOnScroll {
                     translateX(${100 - ((scrollY - s) / (e - s)) * 150}vw)
                 `;
             } else if (scrollY > e) {
-                // card.style.transform = `
-                //     perspective(100vw)
-                //     translateX(0vw)
-                // `;
+                card.style.transform = `
+                    perspective(100vw)
+                    translateX(0vw)
+                `;
             }
         });
     }
@@ -93,7 +93,7 @@ myDropDownBtn.addEventListener("click", (e) => {
     myDropdownContent.classList.toggle("show");
 });
 
-// brand logo (test)
+// 로고 애니메이션 (test)
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.fromTo(
@@ -113,28 +113,3 @@ gsap.fromTo(
         },
     }
 );
-
-// 브랜드 로고 애니메이션 test
-// gsap.registerPlugin(ScrollTrigger);
-
-// gsap.utils.toArray(".brand_logo_row").forEach((row, i) => {
-//     gsap.fromTo(
-//         row.children,
-//         { y: 100, opacity: 0 },
-//         {
-//             y: 0,
-//             opacity: 1,
-//             duration: 1,
-//             ease: "power1.out",
-//             stagger: 0.3,
-//             scrollTrigger: {
-//                 trigger: row,
-//                 start: "top 80%",
-//                 end: "bottom top",
-//                 markers: true,
-//                 toggleActions: "play none none reverse",
-//                 delay: i * 0.5,
-//             },
-//         }
-//     );
-// });
