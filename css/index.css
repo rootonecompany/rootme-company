@@ -54,10 +54,7 @@ span {
     height: 100vh;
     display: flex;
     align-items: center;
-
-    position: sticky;
-    top: 0;
-    width: 100%;
+    padding-left: 13%;
 }
 
 .story_card_frame {
@@ -65,23 +62,10 @@ span {
     align-items: center;
     gap: 32px;
     white-space: nowrap;
-    padding: 10%;
-
-    position: absolute;
-    /* width: 95vw; */
-    height: 30vw;
-    justify-content: space-between;
 }
 
 .story_card {
     background: var(--color-white);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform-style: preserve-3d;
-    position: relative;
-    transform: perspective(100vw) translateX(100vw);
 }
 
 .story_card:nth-child(even) {
@@ -213,9 +197,6 @@ span {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 361px;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .brand_header span {
@@ -236,8 +217,8 @@ span {
 
 .brand_content_txt {
     text-align: center;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
@@ -315,8 +296,8 @@ span {
 
 .contact_container_txt {
     margin-bottom: 129px;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(110px);
     transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
@@ -440,6 +421,7 @@ footer {
     transform: translateY(0);
     z-index: 2;
 }
+
 .fade-out {
     opacity: 0;
     transform: translateY(110px);
