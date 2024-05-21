@@ -9,7 +9,6 @@
         padding: 42px 0;
     }
 
-    /* story - 스토리 페이지 */
     .story_story_content h5 {
         font-size: 7.5rem;
     }
@@ -80,7 +79,6 @@
         font-size: 5rem;
     }
 
-    /* story - 카드 박스 페이지 */
     .story_story_content h5 {
         font-size: 5.2rem;
     }
@@ -137,7 +135,7 @@
         padding: 32px 0;
     }
 
-    /* story - 카드 박스 페이지 */
+    /* story - 移대뱶 諛뺤뒪 �섏씠吏� */
     .story_card_inner {
         margin: 56px 60px;
         gap: 220px;
@@ -275,7 +273,7 @@
         display: none;
     }
 
-    /* story - card box 페이지 */
+    /* story - card box  */
     .story_card_wrap {
         height: 720px;
     }
@@ -311,7 +309,7 @@
         font-size: 1rem;
     }
 
-    /* story - 스토리 페이지 */
+    /* story - story wrap */
     .story_story_wrap {
         height: 720px;
         justify-content: space-evenly;
@@ -399,7 +397,7 @@
     }
 
     .contact_container_txt {
-        margin-bottom: 0;
+        margin-bottom: 180px;
     }
 
     .contact_container_txt h5 {
@@ -572,10 +570,10 @@
     }
 
     /* contact */
-    /* .contact_container {
+    .contact_container {
         display: flex;
         flex-direction: column;
-    } */
+    }
 
     .contact_container span {
         margin-left: calc(48px - 20px);
@@ -698,7 +696,7 @@
         display: none;
     }
 
-    /* story - card box 페이지 */
+    /* story - card box �섏씠吏� */
     .story_card_frame {
         padding: 7%;
     }
@@ -723,7 +721,7 @@
         margin: 20px auto 43px auto;
     }
 
-    /* story - 스토리 페이지 */
+    /* story - �ㅽ넗由� �섏씠吏� */
     .story_story_wrap {
         height: 560px;
         align-items: center;
@@ -769,6 +767,10 @@
     .contact_container {
         display: flex;
         flex-direction: column;
+    }
+
+    .contact_container_txt {
+        margin-bottom: 180px;
     }
 
     .contact_container_txt h5 {

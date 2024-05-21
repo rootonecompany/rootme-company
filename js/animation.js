@@ -3,9 +3,6 @@ const cardWrap = document.querySelector(".story_card_wrap");
 const panels = gsap.utils.toArray(".story_card");
 const cardFrame = document.querySelector(".story_card_frame");
 
-// let mm = gsap.matchMedia();
-
-// mm.add("(min-width: 769px)", () => {
 gsap.to(cardFrame, {
     xPercent: -15 * (panels.length - 1),
     ease: "none",
@@ -22,7 +19,6 @@ gsap.to(cardFrame, {
         },
     },
 });
-// });
 
 // 드롭다운 메뉴
 const myDropDownBtn = document.getElementById("footer_dropdown_btn");
