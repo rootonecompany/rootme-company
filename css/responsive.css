@@ -262,7 +262,7 @@
     }
 
     .story_txt_container span {
-        margin-left: calc(140px - 40px);
+        margin-left: calc(100px - 40px);
         font-size: 1.2rem;
     }
 
@@ -389,7 +389,7 @@
     }
 
     .contact_container span {
-        margin-left: calc(140px - 40px);
+        margin-left: calc(100px - 40px);
         font-size: 1.4rem;
     }
 

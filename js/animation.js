@@ -1,27 +1,27 @@
-// gsap 스크롤 트리거
-const cardWrap = document.querySelector(".story_card_wrap");
-const panels = gsap.utils.toArray(".story_card");
-const cardFrame = document.querySelector(".story_card_frame");
+// // gsap 스크롤 트리거
+// const cardWrap = document.querySelector(".story_card_wrap");
+// const panels = gsap.utils.toArray(".story_card");
+// const cardFrame = document.querySelector(".story_card_frame");
 
 // let mm = gsap.matchMedia();
 
 // mm.add("(min-width: 769px)", () => {
-gsap.to(cardFrame, {
-    xPercent: -15 * (panels.length - 1),
-    ease: "none",
-    scrollTrigger: {
-        trigger: cardWrap,
-        pin: cardWrap,
-        start: "center center",
-        end: "bottom bottom",
-        pinSpacing: true,
-        scrub: 2,
-        snap: {
-            snapTo: 1 / (panels.length - 1),
-            delay: 3,
-        },
-    },
-});
+// gsap.to(cardFrame, {
+//     xPercent: -15 * (panels.length - 1),
+//     ease: "none",
+//     scrollTrigger: {
+//         trigger: cardWrap,
+//         pin: cardWrap,
+//         start: "center center",
+//         end: "bottom bottom",
+//         pinSpacing: true,
+//         scrub: 2,
+//         snap: {
+//             snapTo: 1 / (panels.length - 1),
+//             delay: 3,
+//         },
+//     },
+// });
 // });
 
 // 드롭다운 메뉴
@@ -57,3 +57,5 @@ gsap.fromTo(
         },
     }
 );
+
+// 텍스트 애니메이션 (Test)
