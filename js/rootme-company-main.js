@@ -167,12 +167,15 @@ tl.to(main, {
     },
 });
 // 페이지 새로고침 시 main_video 트리거 초기화
-window.addEventListener("load", function () {
+const refreshScrollTrigger = () => {
     const mainVideoTrigger = ScrollTrigger.getById("mainVideoTrigger");
     if (mainVideoTrigger) {
         mainVideoTrigger.refresh();
     }
-});
+};
+
+window.addEventListener("load", refreshScrollTrigger);
+window.addEventListener("resize", refreshScrollTrigger);
 
 
 // about
