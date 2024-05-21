@@ -22,20 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const menubg = document.querySelector(".header");
     const logoImg = document.querySelector('.logo img');
     const triggerOffset = 530;
-    let isHeaderHidden = false;
-    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
-
     const storyCardWrap = document.querySelector(".story_card_wrap");
     const brandSection = document.querySelector("#brand");
-
-    function updateMenuDisplay() {
-        menuBar.classList.remove("active");
-        menubg.classList.remove("active");
-
-        const iconImg = menuToggle.querySelector("img");
-        iconImg.src = "./images/toggleopen.svg";
-        logoImg.src = "./images/logo.png";
-    }
+    let isHeaderHidden = false;
+    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
     function handleScroll() {
         const st = window.scrollY || document.documentElement.scrollTop;
@@ -53,8 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
+        //해상도가 768px보다 커지면 header logo.img가 close.png로 변경됨
         if (window.innerWidth <= 768 && isMenuActive) {
             logoImg.src = "./images/logoclose.png";
+            //스크롤이 story 안에 있을경우 header에 .darkMode class가 붙어서 스타일이 바뀜
+            // + 위치에 따라 header 내부 img src 값이 바뀜
         } else if (st >= storyCardWrap.offsetTop && st <= brandSection.offsetTop) {
             const menuItems = document.querySelectorAll('.header_menu li');
             menuItems.forEach(function (item) {
@@ -74,6 +67,17 @@ document.addEventListener("DOMContentLoaded", function () {
         lastScrollTop = st <= 0 ? 0 : st;
     }
 
+    // 헤더가 768px 이상이 될 때 
+    function updateMenuDisplay() {
+        menuBar.classList.remove("active");
+        menubg.classList.remove("active");
+
+        const iconImg = menuToggle.querySelector("img");
+        iconImg.src = "./images/toggleopen.svg";
+        logoImg.src = "./images/logo.png";
+        lenis.start()
+    }
+
     function handleResize() {
         if (window.innerWidth > 768) {
             updateMenuDisplay();
@@ -84,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleResize);
 
+    //토글 이미지 클릭 시 active 값을 통해 스타일 조절
     menuToggle.addEventListener("click", function () {
         menuBar.classList.toggle("active");
         menubg.classList.toggle("active");
@@ -93,9 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (menuBar.classList.contains("active")) {
             iconImg.src = "./images/toggleclose.svg";
             logoImg.src = "./images/logoclose.png";
+            lenis.stop()
         } else {
             iconImg.src = "./images/toggleopen.svg";
             logoImg.src = "./images/logo.png";
+            lenis.start()
             if (window.innerWidth > 768) {
                 logoImg.src = "./images/logo.png";
             }
@@ -103,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // story 구간에서 토글 열고 닫을때 전환 코드
     function updateLogoBasedOnScroll() {
         const st = window.scrollY || document.documentElement.scrollTop;
         const isMenuActive = menuBar.classList.contains("active");
@@ -264,3 +272,5 @@ gsap.utils.toArray(".fadein").forEach((elem) => {
         toggleClass: "fade-in",
     });
 });
+
+// test
