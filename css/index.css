@@ -16,9 +16,6 @@ span {
 
 .story_txt_container {
     margin-top: 120px;
-    opacity: 0;
-    transform: translateY(110px);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .story_txt_container span {
@@ -135,9 +132,6 @@ span {
     align-items: center;
     overflow: hidden;
     margin-top: 70px;
-    opacity: 0;
-    transform: translateY(110px);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .story_story_content > h5 {
@@ -217,9 +211,6 @@ span {
 
 .brand_content_txt {
     text-align: center;
-    opacity: 0;
-    transform: translateY(110px);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .brand_content_txt > span {
@@ -243,9 +234,6 @@ span {
 .brand_logo_wrap {
     margin-top: 44px;
     margin-bottom: 258px;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .brand_logo_container {
@@ -289,16 +277,10 @@ span {
     margin: 42px 0 52px 0;
     height: 490px;
     object-fit: cover;
-    /* opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.4s ease; */
 }
 
 .contact_container_txt {
     margin-bottom: 129px;
-    opacity: 0;
-    transform: translateY(110px);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .contact_container_txt h5 {
@@ -413,17 +395,4 @@ footer {
 
 .footer_btm_address p:nth-child(2) {
     margin-top: 16px;
-}
-
-/* scroll text up */
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-    z-index: 2;
-}
-
-.fade-out {
-    opacity: 0;
-    transform: translateY(110px);
-    z-index: 2;
 }
