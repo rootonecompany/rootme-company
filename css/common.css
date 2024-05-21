@@ -16,7 +16,7 @@ body {
     background: var(--color-gray05);
     margin: 0;
 }
-section {
+.section {
     min-height: 100vh;
     overflow: hidden;
 }

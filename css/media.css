@@ -64,7 +64,7 @@
         z-index: 1000;
     }
     .header_gnb {
-        padding: 0 40px;
+        padding: 0 30px;
         justify-content: space-between;
     }
     .header_menu {
@@ -150,8 +150,8 @@
     }
     .menu-toggle {
         display: block;
-        position: absolute;
-        right: 40px;
+        /* position: absolute;
+        right: 30px; */
     }
 
     /* main */
@@ -165,7 +165,7 @@
         font-size: 6.8rem;
     }
     .main_video {
-        clip-path: inset(0 calc((100% - 48rem) / 2));
+        clip-path: inset(0 calc((100% - 48rem) / 2) round 2rem);
     }
 
     /* about */
@@ -196,7 +196,7 @@
 
     /* work */
     .work {
-        margin-top: 180px;
+        margin-top: 90px;
     }
     .work_top_txt span {
         margin: 0 0 0 140px;
@@ -302,7 +302,7 @@
     }
 
     .main_video {
-        clip-path: inset(0 calc((100% - 34rem) / 2));
+        clip-path: inset(0 calc((100% - 34rem) / 2) round 2rem);
     }
     /* work */
     .work {
@@ -416,7 +416,7 @@
         font-size: 3.8rem;
     }
     .main_video {
-        clip-path: inset(0 calc((100% - 26rem) / 2));
+        clip-path: inset(0 calc((100% - 26rem) / 2) round 2rem);
     }
     /* about */
     .about_txt1 {
