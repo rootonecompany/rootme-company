@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainVideo = document.querySelector(".main_video");
     const menuBar = document.querySelector(".menubar");
     const menuToggle = document.querySelector(".menu-toggle");
+    const menuToggleImg = document.querySelector(".menu-toggle img");
     const menubg = document.querySelector(".header");
     const logoImg = document.querySelector('.logo img');
     const triggerOffset = 530;
@@ -32,10 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
         menubg.classList.remove("active");
 
         const iconImg = menuToggle.querySelector("img");
-        const logo = document.querySelector(".logo img");
-
         iconImg.src = "./images/toggleopen.svg";
-        logo.src = "./images/logo.png";
+        logoImg.src = "./images/logo.png";
     }
 
     function handleScroll() {
@@ -54,13 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        // 헤더 특정 위치 색상 변경
-        if (st >= storyCardWrap.offsetTop && st <= brandSection.offsetTop) {
+        if (window.innerWidth <= 768 && isMenuActive) {
+            logoImg.src = "./images/logoclose.png";
+        } else if (st >= storyCardWrap.offsetTop && st <= brandSection.offsetTop) {
             const menuItems = document.querySelectorAll('.header_menu li');
             menuItems.forEach(function (item) {
                 item.classList.add('darkMode');
             });
-
+            menuToggleImg.src = "./images/togglewhite.svg";
             logoImg.src = "./images/logoclose.png";
         } else {
             const menuItems = document.querySelectorAll('.header_menu li');
@@ -68,11 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 item.classList.remove('darkMode');
             });
             logoImg.src = "./images/logo.png";
+            menuToggleImg.src = "./images/toggleopen.svg";
         }
+
         lastScrollTop = st <= 0 ? 0 : st;
     }
 
-    // 768px 해상도 이하 토글 코드 (스크롤링 막고 스크롤 코드 지우기)
     function handleResize() {
         if (window.innerWidth > 768) {
             updateMenuDisplay();
@@ -88,18 +89,44 @@ document.addEventListener("DOMContentLoaded", function () {
         menubg.classList.toggle("active");
 
         const iconImg = menuToggle.querySelector("img");
-        const logo = document.querySelector(".logo img");
 
-        if (iconImg.src.includes("toggleopen.svg")) {
+        if (menuBar.classList.contains("active")) {
             iconImg.src = "./images/toggleclose.svg";
-            logo.src = "./images/logoclose.png";
+            logoImg.src = "./images/logoclose.png";
         } else {
             iconImg.src = "./images/toggleopen.svg";
-            logo.src = "./images/logo.png";
+            logoImg.src = "./images/logo.png";
+            if (window.innerWidth > 768) {
+                logoImg.src = "./images/logo.png";
+            }
+            updateLogoBasedOnScroll();
         }
     });
 
-    // 헤더 list 더블 클릭 방지 및 자연스러운 위치 이동
+    function updateLogoBasedOnScroll() {
+        const st = window.scrollY || document.documentElement.scrollTop;
+        const isMenuActive = menuBar.classList.contains("active");
+
+        if (window.innerWidth <= 768 && isMenuActive) {
+            logoImg.src = "./images/logoclose.png";
+        } else if (st >= storyCardWrap.offsetTop && st <= brandSection.offsetTop) {
+            const menuItems = document.querySelectorAll('.header_menu li');
+            menuItems.forEach(function (item) {
+                item.classList.add('darkMode');
+            });
+            menuToggleImg.src = "./images/togglewhite.svg";
+            logoImg.src = "./images/logoclose.png";
+        } else {
+            const menuItems = document.querySelectorAll('.header_menu li');
+            menuItems.forEach(function (item) {
+                item.classList.remove('darkMode');
+            });
+            logoImg.src = "./images/logo.png";
+            menuToggleImg.src = "./images/toggleopen.svg";
+        }
+    }
+
+    //이중 클릭 안되게
     const menuItems = document.querySelectorAll(".header_menu li");
     menuItems.forEach(function (item) {
         item.addEventListener("click", updateMenuDisplay);
@@ -166,7 +193,7 @@ tl.to(main, {
         pin: true,
     },
 });
-// 페이지 새로고침 시 main_video 트리거 초기화
+//main_video 트리거 초기화
 const refreshScrollTrigger = () => {
     const mainVideoTrigger = ScrollTrigger.getById("mainVideoTrigger");
     if (mainVideoTrigger) {
@@ -176,6 +203,7 @@ const refreshScrollTrigger = () => {
 
 window.addEventListener("load", refreshScrollTrigger);
 window.addEventListener("resize", refreshScrollTrigger);
+window.addEventListener("scroll", refreshScrollTrigger);
 
 
 // about
