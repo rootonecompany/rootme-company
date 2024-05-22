@@ -16,6 +16,14 @@ span {
 
 .story_txt_container {
     margin-top: 120px;
+    transform: translateY(0);
+    /* opacity: 0; */
+    transition: opacity 0.6s ease, transform 0.4s ease;
+}
+
+.txt-up {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .story_title_txt {
