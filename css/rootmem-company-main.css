@@ -64,6 +64,7 @@
 }
 .main_txt {
     width: 100%;
+    overflow: hidden;
 }
 
 .main_txt p {
@@ -75,7 +76,12 @@
     line-height: normal;
     letter-spacing: -0.64px;
     margin: 208px 0 0;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    opacity: 0;
 }
+
 .main_txt h2 {
     text-align: center;
     font-size: 11.2rem;
@@ -83,15 +89,23 @@
     font-weight: 900;
     line-height: normal;
     text-transform: uppercase;
-    margin: 34px 0 92px;
+    margin: 34px 0 0px;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    opacity: 0;
 }
+
 .main_txt p.mainSlideUp {
-    animation: maintxt 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0s;
 }
 .main_txt h2.mainSlideUp {
-    animation: maintxt 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.5s;
 }
 .main_video {
+    margin-top: 92px;
     text-align: center;
     position: relative;
     width: 100%;

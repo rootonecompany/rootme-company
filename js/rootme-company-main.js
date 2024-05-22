@@ -22,20 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const menubg = document.querySelector(".header");
     const logoImg = document.querySelector('.logo img');
     const triggerOffset = 530;
-    let isHeaderHidden = false;
-    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
-
     const storyCardWrap = document.querySelector(".story_card_wrap");
     const brandSection = document.querySelector("#brand");
-
-    function updateMenuDisplay() {
-        menuBar.classList.remove("active");
-        menubg.classList.remove("active");
-
-        const iconImg = menuToggle.querySelector("img");
-        iconImg.src = "./images/toggleopen.svg";
-        logoImg.src = "./images/logo.png";
-    }
+    let isHeaderHidden = false;
+    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
     function handleScroll() {
         const st = window.scrollY || document.documentElement.scrollTop;
@@ -53,8 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
+        //해상도가 768px보다 커지면 header logo.img가 close.png로 변경됨
         if (window.innerWidth <= 768 && isMenuActive) {
             logoImg.src = "./images/logoclose.png";
+            //스크롤이 story 안에 있을경우 header에 .darkMode class가 붙어서 스타일이 바뀜
+            // + 위치에 따라 header 내부 img src 값이 바뀜
         } else if (st >= storyCardWrap.offsetTop && st <= brandSection.offsetTop) {
             const menuItems = document.querySelectorAll('.header_menu li');
             menuItems.forEach(function (item) {
@@ -74,6 +67,17 @@ document.addEventListener("DOMContentLoaded", function () {
         lastScrollTop = st <= 0 ? 0 : st;
     }
 
+    // 헤더가 768px 이상이 될 때 
+    function updateMenuDisplay() {
+        menuBar.classList.remove("active");
+        menubg.classList.remove("active");
+
+        const iconImg = menuToggle.querySelector("img");
+        iconImg.src = "./images/toggleopen.svg";
+        logoImg.src = "./images/logo.png";
+        lenis.start()
+    }
+
     function handleResize() {
         if (window.innerWidth > 768) {
             updateMenuDisplay();
@@ -84,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleResize);
 
+    //토글 이미지 클릭 시 active 값을 통해 스타일 조절
     menuToggle.addEventListener("click", function () {
         menuBar.classList.toggle("active");
         menubg.classList.toggle("active");
@@ -93,9 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (menuBar.classList.contains("active")) {
             iconImg.src = "./images/toggleclose.svg";
             logoImg.src = "./images/logoclose.png";
+            lenis.stop()
         } else {
             iconImg.src = "./images/toggleopen.svg";
             logoImg.src = "./images/logo.png";
+            lenis.start()
             if (window.innerWidth > 768) {
                 logoImg.src = "./images/logo.png";
             }
@@ -103,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // story 구간에서 토글 열고 닫을때 전환 코드
     function updateLogoBasedOnScroll() {
         const st = window.scrollY || document.documentElement.scrollTop;
         const isMenuActive = menuBar.classList.contains("active");
@@ -151,11 +159,33 @@ const main = document.querySelector(".main");
 const mainVideo = document.querySelector(".main_video");
 const video = document.querySelector(".main_video_object");
 
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1920) {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 68rem) / 2)) round 2rem)", })
+    } else if (window.innerWidth >= 768) {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 68rem) / 2)) round 2rem)", })
+    } else if (window.innerWidth >= 550) {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 48rem) / 2)) round 2rem)", })
+    } else if (window.innerWidth >= 360) {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 34rem) / 2)) round 2rem)", })
+    } else {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 26rem) / 2)) round 2rem)", })
+    }
+
+    return;
+})
+
 // clipPath 설정 함수
 const setClipPath = (progress, size) => {
+    ScrollTrigger.saveStyles(".main_video");
     const clipPathValue = progress === 1
         ? `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`
         : `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)) round 2rem)`;
+
+    // const clipPathValueDel = progress === 0
+    //     ? ``
+    //     : clipPathValue;
+
     gsap.set(mainVideo, { clipPath: clipPathValue });
 };
 
@@ -191,6 +221,7 @@ tl.to(main, {
         start: "top top",
         end: () => "+=" + video.clientHeight,
         pin: true,
+
     },
 });
 //main_video 트리거 초기화
@@ -227,6 +258,8 @@ ScrollTrigger.create({
 window.addEventListener("resize", () => {
     ScrollTrigger.refresh();
 });
+
+
 
 // work move text
 const workTopTxt = document.querySelector(".work_top_txt");

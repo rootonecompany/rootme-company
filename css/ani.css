@@ -42,13 +42,14 @@
         transform: translateY(0);
     }
 }
-@keyframes maintxt {
+
+@keyframes scrollUpTxt {
     0% {
+        transform: translateY(100%);
         opacity: 0;
-        transform: translateY(5%);
     }
     100% {
-        opacity: 1;
         transform: translateY(0);
+        opacity: 1;
     }
 }
