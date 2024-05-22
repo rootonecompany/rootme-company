@@ -60,10 +60,10 @@ gsap.fromTo(
 );
 
 // text scroll up 애니메이션
-// gsap.utils.toArray("txtup").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top 70%",
-//         toggleClass: "txt-up",
-//     });
-// });
+gsap.utils.toArray("txtup").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top 70%",
+        toggleClass: "txt-up",
+    });
+});
