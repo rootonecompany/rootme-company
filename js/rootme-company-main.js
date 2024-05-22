@@ -256,37 +256,50 @@ window.addEventListener("scroll", refreshScrollTrigger);
 // });
 const aboutSection = document.querySelector('.about');
 
-// about 섹션에 대해 ScrollTrigger 설정
-gsap.timeline({
-    scrollTrigger: {
-        trigger: aboutSection,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        pin: true,
-        onEnter: () => {
-            // lenis.stop();
-            Reveal.initialize({
-                embedded: true,
-                center: true,
-                hash: true,
-                autoSlide: 0,
-                loop: false,
-                width: "100%",
-                disableLayout: false,
-                scroll: true,
-                view: "scroll",
-                scrollProgress: true,
-                scrollLayout: 'full',
-                overview: true,
-                scrollActivationWidth: null
-            });
-        },
-        onLeave: () => {
-            // lenis.start();
-        }
-    }
+Reveal.initialize({
+    embedded: true,
+    center: true,
+    hash: true,
+    loop: true,
+    width: "100%",
+    disableLayout: false,
+    scroll: true,
+    view: "scroll",
+    scrollProgress: true,
+    scrollLayout: 'full',
+    overview: true,
+    scrollActivationWidth: null
 });
+
+function test() {
+    window.addEventListener("scroll", (e) => {
+        e.preventDefault();
+    })
+}
+// about 섹션에 대해 ScrollTrigger 설정
+// gsap.timeline({
+//     scrollTrigger: {
+//         trigger: aboutSection,
+//         start: "top top",
+//         end: "bottom top",
+//         scrub: true,
+//         pin: true,
+//         onEnter: () => {
+
+//             lenis.destroy();
+
+//         },
+//         onLeave: () => {
+//             const lenis = new Lenis();
+
+//             lenis.on("scroll", ScrollTrigger.update);
+
+//             gsap.ticker.add((time) => {
+//                 lenis.raf(time * 700);
+//             });
+//         }
+//     }
+// });
 
 
 // window.addEventListener("resize", () => {
