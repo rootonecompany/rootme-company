@@ -1,4 +1,4 @@
-// gsap 스크롤 트리거
+// GSAP 스크롤 트리거 (카드 애니메이션)
 const cardWrap = document.querySelector(".story_card_wrap");
 const cardFrame = document.querySelector(".story_card_frame");
 const panels = gsap.utils.toArray(".story_card");
@@ -38,7 +38,7 @@ myDropDownBtn.addEventListener("click", (e) => {
     myDropdownContent.classList.toggle("show");
 });
 
-// 로고 애니메이션 (test)
+// brand logo 애니메이션
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.fromTo(
@@ -58,3 +58,12 @@ gsap.fromTo(
         },
     }
 );
+
+// text scroll up 애니메이션
+// gsap.utils.toArray("txtup").forEach((elem) => {
+//     ScrollTrigger.create({
+//         trigger: elem,
+//         start: "top 70%",
+//         toggleClass: "txt-up",
+//     });
+// });
