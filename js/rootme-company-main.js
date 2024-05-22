@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const menubg = document.querySelector(".header");
     const logoImg = document.querySelector('.logo img');
     const triggerOffset = 530;
-    const storyCardWrap = document.querySelector(".story_card_wrap");
+    // const storyCardWrap = document.querySelector(".story_card_wrap");
+    const storyCardWrap = document.querySelector(".test_wrap");
+
     const brandSection = document.querySelector("#brand");
     let isHeaderHidden = false;
     let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -42,13 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 isHeaderHidden = false;
             }
         }
-
+        // st >= storyCardWrap.offsetTop && st <= brandSection.offsetTop
         //해상도가 768px보다 커지면 header logo.img가 close.png로 변경됨
         if (window.innerWidth <= 768 && isMenuActive) {
             logoImg.src = "./images/logoclose.png";
             //스크롤이 story 안에 있을경우 header에 .darkMode class가 붙어서 스타일이 바뀜
             // + 위치에 따라 header 내부 img src 값이 바뀜
-        } else if (st >= storyCardWrap.offsetTop && st <= brandSection.offsetTop) {
+        } else if (st >= storyCardWrap.getBoundingClientRect().top + window.scrollY && st <= brandSection.offsetTop) {
             const menuItems = document.querySelectorAll('.header_menu li');
             menuItems.forEach(function (item) {
                 item.classList.add('darkMode');
@@ -270,7 +272,7 @@ gsap.set(workTopTxt, { y: 0 });
 ScrollTrigger.create({
     trigger: workSection,
     start: "top top",
-    end: "95% bottom",
+    end: "93% bottom",
     scrub: 1,
     onUpdate: () => {
         const translateY = window.scrollY - workSection.offsetTop;
