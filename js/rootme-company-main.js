@@ -161,6 +161,7 @@ const video = document.querySelector(".main_video_object");
 
 // clipPath 설정 함수
 const setClipPath = (progress, size) => {
+    ScrollTrigger.saveStyles(".main_video");
     const clipPathValue = progress === 1
         ? `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`
         : `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)) round 2rem)`;
@@ -199,7 +200,7 @@ tl.to(main, {
         start: "top top",
         end: () => "+=" + video.clientHeight,
         pin: true,
-        id: "mainVideoTrigger"
+
     },
 });
 //main_video 트리거 초기화
@@ -236,6 +237,8 @@ ScrollTrigger.create({
 window.addEventListener("resize", () => {
     ScrollTrigger.refresh();
 });
+
+
 
 // work move text
 const workTopTxt = document.querySelector(".work_top_txt");
