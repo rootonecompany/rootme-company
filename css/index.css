@@ -366,7 +366,7 @@ footer {
     border-radius: 10px;
     margin-top: -230px;
     overflow: hidden;
-    width: 100%;
+    max-width: 100%;
 }
 
 .footer_dropdown_content a {
