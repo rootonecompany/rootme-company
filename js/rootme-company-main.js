@@ -238,26 +238,61 @@ window.addEventListener("scroll", refreshScrollTrigger);
 
 
 // about
-const aboutAni = gsap.timeline();
-aboutAni
-    .from(".about_container .about_txt1", { autoAlpha: 1, duration: 0 }, "+=1")
-    .from(".about_container .about_txt2", { autoAlpha: 0, duration: 0 }, 2)
-    .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0 }, 6);
+// const aboutAni = gsap.timeline();
+// aboutAni
+//     .from(".about_container .about_txt1", { autoAlpha: 1, duration: 0 }, "+=1")
+//     .from(".about_container .about_txt2", { autoAlpha: 0, duration: 0 }, 2)
+//     .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0 }, 6);
 
-ScrollTrigger.create({
-    animation: aboutAni,
-    trigger: ".about_container",
-    start: "top top",
-    end: "+=1500",
-    scrub: true,
-    pin: true,
-    markers: false,
-    anticipatePin: 1,
+// ScrollTrigger.create({
+//     animation: aboutAni,
+//     trigger: ".about_container",
+//     start: "top top",
+//     end: "+=1500",
+//     scrub: true,
+//     pin: true,
+//     markers: false,
+//     anticipatePin: 1,
+// });
+const aboutSection = document.querySelector('.about');
+
+// about 섹션에 대해 ScrollTrigger 설정
+gsap.timeline({
+    scrollTrigger: {
+        trigger: aboutSection,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        pin: true,
+        onEnter: () => {
+            // lenis.stop();
+            Reveal.initialize({
+                embedded: true,
+                center: true,
+                hash: true,
+                autoSlide: 0,
+                loop: false,
+                width: "100%",
+                disableLayout: false,
+                scroll: true,
+                view: "scroll",
+                scrollProgress: true,
+                scrollLayout: 'full',
+                overview: true,
+                scrollActivationWidth: null
+            });
+        },
+        onLeave: () => {
+            // lenis.start();
+        }
+    }
 });
 
-window.addEventListener("resize", () => {
-    ScrollTrigger.refresh();
-});
+
+// window.addEventListener("resize", () => {
+//     ScrollTrigger.refresh();
+// });
+
 
 
 
@@ -297,3 +332,25 @@ gsap.utils.toArray(".fadein").forEach((elem) => {
         toggleClass: "fade-in",
     });
 });
+
+
+//test
+// var aboutSection = document.querySelector('.about .reveal');
+// Reveal.initialize({
+//     embedded: true,
+//     container: aboutSection,
+//     center: true,
+//     slideNumber: true,
+//     hash: true,
+//     autoSlide: 0,
+//     loop: false,
+//     width: "100%",
+//     disableLayout: false,
+//     scroll: true,
+
+//     view: "scroll",
+//     scrollProgress: true,
+//     disableLayout: false,
+//     center: true,
+// });
+

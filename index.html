@@ -3,7 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css"
+            id="theme"
+        />
         <!-- main css -->
         <link rel="stylesheet" href="./css/reset.css" />
         <link rel="stylesheet" href="./css/common.css" />
@@ -62,8 +67,6 @@
                     <div class="main_wrap">
                         <div class="main_txt">
                             <p class="mainSlideUp">스마트한 서비스, 스마트한 비즈니스</p>
-                        </div>
-                        <div class="main_txt">
                             <h2 class="mainSlideUp">BAUM ROOTME</h2>
                         </div>
                         <div class="main_video">
@@ -84,42 +87,48 @@
                 </section>
 
                 <section class="about section" id="about">
-                    <div class="about_container">
-                        <div class="about_box about_txt1">
-                            <div class="about_txt">
-                                <span class="about_txt_top">Expert in Each field</span>
-                                <div class="about_txt_bottom">
-                                    <span>1</span>
-                                    <h3>
-                                        다양한 분야의 전문가들이 모여<br />서비스의 상상을 현실로
-                                        만드는 곳
-                                    </h3>
+                    <div class="reveal">
+                        <div class="slides">
+                            <section>
+                                <div class="box bg1">
+                                    <div class="about_txt">
+                                        <span class="about_txt_top">Expert in Each field</span>
+                                        <div class="about_txt_bottom">
+                                            <span>1</span>
+                                            <h3>
+                                                다양한 분야의 전문가들이 모여<br />서비스의 상상을
+                                                현실로 만드는 곳
+                                            </h3>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="about_box about_txt2">
-                            <div class="about_txt">
-                                <span class="about_txt_top">Flexible thinking attitude</span>
-                                <div class="about_txt_bottom">
-                                    <span>2</span>
-                                    <h3>
-                                        우리는 열린 생각과 유연한 태도로<br />서비스를 행복하게
-                                        만듭니다.
-                                    </h3>
+                                <div class="box bg2 fragment fade-in-then-out">
+                                    <div class="about_txt">
+                                        <span class="about_txt_top"
+                                            >Flexible thinking attitude</span
+                                        >
+                                        <div class="about_txt_bottom">
+                                            <span>2</span>
+                                            <h3>
+                                                우리는 열린 생각과 유연한 태도로<br />서비스를
+                                                행복하게 만듭니다.
+                                            </h3>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="about_box about_txt3">
-                            <div class="about_txt">
-                                <span class="about_txt_top">New flow service</span>
-                                <div class="about_txt_bottom">
-                                    <span>3</span>
-                                    <h3>
-                                        각자의 다양한 개성과 능력으로<br />새로운 흐름의 서비스를
-                                        만듭니다.
-                                    </h3>
+                                <div class="box bg3 fragment fade-in-then-out">
+                                    <div class="about_txt">
+                                        <span class="about_txt_top">New flow service</span>
+                                        <div class="about_txt_bottom">
+                                            <span>3</span>
+                                            <h3>
+                                                각자의 다양한 개성과 능력으로<br />새로운 흐름의
+                                                서비스를 만듭니다.
+                                            </h3>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </section>
                         </div>
                     </div>
                 </section>
@@ -435,6 +444,8 @@
             </footer>
         </div>
 
+        <!-- reveal.js script -->
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
         <!-- main js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
         <!-- ScrollTrigger CDN -->
