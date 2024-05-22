@@ -23,13 +23,13 @@
 
 @keyframes bounce {
     0% {
-        top: 30px;
+        top: 35px;
     }
     50% {
         top: 40px;
     }
     100% {
-        top: 30px;
+        top: 35px;
     }
 }
 

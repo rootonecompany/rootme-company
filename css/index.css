@@ -16,9 +16,9 @@ span {
 
 .story_txt_container {
     margin-top: 120px;
-    opacity: 0;
+    /* opacity: 0;
     transform: translateY(110px);
-    transition: opacity 0.6s ease, transform 0.4s ease;
+    transition: opacity 0.6s ease, transform 0.4s ease; */
 }
 
 .story_txt_container span {
@@ -131,14 +131,9 @@ span {
 }
 
 .story_story_content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    /* opacity: 0;
-    transform: translateY(110px);
-    transition: opacity 0.6s ease, transform 0.4s ease; */
-    margin-top: 70px;
+    margin-top: 426px;
+    margin-bottom: 230px;
+    width: 100%;
 }
 
 .story_story_content > h5 {
@@ -163,7 +158,7 @@ span {
     line-height: 1.58;
     padding: 40px;
     white-space: nowrap;
-    margin-left: 20%;
+    margin-left: 450px;
 }
 
 .story_scroll_icon {
@@ -218,9 +213,6 @@ span {
 
 .brand_content_txt {
     text-align: center;
-    opacity: 0;
-    transform: translateY(110px);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .brand_content_txt > span {
@@ -281,25 +273,14 @@ span {
     font-weight: 700;
 }
 
-.container_imgBox {
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.4s ease;
-}
-
 .contact_img {
     margin: 42px 0 52px 0;
     height: 490px;
     object-fit: cover;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .contact_container_txt {
     margin-bottom: 129px;
-    opacity: 0;
-    transform: translateY(110px);
-    transition: opacity 0.6s ease, transform 0.4s ease;
 }
 
 .contact_container_txt h5 {
@@ -335,7 +316,10 @@ footer {
 .footer_dropdown {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+}
+.footer_dropdown > div {
+    position: relative;
 }
 
 .footer_dropdown_btn {
@@ -366,7 +350,7 @@ footer {
     border-radius: 10px;
     margin-top: -230px;
     overflow: hidden;
-    max-width: 100%;
+    width: 100%;
 }
 
 .footer_dropdown_content a {

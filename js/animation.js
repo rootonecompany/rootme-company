@@ -1,7 +1,7 @@
 // gsap 스크롤 트리거
 const cardWrap = document.querySelector(".story_card_wrap");
-const panels = gsap.utils.toArray(".story_card");
 const cardFrame = document.querySelector(".story_card_frame");
+const panels = gsap.utils.toArray(".story_card");
 
 // let mm = gsap.matchMedia();
 
@@ -17,11 +17,9 @@ gsap.to(cardFrame, {
         // end: "bottom bottom",
         end: "bottom 10%",
         pinSpacing: true,
-        scrub: 1.5,
-        // markers: true,
+        scrub: true,
         snap: {
             snapTo: 1 / (panels.length - 1),
-            delay: 3,
         },
     },
 });
@@ -60,5 +58,3 @@ gsap.fromTo(
         },
     }
 );
-
-// 카드 애니메이션 (JS)

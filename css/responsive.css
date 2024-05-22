@@ -317,6 +317,11 @@
         justify-content: space-evenly;
     }
 
+    .story_story_content {
+        margin-top: 216px;
+        margin-bottom: 88px;
+    }
+
     .story_story_content h5 {
         font-size: 4.2rem;
         line-height: 1.4;
@@ -327,7 +332,7 @@
         font-size: 2.4rem;
         padding: 40px;
         margin-left: calc(124px - 40px);
-        padding-top: 2%;
+        padding-top: 18px;
         padding-bottom: 0;
     }
 
@@ -559,10 +564,6 @@
         font-size: 3.5rem;
     }
 
-    .story_story_content p {
-        margin-left: -50px;
-    }
-
     .brand_header span {
         font-size: 1.2rem;
     }
@@ -572,10 +573,10 @@
     }
 
     /* contact */
-    /* .contact_container {
+    .contact_container {
         display: flex;
         flex-direction: column;
-    } */
+    }
 
     .contact_container span {
         margin-left: calc(48px - 20px);
@@ -728,6 +729,11 @@
         height: 560px;
         align-items: center;
         justify-content: flex-start;
+    }
+
+    .story_story_content {
+        margin-top: 178px;
+        margin-bottom: 68px;
     }
 
     .story_story_content h5 {
