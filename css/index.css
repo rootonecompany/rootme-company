@@ -8,7 +8,7 @@ span {
     word-wrap: break-word;
 }
 
-/* story */
+/* story - 타이틀 */
 #story {
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@ span {
     display: none;
 }
 
-/* story - 카드 박스 페이지 */
+/* story - 카드 슬라이드 */
 .story_card_wrap {
     background: url("../images/story_bg1.png") no-repeat center/cover;
     height: 1400px;
@@ -146,7 +146,7 @@ span {
     text-transform: capitalize;
 }
 
-/* story - 스토리 페이지 */
+/* story - 스토리 */
 .story_story_wrap {
     background: url("../images/story_bg2.png") center/cover;
     width: 100%;
@@ -287,6 +287,7 @@ span {
     width: 100%;
     opacity: 0;
 }
+
 .brand_title_txt h5 > span {
     font-size: 10rem;
     font-weight: 400;
@@ -400,7 +401,6 @@ footer {
     flex-direction: column;
 }
 
-/* 드롭다운 메뉴 */
 .footer_dropdown {
     position: relative;
     display: flex;
@@ -487,17 +487,4 @@ footer {
 
 .footer_btm_address p:nth-child(2) {
     margin-top: 16px;
-}
-
-/* scroll text up */
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-    z-index: 2;
-}
-
-.fade-out {
-    opacity: 0;
-    transform: translateY(110px);
-    z-index: 2;
 }

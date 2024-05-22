@@ -9,7 +9,6 @@
         padding: 42px 0;
     }
 
-    /* story - 스토리 페이지 */
     .story_story_txt h5 {
         font-size: 7.5rem;
     }
@@ -136,7 +135,6 @@
         padding: 32px 0;
     }
 
-    /* story - 카드 박스 페이지 */
     .story_card_inner {
         margin: 56px 60px;
         gap: 220px;
@@ -276,7 +274,6 @@
         display: none;
     }
 
-    /* story - card box 페이지 */
     .story_card_wrap {
         height: 720px;
     }
@@ -312,7 +309,6 @@
         font-size: 1rem;
     }
 
-    /* story - 스토리 페이지 */
     .story_story_wrap {
         height: 720px;
         justify-content: space-evenly;
@@ -470,6 +466,7 @@
 }
 
 @media screen and (max-width: 690px) {
+    /* story */
     .story_title_txt span {
         font-size: 1.2rem;
     }
@@ -501,6 +498,7 @@
         margin-left: 0;
     }
 
+    /* brand */
     .brand_title_txt span {
         font-size: 1.6rem;
     }
@@ -521,6 +519,7 @@
         font-size: 4rem;
     }
 
+    /* contact */
     .contact_container span {
         margin-left: 50px;
         font-size: 1.2rem;
@@ -553,6 +552,7 @@
         padding: 0 20px;
     }
 
+    /* story */
     .story_title_txt span {
         margin-left: 7%;
     }
@@ -565,6 +565,7 @@
         font-size: 3.5rem;
     }
 
+    /* brand */
     .brand_header span {
         font-size: 1.2rem;
     }
@@ -656,6 +657,7 @@
 }
 
 @media screen and (max-width: 470px) {
+    /* story */
     .story_title_txt h5 br.mobile {
         display: block;
     }
@@ -664,6 +666,15 @@
         display: none;
     }
 
+    .story_story_txt h5 {
+        font-size: 2.8rem;
+    }
+
+    .story_story_txt p {
+        margin-left: 0;
+    }
+
+    /* brand */
     .brand_title_txt h5 {
         font-size: 3.2rem;
     }
@@ -674,14 +685,6 @@
 
     .brand_logo_container {
         grid-gap: 1.2rem;
-    }
-
-    .story_story_txt h5 {
-        font-size: 2.8rem;
-    }
-
-    .story_story_txt p {
-        margin-left: 0;
     }
 }
 
@@ -700,7 +703,6 @@
         display: none;
     }
 
-    /* story - card box 페이지 */
     .story_card_frame {
         padding: 7%;
     }
@@ -725,7 +727,6 @@
         margin: 20px auto 43px auto;
     }
 
-    /* story - 스토리 페이지 */
     .story_story_wrap {
         height: 560px;
         align-items: center;
