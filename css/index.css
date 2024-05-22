@@ -48,6 +48,7 @@ span {
     height: 1400px;
     display: flex;
     align-items: center;
+    /* overflow-x: hidden; */
 }
 
 .story_sticky {
@@ -365,6 +366,7 @@ footer {
     border-radius: 10px;
     margin-top: -230px;
     overflow: hidden;
+    width: 100%;
 }
 
 .footer_dropdown_content a {

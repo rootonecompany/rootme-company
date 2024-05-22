@@ -399,7 +399,7 @@
     }
 
     .contact_container_txt {
-        margin-bottom: 0;
+        margin-bottom: 180px;
     }
 
     .contact_container_txt h5 {
@@ -769,6 +769,10 @@
     .contact_container {
         display: flex;
         flex-direction: column;
+    }
+
+    .contact_container_txt {
+        margin-bottom: 160px;
     }
 
     .contact_container_txt h5 {
