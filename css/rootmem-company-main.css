@@ -97,11 +97,11 @@
 }
 
 .main_txt p.mainSlideUp {
-    animation: maintxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
     animation-delay: 0s;
 }
 .main_txt h2.mainSlideUp {
-    animation: maintxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
     animation-delay: 0.5s;
 }
 .main_video {

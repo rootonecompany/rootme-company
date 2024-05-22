@@ -159,12 +159,33 @@ const main = document.querySelector(".main");
 const mainVideo = document.querySelector(".main_video");
 const video = document.querySelector(".main_video_object");
 
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1920) {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 68rem) / 2)) round 2rem)", })
+    } else if (window.innerWidth >= 768) {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 68rem) / 2)) round 2rem)", })
+    } else if (window.innerWidth >= 550) {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 48rem) / 2)) round 2rem)", })
+    } else if (window.innerWidth >= 360) {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 34rem) / 2)) round 2rem)", })
+    } else {
+        gsap.set(mainVideo, { clipPath: "inset(0 calc(1 * ((100% - 26rem) / 2)) round 2rem)", })
+    }
+
+    return;
+})
+
 // clipPath 설정 함수
 const setClipPath = (progress, size) => {
     ScrollTrigger.saveStyles(".main_video");
     const clipPathValue = progress === 1
         ? `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`
         : `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)) round 2rem)`;
+
+    // const clipPathValueDel = progress === 0
+    //     ? ``
+    //     : clipPathValue;
+
     gsap.set(mainVideo, { clipPath: clipPathValue });
 };
 
@@ -276,5 +297,3 @@ gsap.utils.toArray(".fadein").forEach((elem) => {
         toggleClass: "fade-in",
     });
 });
-
-// test
