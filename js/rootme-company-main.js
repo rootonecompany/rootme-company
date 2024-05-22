@@ -199,6 +199,7 @@ tl.to(main, {
         start: "top top",
         end: () => "+=" + video.clientHeight,
         pin: true,
+        id: "mainVideoTrigger"
     },
 });
 //main_video 트리거 초기화
