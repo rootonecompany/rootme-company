@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const menubg = document.querySelector(".header");
     const logoImg = document.querySelector('.logo img');
     const triggerOffset = 530;
-    // const storyCardWrap = document.querySelector(".story_card_wrap");
-    const storyCardWrap = document.querySelector(".test_wrap");
+    const storyCardWrap = document.querySelector(".story_card_wrap");
+    // const storyCardWrap = document.querySelector(".test_wrap");
 
     const brandSection = document.querySelector("#brand");
     let isHeaderHidden = false;
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (window.innerWidth <= 768 && isMenuActive) {
             logoImg.src = "./images/logoclose.png";
-        } else if (st >= storyCardWrap.offsetTop && st <= brandSection.offsetTop) {
+        } else if (st >= storyCardWrap.getBoundingClientRect().top + window.scrollY && st <= brandSection.offsetTop) {
             const menuItems = document.querySelectorAll('.header_menu li');
             menuItems.forEach(function (item) {
                 item.classList.add('darkMode');
@@ -372,10 +372,18 @@ gsap.utils.toArray(".fadein").forEach((elem) => {
         toggleClass: "fade-in",
     });
 });
+gsap.utils.toArray(".Slide").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top 100%",
+        toggleClass: "SlideUp",
+        once: true
+    });
+});
 gsap.utils.toArray(".Slide2").forEach((elem) => {
     ScrollTrigger.create({
         trigger: elem,
-        start: "top 80%",
+        start: "top -350",
         toggleClass: "SlideUp",
         once: true
     });
@@ -383,15 +391,42 @@ gsap.utils.toArray(".Slide2").forEach((elem) => {
 gsap.utils.toArray(".Slide3").forEach((elem) => {
     ScrollTrigger.create({
         trigger: elem,
-        start: "top top",
+        start: "top -1100",
         toggleClass: "SlideUp",
         once: true
     });
 });
-gsap.utils.toArray(".Slide4").forEach((elem) => {
+
+// 
+gsap.utils.toArray(".SrotyCardSlide").forEach((elem) => {
     ScrollTrigger.create({
         trigger: elem,
-        start: "top -1100",
+        start: "top 100%",
+        toggleClass: "SlideUp",
+        once: true
+    });
+});
+
+gsap.utils.toArray(".SrotySlide").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top 60%",
+        toggleClass: "SlideUp",
+        once: true
+    });
+});
+gsap.utils.toArray(".BrandSlide").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top 5%",
+        toggleClass: "SlideUp",
+        once: true
+    });
+});
+gsap.utils.toArray(".ContactSlide").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top 5%",
         toggleClass: "SlideUp",
         once: true
     });

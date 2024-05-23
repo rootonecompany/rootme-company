@@ -3,12 +3,13 @@
     .about_txt_top {
         font-size: 1.4rem;
     }
-    .about_txt_bottom span {
-        left: -8px;
+    .about_txt_bottom p {
+        top: 55px;
+        left: 12px;
         font-size: 3.4rem;
     }
-    .about_box:nth-child(2) > .about_txt > .about_txt_bottom span {
-        left: -28px;
+    .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
+        left: 10px;
     }
     .about_txt h3 {
         margin-top: 39px;
@@ -38,12 +39,15 @@
     .about_txt_top {
         font-size: 1.3rem;
     }
-    .about_txt_bottom span {
-        left: -4px;
+    .about_txt_bottom p {
+        left: 5px;
         font-size: 3.1rem;
     }
-    .about_box:nth-child(2) > .about_txt > .about_txt_bottom span {
-        left: -27px;
+    .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
+        left: 8px;
+    }
+    .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
+        padding: 0 35px;
     }
     .about_txt h3 {
         margin-top: 37px;
@@ -191,12 +195,17 @@
     .about_txt_top {
         font-size: 1.2rem;
     }
-    .about_txt_bottom span {
+    .about_txt_bottom p {
+        top: 51px;
         left: 0px;
         font-size: 2.8rem;
     }
-    .about_box:nth-child(2) > .about_txt > .about_txt_bottom span {
-        left: -25px;
+    .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
+        left: -4px;
+    }
+
+    .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
+        padding: 0 20px;
     }
     .about_txt h3 {
         font-size: 4.2rem;
@@ -283,12 +292,13 @@
     .about_txt_top {
         font-size: 1.1rem;
     }
-    .about_txt_bottom span {
-        left: -1px;
+    .about_txt_bottom p {
+        top: 50px;
+        left: 27px;
         font-size: 2.2rem;
     }
-    .about_box:nth-child(2) > .about_txt > .about_txt_bottom span {
-        left: -20px;
+    .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
+        left: 25px;
     }
     .about_txt h3 {
         font-size: 3.2rem;
@@ -318,6 +328,17 @@
     .main_video {
         margin-top: 45px;
         clip-path: inset(0 calc((100% - 34rem) / 2) round 2rem);
+    }
+    /*  about */
+    .about_txt_bottom p {
+        top: 49px;
+        left: 8px;
+    }
+    .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
+        left: 4px;
+    }
+    .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
+        padding: 0 25px;
     }
     /* work */
     .work {
@@ -388,17 +409,20 @@
     .about_txt_top {
         font-size: 1rem;
     }
-    .about_txt_bottom span {
-        left: -2px;
+    .about_txt_bottom p {
+        left: 3px;
         font-size: 2rem;
     }
-    .about_box:nth-child(2) > .about_txt > .about_txt_bottom span {
-        left: -18px;
+    .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
+        left: 3px;
     }
     .about_txt h3 {
         font-size: 2.7rem;
         margin-top: 29px;
         letter-spacing: -0.54px;
+    }
+    .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
+        padding: 0 20px;
     }
 }
 @media (max-width: 420px) {
@@ -412,8 +436,19 @@
     .about_txt3 {
         background-size: 270px 270px;
     }
+    .about_txt_bottom p {
+        top: 48px;
+        left: 4px;
+        font-size: 1.6rem;
+    }
+    .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
+        left: 4px;
+    }
     .about_txt h3 {
         font-size: 2.3rem;
+    }
+    .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
+        padding: 0 20px;
     }
 }
 @media (max-width: 360px) {
@@ -447,19 +482,22 @@
     .about_txt_top {
         font-size: 1rem;
     }
-    .about_txt_bottom span {
-        left: -3px;
+    .about_txt_bottom p {
+        top: 48px;
+        left: 0px;
         font-size: 1.6rem;
     }
-    .about_box:nth-child(2) > .about_txt > .about_txt_bottom span {
-        left: -15px;
+    .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
+        left: -2px;
     }
     .about_txt h3 {
         margin-top: 28px;
         letter-spacing: -0.44px;
         font-size: 2.2rem;
     }
-
+    .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
+        padding: 0 15px;
+    }
     /* work */
     .work {
         margin-top: 0x;
@@ -520,16 +558,20 @@
     .about_txt_top {
         font-size: 0.9rem;
     }
-    .about_txt_bottom span {
-        left: -4px;
+    .about_txt_bottom p {
+        top: 49px;
+        left: 5px;
         font-size: 1.4rem;
     }
-    .about_box:nth-child(2) > .about_txt > .about_txt_bottom span {
-        left: -13px;
+    .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
+        left: 3px;
     }
     .about_txt h3 {
         font-size: 2rem;
         margin-top: 27px;
         letter-spacing: -0.34px;
+    }
+    .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
+        padding: 0 20px;
     }
 }

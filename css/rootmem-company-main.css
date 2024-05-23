@@ -102,7 +102,7 @@
 }
 .main_txt h2.mainSlideUp {
     animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    animation-delay: 0.5s;
+    animation-delay: 0.2s;
 }
 .main_video {
     margin-top: 92px;
@@ -224,12 +224,12 @@
 
 .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
     margin-top: 0;
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
     margin-top: 45px;
     padding: 0 50px;
 }
 .about_box .about_txt .about_txt_bottom:nth-child(2) p {
-    animation-delay: 0.3s;
+    animation-delay: 0.4s;
 }
 .about_box .about_txt .about_txt_bottom:nth-child(3) h3 {
     margin-top: 0;

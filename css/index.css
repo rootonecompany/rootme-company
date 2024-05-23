@@ -38,19 +38,27 @@ span {
     font-size: 10rem;
     font-weight: 400;
     line-height: 1.15;
-    padding: 42px 0;
     text-size-adjust: auto;
     display: inline-block;
     opacity: 0;
     overflow: hidden;
 }
-.story_title_txt span.txtSlideUp {
+.story_title_txt span.SlideUp {
     animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
     animation-delay: 0s;
 }
-.story_title_txt h5.txtSlideUp {
+.story_title_txt h5.SlideUp {
     animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    animation-delay: 0.5s;
+}
+.story_title_txt:nth-child(2) h5 {
+    margin-top: 42px;
+    animation-delay: 0.2s;
+}
+.story_title_txt:nth-child(3) h5 {
+    animation-delay: 0.4s;
+}
+.story_title_txt:nth-child(4) h5 {
+    animation-delay: 0.6s;
 }
 .story_title_txt h5 bold {
     font-weight: 900;
@@ -65,6 +73,7 @@ span {
     height: 1400px;
     display: flex;
     align-items: center;
+    margin-top: 42px;
 }
 .story_sticky {
     height: 100vh;
@@ -164,20 +173,38 @@ span {
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.58;
-    padding: 40px;
+    /* padding: 40px; */
     white-space: nowrap;
     margin-left: 450px;
     overflow: hidden;
     display: inline-block;
     opacity: 0;
 }
-.story_story_txt h5.txtSlideUp {
+.story_story_txt h5.SlideUp {
     animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    animation-delay: 0s;
 }
-.story_story_txt p.txtSlideUp {
+.story_story_txt p.SlideUp {
     animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    animation-delay: 0.5s;
+}
+.story_story_txt:nth-child(1) h5 {
+    animation-delay: 0.6s;
+}
+.story_story_txt:nth-child(2) h5 {
+    animation-delay: 0.8s;
+}
+.story_story_txt:nth-child(3) h5 {
+    animation-delay: 1s;
+}
+.story_story_txt:nth-child(4) p {
+    margin-top: 40px;
+    animation-delay: 1.2s;
+}
+.story_story_txt:nth-child(5) p {
+    animation-delay: 1.4s;
+}
+.story_story_txt:nth-child(6) p {
+    margin-bottom: 40px;
+    animation-delay: 1.6s;
 }
 .story_scroll_icon {
     display: flex;
@@ -241,7 +268,7 @@ span {
 .brand_title_txt > h5 {
     font-size: 10rem;
     font-weight: 900;
-    padding: 36px;
+    /* padding: 36px; */
     color: var(--color-black);
     line-height: 1.12;
     display: inline-block;
@@ -254,16 +281,24 @@ span {
     font-weight: 400;
     color: var(--color-black);
 }
-.brand_title_txt span.txtSlideUp {
+.brand_title_txt span.SlideUp {
     animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.brand_title_txt h5.SlideUp {
+    animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.brand_title_txt:nth-child(1) span {
     animation-delay: 0s;
 }
-.brand_title_txt h5.txtSlideUp {
-    animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    animation-delay: 0.5s;
+.brand_title_txt:nth-child(2) h5 {
+    animation-delay: 0.2s;
+    margin-top: 36px;
+}
+.brand_title_txt:nth-child(3) h5 {
+    animation-delay: 0.4s;
 }
 .brand_logo_wrap {
-    margin-top: 44px;
+    margin-top: 80px;
     margin-bottom: 258px;
     opacity: 1;
     transform: translateY(0);
@@ -303,8 +338,7 @@ span {
     height: 490px;
     object-fit: cover;
 }
-.contact_container_txt {
-    margin-bottom: 129px;
+.contact_title_txt {
     width: 100%;
     overflow: hidden;
 }
@@ -315,6 +349,7 @@ span {
     display: inline-block;
     opacity: 0;
     width: 100%;
+    padding: 0;
 }
 .contact_title_txt h5 bold {
     font-size: 10rem;
@@ -329,20 +364,29 @@ span {
     opacity: 0;
     width: 100%;
 }
-.contact_title_txt p:nth-child(3) {
-    margin-top: 32px;
-}
-.contact_title_txt h5.txtSlideUp {
+.contact_title_txt h5.SlideUp {
     animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.contact_title_txt p.SlideUp {
+    animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.contact_title_txt:nth-child(1) h5 {
     animation-delay: 0s;
 }
-.contact_title_txt p.txtSlideUp {
-    animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    animation-delay: 0.5s;
+.contact_title_txt:nth-child(2) h5 {
+    animation-delay: 0.2s;
+}
+.contact_title_txt:nth-child(3) p {
+    animation-delay: 0.4s;
+}
+.contact_title_txt:nth-child(4) p {
+    margin-top: 32px;
+    animation-delay: 0.6s;
 }
 
 /* footer */
 footer {
+    padding-top: 129px;
     padding-bottom: 60px;
     display: flex;
     flex-direction: column;
