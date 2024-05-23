@@ -410,7 +410,7 @@ gsap.utils.toArray(".SrotyCardSlide").forEach((elem) => {
 gsap.utils.toArray(".SrotySlide").forEach((elem) => {
     ScrollTrigger.create({
         trigger: elem,
-        start: "top 60%",
+        start: "top 80%",
         toggleClass: "SlideUp",
         once: true
     });
@@ -418,7 +418,7 @@ gsap.utils.toArray(".SrotySlide").forEach((elem) => {
 gsap.utils.toArray(".BrandSlide").forEach((elem) => {
     ScrollTrigger.create({
         trigger: elem,
-        start: "top 5%",
+        start: "top 2%",
         toggleClass: "SlideUp",
         once: true
     });
