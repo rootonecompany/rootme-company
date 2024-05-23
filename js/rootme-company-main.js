@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             logoImg.src = "./images/logoclose.png";
             //스크롤이 story 안에 있을경우 header에 .darkMode class가 붙어서 스타일이 바뀜
             // + 위치에 따라 header 내부 img src 값이 바뀜
-        } else if (st >= storyCardWrap.getBoundingClientRect().top + window.scrollY && st <= brandSection.offsetTop) {
+        } else if (st > storyCardWrap.getBoundingClientRect().top + window.scrollY && st <= brandSection.offsetTop) {
             const menuItems = document.querySelectorAll('.header_menu li');
             menuItems.forEach(function (item) {
                 item.classList.add('darkMode');
@@ -407,14 +407,22 @@ gsap.utils.toArray(".SrotyCardSlide").forEach((elem) => {
     });
 });
 
-gsap.utils.toArray(".SrotySlide").forEach((elem) => {
-    ScrollTrigger.create({
-        trigger: elem,
-        start: "top 80%",
-        toggleClass: "SlideUp",
-        once: true
-    });
+// gsap.utils.toArray(".SrotySlide").forEach((elem) => {
+//     ScrollTrigger.create({
+//         trigger: elem,
+//         start: "top -210vh",
+//         toggleClass: "SlideUp",
+//         once: true
+//     });
+// });
+
+ScrollTrigger.create({
+    trigger: ".story_story_content",
+    start: "top 10%",
+    onEnter: () => gsap.utils.toArray(".SrotySlide").forEach((elem) => elem.classList.add("SlideUp")),
+    once: true
 });
+
 gsap.utils.toArray(".BrandSlide").forEach((elem) => {
     ScrollTrigger.create({
         trigger: elem,

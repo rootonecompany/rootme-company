@@ -1,4 +1,4 @@
-// GSAP 스크롤 트리거 (카드 애니메이션)
+// GSAP 스크롤 트리거(카드 애니메이션)
 const storyCardWrap = document.querySelector(".story_card_wrap");
 const storyCard = document.querySelectorAll(".story_card");
 
