@@ -265,102 +265,60 @@ window.addEventListener("resize", () => {
 
 
 // work move text
-// const workTopTxt = document.querySelector(".work_top_txt");
-// const workSection = document.querySelector(".work");
 
-// gsap.set(workTopTxt, { y: 0 });
-
-
-// const calculateEndValue = () => {
-//     if (window.innerWidth >= 1000) {
-//         return "93% bottom";
-//     } else if (window.innerWidth > 900) {
-//         return "94% bottom";
-//     } else if (window.innerWidth > 800) {
-//         return "95% bottom";
-//     } else if (window.innerWidth > 768) {
-//         return "97% bottom";
-//     } else {
-//         return "100% bottom";
-//     }
-// };
-
-// ScrollTrigger.create({
-//     trigger: workSection,
-//     start: "top top",
-//     // end: "93% bottom",
-//     end: calculateEndValue(),
-//     scrub: 1,
-//     onUpdate: () => {
-//         const translateY = window.scrollY - workSection.offsetTop;
-//         const translateSetY = translateY < 0 ? 0 : translateY;
-//         const targetH3 = document.querySelector(".work_move_txt h3:nth-child(1)");
-
-//         if (window.scrollY >= workSection.offsetTop) {
-//             gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
-//             gsap.to(targetH3, { opacity: 0.9, duration: 0.3 });
-//             gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
-//         } else {
-//             gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
-//             gsap.to(targetH3, { opacity: 1, duration: 0.3 });
-//             gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
-//         }
-//     },
-// });
-
-// window.addEventListener('resize', () => {
-//     scrollTrigger.vars.end = calculateEndValue();
-//     scrollTrigger.refresh();
-// });
 const workTopTxt = document.querySelector(".work_top_txt");
 const workSection = document.querySelector(".work");
+const thirdProjectWrap = document.querySelectorAll(".project_wrap")[2];
 
 gsap.set(workTopTxt, { y: 0 });
 
 const setEndValue = () => {
-    let endValue;
-    if (window.matchMedia("(min-width: 1000px)").matches) {
-        endValue = "93% bottom";
-    } else if (window.matchMedia("(min-width: 900px)").matches) {
-        endValue = "94% bottom";
-    } else if (window.matchMedia("(min-width: 800px)").matches) {
-        endValue = "95% bottom";
-    } else if (window.matchMedia("(min-width: 768px)").matches) {
-        endValue = "97% bottom";
-    } else {
-        endValue = "100% bottom";
-    }
-    return endValue;
+    const thirdProjectWrapTop = thirdProjectWrap.offsetTop;
+    const thirdProjectWrapHeight = thirdProjectWrap.offsetHeight;
+    const endPosition = thirdProjectWrapTop + (thirdProjectWrapHeight / 2);
+    return endPosition - window.innerHeight / 2;
 };
 
-ScrollTrigger.create({
-    trigger: workSection,
-    start: "top top",
-    end: setEndValue(),
-    scrub: 1,
-    onUpdate: () => {
-        const translateY = window.scrollY - workSection.offsetTop;
-        const translateSetY = translateY < 0 ? 0 : translateY;
-        const targetH3 = document.querySelector(".work_move_txt h3:nth-child(1)");
+let scrollTriggerInstance = null;
 
-        if (window.scrollY >= workSection.offsetTop) {
-            gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
-            gsap.to(targetH3, { opacity: 0.9, duration: 0.3 });
-            gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
-        } else {
-            gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
-            gsap.to(targetH3, { opacity: 1, duration: 0.3 });
-            gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
-        }
-    },
-});
+const createScrollTrigger = () => {
+    if (scrollTriggerInstance) {
+        scrollTriggerInstance.kill();
+    }
 
+    scrollTriggerInstance = ScrollTrigger.create({
+        trigger: workSection,
+        start: "top top",
+        end: () => setEndValue() + "px",
+        scrub: 1,
+        onUpdate: () => {
+            const translateY = window.scrollY - workSection.offsetTop;
+            const translateSetY = translateY < 0 ? 0 : translateY;
+            const targetH3 = document.querySelector(".work_move_txt h3:nth-child(1)");
 
-window.addEventListener('resize,load,scroll', () => {
-    ScrollTrigger.saveStyles(".work_top_txt");
+            if (window.scrollY >= workSection.offsetTop) {
+                gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
+                gsap.to(targetH3, { opacity: 0.9, duration: 0.3 });
+                gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
+            } else {
+                gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
+                gsap.to(targetH3, { opacity: 1, duration: 0.3 });
+                gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
+            }
+        },
+    });
+};
+
+createScrollTrigger();
+
+const updateScrollTrigger = () => {
+    createScrollTrigger();
     ScrollTrigger.refresh();
-    ScrollTrigger.config({ end: setEndValue() });
-});
+}
+
+window.addEventListener('resize', updateScrollTrigger);
+window.addEventListener('load', updateScrollTrigger);
+updateScrollTrigger();
 
 
 
