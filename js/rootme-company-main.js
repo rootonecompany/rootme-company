@@ -244,13 +244,14 @@ const aboutAni = gsap.timeline();
 aboutAni
     .from(".about_container .about_txt1", { autoAlpha: 1, duration: 0 }, "+=1")
     .from(".about_container .about_txt2", { autoAlpha: 0, duration: 0 }, 2)
-    .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0 }, 6);
+    .from(".about_container .about_txt3", { autoAlpha: 0, duration: 0 }, 6)
+    .to({}, { duration: 5 });
 
 ScrollTrigger.create({
     animation: aboutAni,
     trigger: ".about_container",
     start: "top top",
-    end: "+=1500",
+    end: "+=2500",
     scrub: true,
     pin: true,
     markers: false,
