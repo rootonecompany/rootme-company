@@ -267,12 +267,29 @@ window.addEventListener("resize", () => {
 const workTopTxt = document.querySelector(".work_top_txt");
 const workSection = document.querySelector(".work");
 
+
 gsap.set(workTopTxt, { y: 0 });
+
+
+const calculateEndValue = () => {
+    if (window.innerWidth >= 1000) {
+        return "93% bottom";
+    } else if (window.innerWidth > 900) {
+        return "94% bottom";
+    } else if (window.innerWidth > 800) {
+        return "95% bottom";
+    } else if (window.innerWidth > 768) {
+        return "97% bottom";
+    } else {
+        return "100% bottom";
+    }
+};
 
 ScrollTrigger.create({
     trigger: workSection,
     start: "top top",
-    end: "93% bottom",
+    // end: "93% bottom",
+    end: calculateEndValue(),
     scrub: 1,
     onUpdate: () => {
         const translateY = window.scrollY - workSection.offsetTop;
@@ -281,7 +298,7 @@ ScrollTrigger.create({
 
         if (window.scrollY >= workSection.offsetTop) {
             gsap.to(workTopTxt, { opacity: 0.1, duration: 0.3 });
-            gsap.to(targetH3, { opacity: 0.8, duration: 0.3 });
+            gsap.to(targetH3, { opacity: 0.9, duration: 0.3 });
             gsap.to(workTopTxt, { y: translateSetY, duration: 0 });
         } else {
             gsap.to(workTopTxt, { opacity: 1, duration: 0.3 });
@@ -290,6 +307,12 @@ ScrollTrigger.create({
         }
     },
 });
+
+window.addEventListener('resize', () => {
+    scrollTrigger.vars.end = calculateEndValue();
+    scrollTrigger.refresh();
+});
+
 
 // scroll up -> section. Work
 gsap.utils.toArray(".fadein").forEach((elem) => {

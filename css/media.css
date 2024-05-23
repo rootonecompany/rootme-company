@@ -200,7 +200,7 @@
 
     /* work */
     .work {
-        margin-top: 90px;
+        margin-top: 0;
     }
     .work_top_txt span {
         margin: 0 0 0 140px;
@@ -212,6 +212,7 @@
     }
     .work_move_txt h3:nth-child(1) {
         margin-top: 28px;
+        -webkit-text-stroke-width: 1px;
     }
 
     /* project box */
@@ -314,7 +315,7 @@
     }
     /* work */
     .work {
-        margin-top: 170px;
+        margin-top: 0;
     }
     .work_top_txt span {
         margin: 0 0 0 92px;
@@ -455,7 +456,7 @@
 
     /* work */
     .work {
-        margin-top: 160px;
+        margin-top: 0x;
     }
     .work_top_txt span {
         margin: 0 0 0 48px;
