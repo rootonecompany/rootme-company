@@ -259,20 +259,18 @@ window.addEventListener("scroll", refreshScrollTrigger);
 // about 섹션 요소 선택
 const aboutSection = document.querySelector('.about');
 
-function handleScroll(event) {
+function handleScroll() {
     const aboutTop = aboutSection.offsetTop;
     const scrollPosition = window.scrollY;
-    event.preventDefault();
 
     if (scrollPosition >= aboutTop) {
         window.removeEventListener('scroll', handleScroll);
-
-        // Add the class to make the .about section sticky
         aboutSection.classList.add('sticky');
 
-        if (lenis) {
+        if (typeof lenis !== 'undefined') {
             lenis.destroy();
         }
+
 
         Reveal.initialize({
             embedded: true,
@@ -288,9 +286,9 @@ function handleScroll(event) {
             overview: true,
             scrollActivationWidth: null,
             onComplete: () => {
-
-                aboutSection.classList.remove('sticky');
                 window.addEventListener('scroll', handleScroll);
+                aboutSection.classList.remove('sticky');
+
                 const lenis = new Lenis();
 
                 lenis.on("scroll", ScrollTrigger.update);
@@ -298,16 +296,14 @@ function handleScroll(event) {
                 gsap.ticker.add((time) => {
                     lenis.raf(time * 700);
                 });
-
-
-
-
             }
         });
     }
+    return
 }
 
 window.addEventListener('scroll', handleScroll);
+
 
 
 

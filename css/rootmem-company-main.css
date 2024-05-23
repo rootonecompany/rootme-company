@@ -176,10 +176,11 @@
     background-image: url("../images/about3.png");
 } */
 .about.sticky {
-    position: -webkit-sticky;
+    /* position: -webkit-sticky; */
     position: sticky;
     top: 0;
     background-color: #eff1f5;
+    height: 100vh;
 }
 
 .reveal {
