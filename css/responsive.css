@@ -2,21 +2,17 @@
     .inner_wrap {
         padding: 0 60px;
     }
-
     /* story */
     .story_title_txt h5 {
         font-size: 7.5rem;
         padding: 42px 0;
     }
-
     .story_story_txt h5 {
         font-size: 7.5rem;
     }
-
     .story_story_txt h5 br.mobile_block {
         display: block;
     }
-
     .story_story_txt p {
         margin-left: 28%;
     }
@@ -24,41 +20,30 @@
     .story_scroll_icon {
         margin-top: 10%;
     }
-
     /* brand */
     .brand_header span {
         font-size: 2.5rem;
     }
-
     .brand_content_txt > span {
         font-size: 2.8rem;
     }
-
-    .brand_content_txt h5 {
-        font-size: 7.5rem;
-    }
-
+    .brand_content_txt h5,
     .brand_content_txt h5 > span {
         font-size: 7.5rem;
     }
-
     .brand_logo_wrap {
         margin-top: 20px;
     }
-
     .brand_logo_container {
         grid-gap: 2rem;
     }
-
     /* contact */
     .contact_img {
         height: 460px;
     }
-
     .contact_title_txt h5 {
         font-size: 7.5rem;
     }
-
     .contact_title_txt h5 bold {
         font-size: 7.5rem;
         margin-bottom: 36px;
@@ -70,49 +55,38 @@
     .story_txt_container {
         margin-top: 120px;
     }
-
     .story_title_txt span {
         margin-left: 11%;
     }
-
     .story_title_txt h5 {
         font-size: 5rem;
     }
-
     .story_story_txt h5 {
         font-size: 5.2rem;
     }
-
     .story_story_txt p {
         font-size: 2.8rem;
     }
-
     /* brand */
     .brand_header span {
         font-size: 2.2rem;
     }
-
     .brand_header span:nth-child(2) {
         padding-right: 150px;
     }
-
     .brand_title_txt > span {
         font-size: 2.3rem;
     }
-
     .brand_title_txt h5 {
         font-size: 5.2rem;
         padding: 25px;
     }
-
     .brand_title_txt h5 > span {
         font-size: 5rem;
     }
-
     .brand_logo_container {
         grid-gap: 1.4rem;
     }
-
     /* contact */
     .contact_title_txt h5,
     .contact_title_txt h5 bold {
@@ -125,126 +99,101 @@
     .story_txt_container {
         margin-top: 100px;
     }
-
     .story_title_txt span {
         margin-left: 11%;
     }
-
     .story_title_txt h5 {
         font-size: 4.5rem;
         padding: 32px 0;
     }
-
     .story_card_inner {
         margin: 56px 60px;
         gap: 220px;
     }
-
     .story_card_inner {
         margin: 45px;
         gap: 180px;
     }
-
     .story_card_top span {
         font-size: 16rem;
         padding-right: 150px;
     }
-
     .story_card_icon {
         width: 32px;
         height: 32px;
     }
-
     .story_card_btm h5 {
         font-size: 24rem;
         margin: 34px auto 65px auto;
     }
-
     .story_card_btm span {
         font-size: 12rem;
     }
-
     .story_card_top > span {
         padding-right: 100px;
         font-size: 2rem;
     }
-
     .story_card_icon {
         width: 36px;
         height: 36px;
         gap: 12px;
     }
-
     .story_card_btm h5 {
         font-size: 2.8rem;
         margin: 44px auto 87px auto;
     }
-
     .story_card_btm span {
         font-size: 1.4rem;
     }
-
+    .story_story_content {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
     .story_story_txt h5 {
         font-size: 4.3rem;
     }
-
     .story_story_txt p {
         font-size: 2.4rem;
         margin-left: 15%;
     }
-
     /* brand */
     .brand_header span {
         font-size: 2rem;
     }
-
     .brand_header span:nth-child(2) {
         padding-right: 100px;
     }
-
     .brand_title_txt > span {
         font-size: 2.3rem;
     }
-
     .brand_title_txt h5 {
         font-size: 4.5rem;
         padding: 25px;
     }
-
     .brand_title_txt h5 > span {
         font-size: 4.5rem;
     }
-
     .brand_logo_wrap {
         margin-top: 20px;
     }
-
     .brand_logo_container {
         grid-gap: 1.2rem;
     }
-
     /* contact */
     .contact_container span {
         font-size: 1.4rem;
     }
-
-    .contact_title_txt h5 {
-        font-size: 4.5rem;
-    }
-
+    .contact_title_txt h5,
     .contact_title_txt h5 bold {
         font-size: 4.5rem;
     }
-
     .contact_title_txt p {
         font-size: 1.8rem;
         margin-top: 32px;
     }
-
     .contact_title_txt p:nth-child(3) {
         margin-top: 28px;
     }
-
     .contact_img {
         margin: 25px 0;
     }
@@ -254,77 +203,61 @@
     .inner_wrap {
         padding: 0 40px;
     }
-
     /* story */
     .story_txt_container {
         margin-top: 120px;
     }
-
     .story_title_txt span {
         margin-left: calc(100px - 40px);
         font-size: 1.2rem;
     }
-
     .story_title_txt h5 {
         font-size: 4.2rem;
         padding: 28px 0;
     }
-
     .story_title_txt h5 br.mobile {
         display: none;
     }
-
     .story_card_wrap {
         height: 720px;
     }
-
     .story_card_frame {
         gap: 24px;
-        padding-left: 8%;
     }
-
     .story_card_inner {
         margin: 32px;
         gap: 125px;
     }
-
     .story_card_top > span {
         padding-right: calc(191px - 105px);
         font-size: 1.2rem;
     }
-
     .story_card_icon {
         display: flex;
         width: 28px;
         height: 28px;
         gap: 12px;
     }
-
     .story_card_btm h5 {
         font-size: 2rem;
         margin: 24px auto 43px auto;
     }
-
     .story_card_btm span {
         font-size: 1rem;
     }
-
     .story_story_wrap {
         height: 720px;
         justify-content: space-evenly;
     }
-
     .story_story_content {
         margin-top: 216px;
         margin-bottom: 88px;
     }
-
     .story_story_txt h5 {
         font-size: 4.2rem;
         line-height: 1.4;
         padding: 18px 0;
     }
-
     .story_story_txt p {
         font-size: 2.4rem;
         padding: 40px;
@@ -332,134 +265,105 @@
         padding-top: 18px;
         padding-bottom: 0;
     }
-
     .story_scroll_icon {
         gap: 10px;
     }
-
     .story_scroll_icon span {
         font-size: 1.2rem;
     }
-
     .story_scroll_img {
         width: 28px;
         height: 28px;
         left: calc(50% + 47px);
     }
-
     /* brand */
     .brand_header {
         margin-bottom: 196px;
     }
-
     .brand_header span {
         margin-top: 16px;
         font-size: 1.8rem;
     }
-
     .brand_header span:nth-child(2) {
         padding-right: 100px;
     }
-
     .brand_title_txt > span {
         font-size: 2.2rem;
     }
-
     .brand_title_txt h5 {
         font-size: 5.2rem;
         padding: 24px;
     }
-
     .brand_title_txt h5 > span {
         font-size: 5.2rem;
     }
-
     .brand_logo_wrap {
         margin-bottom: 220px;
     }
-
     .brand_logo_container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
     }
-
     /* contact */
     .contact_container {
         display: flex;
         flex-direction: column;
     }
-
     .contact_container span {
         margin-left: calc(100px - 40px);
         font-size: 1.4rem;
     }
-
     .contact_img {
         margin: 28px 0 36px 0;
         height: 400px;
     }
-
     .contact_container_txt {
         margin-bottom: 180px;
     }
-
-    .contact_title_txt h5 {
-        font-size: 5.2rem;
-    }
-
+    .contact_title_txt h5,
     .contact_title_txt h5 bold {
         font-size: 5.2rem;
     }
-
     .contact_title_txt p {
         font-size: 1.6rem;
     }
-
     /* footer */
     footer {
         position: relative;
     }
-
     .footer_dropdown {
         position: absolute;
         margin-top: -50px;
         z-index: 2;
     }
-
     .footer_dropdown_btn img {
         width: 12px;
         height: 6px;
         margin-left: 12px;
     }
-
     .footer_dropdown_content {
         position: absolute;
         z-index: 2;
         margin-top: -230px;
     }
-
     .footer_btm {
         flex-direction: column;
         align-items: flex-start;
         z-index: 1;
     }
-
     .footer_btm p {
         font-size: 1.3rem;
         text-align: start;
         padding: 6px 0;
     }
-
     .footer_btm_address > p {
         line-height: 1.2;
     }
-
     .footer_btm_address p:nth-child(1) {
         margin-top: 118px;
         line-height: 1.4;
     }
-
     .footer_btm_address p:nth-child(2) {
         margin-top: 0px;
     }
@@ -470,80 +374,70 @@
     .story_title_txt span {
         font-size: 1.2rem;
     }
-
     .story_title_txt h5 {
-        font-size: 3.4rem;
+        font-size: 3.8rem;
     }
-
     .story_story_txt h5 {
         font-size: 4rem;
         padding: 15px 0;
     }
-
     .story_story_txt p {
         font-size: 2rem;
     }
-
     .story_story_txt h5 br {
         display: none;
     }
-
     .story_story_txt h5 br.mobile {
         display: block;
     }
-
     .story_story_txt p {
         font-size: 1.6rem;
         padding: 0;
         margin-left: 0;
     }
-
     /* brand */
     .brand_title_txt span {
         font-size: 1.6rem;
     }
-
+    .brand_header {
+        margin-bottom: 196px;
+    }
     .brand_header span {
         font-size: 1.4rem;
     }
-
-    .brand_header span:nth-child(2) {
+    e .brand_header span:nth-child(2) {
         padding-right: 70px;
     }
-
-    .brand_title_txt h5 {
-        font-size: 4rem;
-    }
-
+    .brand_title_txt h5,
     .brand_title_txt > h5 > span {
-        font-size: 4rem;
+        font-size: 4.6rem;
     }
-
     /* contact */
     .contact_container span {
         margin-left: 50px;
         font-size: 1.2rem;
     }
-
     .contact_img {
         margin: 32px 0 34px 0;
     }
-
     .contact_title_txt h5 {
-        font-size: 4rem;
+        font-size: 4.6rem;
     }
-
     .contact_title_txt h5 bold {
-        font-size: 4rem;
+        font-size: 4.6rem;
         margin-top: 22px;
     }
-
     .contact_title_txt p:nth-child(3) {
         margin-top: 20px;
     }
-
     .container_imgBox span {
         font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .story_title_txt h5 {
+        font-size: 3.2rem;
     }
 }
 
@@ -551,106 +445,84 @@
     .inner_wrap {
         padding: 0 20px;
     }
-
     /* story */
     .story_title_txt span {
         margin-left: 7%;
     }
-
-    .story_title_txt h5 {
-        font-size: 3rem;
-    }
-
     .story_story_txt h5 {
         font-size: 3.5rem;
     }
-
     /* brand */
     .brand_header span {
         font-size: 1.2rem;
     }
-
     .brand_logo_container {
         grid-gap: 1.6rem;
     }
-
+    .brand_title_txt h5,
+    .brand_title_txt > h5 > span {
+        font-size: 3.5rem;
+    }
     /* contact */
     .contact_container {
         display: flex;
         flex-direction: column;
     }
-
     .contact_container span {
         margin-left: calc(48px - 20px);
         font-size: 1rem;
     }
-
     .contact_img {
         margin: 22px 0 24px 0;
         height: 400px;
     }
-
     .contact_title_txt h5 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         margin-bottom: 22px;
     }
-
     .contact_title_txt h5 bold {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
-
     .contact_title_txt p {
         font-size: 1.2rem;
-    }
-
-    .contact_title_txt p {
         margin-top: 0;
     }
-
     .contact_title_txt p:nth-child(3) {
         margin-top: 20px;
     }
-
     /* footer */
     footer {
         position: relative;
     }
-
     .footer_dropdown {
         position: absolute;
         margin-top: -60px;
         z-index: 2;
     }
-
     .footer_dropdown_btn img {
         width: 12px;
         height: 6px;
         margin-left: 12px;
     }
-
     .footer_dropdown_content {
         position: absolute;
         z-index: 1;
         margin-top: -230px;
     }
-
     .footer_btm {
         flex-direction: column;
         align-items: flex-start;
         z-index: 1;
     }
-
     .footer_btm p {
         font-size: 1rem;
         text-align: start;
         padding: 6px 0;
     }
-
     .footer_btm_address p:nth-child(1) {
         margin-top: 111px;
         line-height: 1.4;
     }
-
     .footer_btm_address p:nth-child(2) {
         margin-top: 0px;
     }
@@ -661,28 +533,20 @@
     .story_title_txt h5 br.mobile {
         display: block;
     }
-
     .story_title_txt h5 br.mobile_block {
         display: none;
     }
-
     .story_story_txt h5 {
         font-size: 2.8rem;
     }
-
     .story_story_txt p {
         margin-left: 0;
     }
-
     /* brand */
-    .brand_title_txt h5 {
-        font-size: 3.2rem;
-    }
-
+    .brand_title_txt h5,
     .brand_content_txt h5 span {
         font-size: 3.2rem;
     }
-
     .brand_logo_container {
         grid-gap: 1.2rem;
     }
@@ -694,114 +558,92 @@
         margin-left: calc(48px - 20px);
         font-size: 1rem;
     }
-
     .story_title_txt h5 {
         padding: 22px 0;
     }
-
     .story_title_txt h5 bold br.mobile {
         display: none;
     }
-
     .story_card_frame {
         padding: 7%;
     }
-
     .story_card_inner {
         margin: 26px;
     }
-
     .story_card_top > span {
         padding-right: calc(191px - 60px);
         font-size: 1rem;
     }
-
     .story_card_icon {
         width: 24px;
         height: 24px;
         gap: 12px;
     }
-
     .story_card_btm h5 {
         font-size: 1.6rem;
         margin: 20px auto 43px auto;
     }
-
     .story_story_wrap {
         height: 560px;
         align-items: center;
         justify-content: flex-start;
     }
-
     .story_story_content {
         margin-top: 178px;
         margin-bottom: 68px;
     }
-
     .story_story_txt h5 {
         font-size: 2.4rem;
     }
-
     .story_story_txt p {
         font-size: 1.4rem;
     }
-
     /* brand */
     .brand_header span {
         margin-top: 10px;
     }
-
     .brand_header span:nth-child(2) {
         padding-right: 40px;
     }
-
     .brand_content_txt h5 {
         font-size: 3rem;
         padding: 18px;
     }
-
     .brand_content_txt h5 > span {
         font-size: 3rem;
     }
-
     .brand_logo_wrap {
         margin-top: calc(32px - 18px);
         margin-bottom: 160px;
     }
-
     .brand_logo_container {
         grid-gap: 0.8rem;
     }
-
     /* contact */
     .contact_container {
         display: flex;
         flex-direction: column;
     }
-
     .contact_container_txt {
         margin-bottom: 160px;
     }
-
     .contact_title_txt h5 {
         margin-bottom: 22px;
+        font-size: 3rem;
     }
-
+    .contact_title_txt h5 bold {
+        font-size: 3rem;
+    }
     .contact_title_txt p {
         font-size: 1.2rem;
-    }
-
-    .contact_title_txt p {
         margin-top: 0;
     }
-
     /* footer */
     .footer_dropdown_btn img {
         width: 12px;
         height: 6px;
         margin-left: 12px;
     }
-
     .footer_dropdown_content {
         position: absolute;
         z-index: 1;
