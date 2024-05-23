@@ -62,7 +62,6 @@ span {
 /* story - 카드 슬라이드 */
 .story_card_wrap {
     background: url("../images/story_bg1.png") no-repeat center/cover;
-    height: 1400px;
     display: flex;
     align-items: center;
 }
@@ -208,7 +207,7 @@ span {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 361px;
+    /* margin-bottom: 361px; */
 }
 .brand_header span {
     display: inline-block;
@@ -237,6 +236,7 @@ span {
     overflow: hidden;
     width: 100%;
     opacity: 0;
+    padding-top: 361px;
 }
 .brand_title_txt > h5 {
     font-size: 10rem;
@@ -264,7 +264,7 @@ span {
 }
 .brand_logo_wrap {
     margin-top: 44px;
-    margin-bottom: 258px;
+    padding-bottom: 258px;
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.4s ease;
