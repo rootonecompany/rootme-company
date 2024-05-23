@@ -372,3 +372,27 @@ gsap.utils.toArray(".fadein").forEach((elem) => {
         toggleClass: "fade-in",
     });
 });
+gsap.utils.toArray(".Slide2").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top 80%",
+        toggleClass: "SlideUp",
+        once: true
+    });
+});
+gsap.utils.toArray(".Slide3").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top top",
+        toggleClass: "SlideUp",
+        once: true
+    });
+});
+gsap.utils.toArray(".Slide4").forEach((elem) => {
+    ScrollTrigger.create({
+        trigger: elem,
+        start: "top -1100",
+        toggleClass: "SlideUp",
+        once: true
+    });
+});
