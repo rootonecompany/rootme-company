@@ -6,15 +6,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(storyCard, {
     xPercent: -100 * (storyCard.length - 1.5),
-    x: () => -100 * (storyCard.length - 0.5),
+    x: () => -100 * (storyCard.length - 1),
     ease: "none",
     scrollTrigger: {
         trigger: storyCardWrap,
-        start: "center 50%",
+        // start: "center 50%",
+        start: "top top",
         end: () => "+=" + storyCardWrap.offsetWidth * 2,
         pin: true,
         pinSpacing: true,
         scrub: true,
+        // markers: true
     },
 });
 
