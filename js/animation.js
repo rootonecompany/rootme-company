@@ -23,6 +23,42 @@ mm.add("(min-width: 769px)", () => {
     });
 });
 
+mm.add("(max-width: 768px)", () => {
+    gsap.to(cardFrame, {
+        xPercent: -17 * panels.length,
+        ease: "none",
+        scrollTrigger: {
+            trigger: cardWrap,
+            pin: cardWrap,
+            start: "center 50%",
+            end: "bottom 10%",
+            pinSpacing: true,
+            scrub: true,
+            snap: {
+                snapTo: 1 / (panels.length - 1),
+            },
+        },
+    });
+});
+
+mm.add("(max-width: 360px)", () => {
+    gsap.to(panels, {
+        xPercent: -25 * panels.length,
+        ease: "none",
+        scrollTrigger: {
+            trigger: cardFrame,
+            pin: cardFrame,
+            start: "center center",
+            end: "bottom bottom",
+            pinSpacing: true,
+            scrub: true,
+            snap: {
+                snapTo: 1 / panels.length,
+            },
+        },
+    });
+});
+
 // 드롭다운 메뉴
 const myDropDownBtn = document.getElementById("footer_dropdown_btn");
 const myDropdownContent = document.getElementById("myDropdownContent");
@@ -52,7 +88,7 @@ gsap.fromTo(
             trigger: ".brand_logo_container",
             start: "top 80%",
             end: "bottom top",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
         },
     }
 );
@@ -84,7 +120,7 @@ logoElements.forEach((element) => {
             ease: "power1.out",
             scrollTrigger: {
                 trigger: element,
-                start: "top 60%",
+                start: "top 70%",
                 end: "bottom top",
                 toggleActions: "play none none reverse",
             },
