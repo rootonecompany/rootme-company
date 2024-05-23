@@ -175,12 +175,19 @@
 .about_txt3 {
     background-image: url("../images/about3.png");
 } */
+.about.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #eff1f5;
+}
 
 .reveal {
     width: 100%;
     height: 100vh;
     margin: 0;
     padding: 0;
+    background-color: #eff1f5;
 }
 .reveal .slides {
     height: 100vh;

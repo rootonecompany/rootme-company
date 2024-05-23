@@ -254,29 +254,65 @@ window.addEventListener("scroll", refreshScrollTrigger);
 //     markers: false,
 //     anticipatePin: 1,
 // });
+
+
+// about 섹션 요소 선택
 const aboutSection = document.querySelector('.about');
 
-Reveal.initialize({
-    embedded: true,
-    center: true,
-    hash: true,
-    loop: true,
-    width: "100%",
-    disableLayout: false,
-    scroll: true,
-    view: "scroll",
-    scrollProgress: true,
-    scrollLayout: 'full',
-    overview: true,
-    scrollActivationWidth: null
-});
+function handleScroll(event) {
+    const aboutTop = aboutSection.offsetTop;
+    const scrollPosition = window.scrollY;
+    event.preventDefault();
 
-function test() {
-    window.addEventListener("scroll", (e) => {
-        e.preventDefault();
-    })
+    if (scrollPosition >= aboutTop) {
+        window.removeEventListener('scroll', handleScroll);
+
+        // Add the class to make the .about section sticky
+        aboutSection.classList.add('sticky');
+
+        if (lenis) {
+            lenis.destroy();
+        }
+
+        Reveal.initialize({
+            embedded: true,
+            center: true,
+            hash: true,
+            loop: true,
+            width: "100%",
+            disableLayout: false,
+            scroll: true,
+            view: "scroll",
+            scrollProgress: true,
+            scrollLayout: 'full',
+            overview: true,
+            scrollActivationWidth: null,
+            onComplete: () => {
+
+                aboutSection.classList.remove('sticky');
+                window.addEventListener('scroll', handleScroll);
+                const lenis = new Lenis();
+
+                lenis.on("scroll", ScrollTrigger.update);
+
+                gsap.ticker.add((time) => {
+                    lenis.raf(time * 700);
+                });
+
+
+
+
+            }
+        });
+    }
 }
-// about 섹션에 대해 ScrollTrigger 설정
+
+window.addEventListener('scroll', handleScroll);
+
+
+
+// const aboutSection = document.querySelector('.about');
+// // about 섹션에 대해 ScrollTrigger 설정
 // gsap.timeline({
 //     scrollTrigger: {
 //         trigger: aboutSection,
@@ -285,11 +321,25 @@ function test() {
 //         scrub: true,
 //         pin: true,
 //         onEnter: () => {
+//             Reveal.initialize({
+//                 embedded: true,
+//                 center: true,
+//                 hash: true,
+//                 loop: true,
+//                 width: "100%",
+//                 disableLayout: false,
+//                 scroll: true,
+//                 view: "scroll",
+//                 scrollProgress: true,
+//                 scrollLayout: 'full',
+//                 overview: true,
+//                 scrollActivationWidth: null,
+//             });
 
 //             lenis.destroy();
 
 //         },
-//         onLeave: () => {
+//         onComplete: () => {
 //             const lenis = new Lenis();
 
 //             lenis.on("scroll", ScrollTrigger.update);
@@ -305,7 +355,6 @@ function test() {
 // window.addEventListener("resize", () => {
 //     ScrollTrigger.refresh();
 // });
-
 
 
 
