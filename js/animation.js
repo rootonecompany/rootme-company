@@ -58,10 +58,36 @@ gsap.fromTo(
 );
 
 // text scroll up 애니메이션
-gsap.utils.toArray("txtup").forEach((elem) => {
-    ScrollTrigger.create({
-        trigger: elem,
-        start: "top 70%",
-        toggleClass: "txt-up",
-    });
+// gsap.utils.toArray("txtup").forEach((elem) => {
+//     ScrollTrigger.create({
+//         trigger: elem,
+//         start: "top 70%",
+//         toggleClass: "txt-up",
+//     });
+// });
+
+// 텍스트 스크롤 업 (test)
+gsap.registerPlugin(ScrollTrigger);
+
+const logoElements = gsap.utils.toArray(
+    ".story_txt_container, .story_story_txt, .brand_content_wrap, .contact_title_txt"
+);
+
+logoElements.forEach((element) => {
+    gsap.fromTo(
+        element,
+        { y: 100, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.out",
+            scrollTrigger: {
+                trigger: element,
+                start: "top 60%",
+                end: "bottom top",
+                toggleActions: "play none none reverse",
+            },
+        }
+    );
 });
