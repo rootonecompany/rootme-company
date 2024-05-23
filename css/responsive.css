@@ -218,7 +218,7 @@
         display: none;
     }
     .story_card_wrap {
-        height: 720px;
+        height: 100vh;
     }
     .story_sticky {
         padding-left: 120px;
@@ -566,9 +566,12 @@
     .story_title_txt h5 bold br.mobile {
         display: none;
     }
-    .story_sticky {
-        padding-left: 110px;
+    .story_card_wrap {
+        height: 100vh;
     }
+    /* .story_sticky {
+        padding-left: 110px;
+    } */
     .story_card_inner {
         margin: 26px;
     }
