@@ -3,12 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css"
-            id="theme"
-        />
+
+        <!-- og -->
+        <meta property="og:url" content="url" />
+        <meta property="og:title" content="BAUMROOTME(바움루트미)" />
+        <meta property="og:description" content="여기를 눌러 링크를 확인하세요." />
+        <meta property="og:image" content="image" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <!-- favicon -->
+        <link rel="icon" type="image/svg" sizes="32x32" href="./images/favicon32x32.svg" />
+        <link rel="icon" type="image/svg" sizes="16x16" href="./images/favicon16x16.svg" />
+
         <!-- main css -->
         <link rel="stylesheet" href="./css/reset.css" />
         <link rel="stylesheet" href="./css/common.css" />
@@ -341,10 +348,7 @@
                                 </h5>
                             </div>
                             <div class="story_story_txt">
-                                <h5 class="SrotySlide">
-                                    <!-- <br class="mobile_block" /> -->
-                                    excellent service.
-                                </h5>
+                                <h5 class="SrotySlide">excellent service.</h5>
                             </div>
                             <div class="story_story_txt">
                                 <p class="SrotySlide">
@@ -360,7 +364,7 @@
                                 <p class="SrotySlide">있는 서비스를 추구하고 지향합니다.</p>
                             </div>
                             <div class="story_scroll_icon">
-                                <span>scroll down</span>
+                                <span class="story_scroll_down">scroll down</span>
                                 <img
                                     class="story_scroll_img"
                                     src="./images/scroll_down.png"
@@ -469,7 +473,7 @@
                                 <img src="./images/arrow_down.png" />
                             </button>
                             <div id="myDropdownContent" class="footer_dropdown_content">
-                                <a href="#">비유바움</a>
+                                <a href="https://bubaum.com">비유바움</a>
                                 <a href="#">RM 엔터</a>
                                 <a href="#">신우 네트워크</a>
                             </div>
@@ -490,8 +494,6 @@
             </footer>
         </div>
 
-        <!-- reveal.js script -->
-        <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
         <!-- main js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
         <!-- ScrollTrigger CDN -->

@@ -1,25 +1,4 @@
 // GSAP 스크롤 트리거(카드 애니메이션)
-// const storyCardWrap = document.querySelector(".story_card_wrap");
-// const storyCard = document.querySelectorAll(".story_card");
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// gsap.to(storyCard, {
-// xPercent: -100 * (storyCard.length - 1.5),
-// x: () => -100 * (storyCard.length - 0.5),
-// ease: "none",
-// scrollTrigger: {
-//     trigger: storyCardWrap,
-//     // start: "center 50%",
-//     start: "top top",
-//     end: () => "+=" + storyCardWrap.offsetWidth * 2,
-//     pin: true,
-//     pinSpacing: true,
-//     scrub: true,
-//     // markers: true
-// },
-// });
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const storyCardWrap = document.querySelector(".story_card_wrap");
@@ -29,16 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(storyCardFrame, {
-        // x: () => -(storyCardFrame.scrollWidth - window.innerWidth),
-        // ease: "none",
-        // scrollTrigger: {
-        //     trigger: storyCardWrap,
-        //     start: "top top",
-        //     end: () => `+=${storyCardFrame.scrollWidth - window.innerWidth}`,
-        //     pin: true,
-        //     pinSpacing: true,
-        //     scrub: true,
-        // },
         xPercent: -100 * (storyCard.length - 1.5),
         x: () => -100 * (storyCard.length - 0.5),
         ease: "none",
@@ -46,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             trigger: storyCardWrap,
             // start: "center 50%",
             start: "top top",
-            end: () => "+=" + storyCardWrap.offsetWidth * 2,
+            end: () => "+=" + storyCardFrame.offsetWidth * 2,
             pin: true,
             pinSpacing: true,
             scrub: true,
@@ -56,31 +25,74 @@ document.addEventListener("DOMContentLoaded", function () {
             //story story
             ScrollTrigger.create({
                 trigger: ".story_story_wrap",
-                start: "top 90%",
-                onEnter: () => gsap.utils.toArray(".SrotySlide").forEach((elem) => elem.classList.add("SlideUp")),
-                once: true
+                start: "top 60%",
+                onEnter: () =>
+                    gsap.utils
+                        .toArray(".SrotySlide")
+                        .forEach((elem) => elem.classList.add("SlideUp")),
+                once: true,
             });
 
             // brand
             ScrollTrigger.create({
                 trigger: ".brand",
-                start: "top 50%",
-                onEnter: () => gsap.utils.toArray(".BrandSlide").forEach((elem) => elem.classList.add("SlideUp")),
-                once: true
+                start: "top 80%",
+                onEnter: () =>
+                    gsap.utils
+                        .toArray(".BrandSlide")
+                        .forEach((elem) => elem.classList.add("SlideUp")),
+                once: true,
             });
 
             //contact
             ScrollTrigger.create({
                 trigger: ".contact",
-                start: "top 50%",
-                onEnter: () => gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
-                once: true
+                start: "top 15%",
+                onEnter: () =>
+                    gsap.utils
+                        .toArray(".ContactSlide")
+                        .forEach((elem) => elem.classList.add("SlideUp")),
+                once: true,
             });
-        }
+
+            // brand logo 애니메이션
+            gsap.fromTo(
+                ".brand_logo_inner",
+                { y: 100, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.05,
+                    ease: "power1.out",
+                    scrollTrigger: {
+                        trigger: ".brand_logo_container",
+                        start: "top 80%",
+                        end: "bottom top",
+                        toggleActions: "play none none none",
+                    },
+                }
+            );
+
+            gsap.fromTo(
+                ".story_scroll_down",
+                { opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.05,
+                    ease: "power1.out",
+                    scrollTrigger: {
+                        trigger: ".story_story_wrap",
+                        start: "top 70%",
+                    },
+                }
+            );
+
+        },
     });
 });
-
-
 
 // 드롭다운 메뉴
 const myDropDownBtn = document.getElementById("footer_dropdown_btn");
@@ -94,24 +106,3 @@ myDropDownBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     myDropdownContent.classList.toggle("show");
 });
-
-// brand logo 애니메이션
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.fromTo(
-    ".brand_logo_inner",
-    { y: 100, opacity: 0 },
-    {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.02,
-        ease: "power1.out",
-        scrollTrigger: {
-            trigger: ".brand_logo_container",
-            start: "top 80%",
-            end: "bottom top",
-            toggleActions: "play none none none",
-        },
-    }
-);

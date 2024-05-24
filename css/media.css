@@ -44,7 +44,7 @@
         font-size: 3.1rem;
     }
     .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
-        left: 8px;
+        left: 0px;
     }
     .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
         padding: 0 35px;
@@ -196,20 +196,20 @@
         font-size: 1.2rem;
     }
     .about_txt_bottom p {
-        top: 51px;
+        top: 40px;
         left: 0px;
         font-size: 2.8rem;
     }
     .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
-        left: -4px;
+        left: 0px;
     }
 
     .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
-        padding: 0 20px;
+        padding: 0 25px;
+        margin-top: 34px;
     }
     .about_txt h3 {
         font-size: 4.2rem;
-        margin-top: 34px;
         letter-spacing: -0.84px;
     }
 
@@ -293,12 +293,12 @@
         font-size: 1.1rem;
     }
     .about_txt_bottom p {
-        top: 50px;
-        left: 27px;
+        top: 38px;
+        left: 0px;
         font-size: 2.2rem;
     }
     .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
-        left: 25px;
+        left: 0px;
     }
     .about_txt h3 {
         font-size: 3.2rem;
@@ -331,14 +331,14 @@
     }
     /*  about */
     .about_txt_bottom p {
-        top: 49px;
-        left: 8px;
+        top: 39px;
+        left: 0px;
     }
     .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
-        left: 4px;
+        left: 0px;
     }
     .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
-        padding: 0 25px;
+        padding: 0 20px;
     }
     /* work */
     .work {
@@ -437,12 +437,12 @@
         background-size: 270px 270px;
     }
     .about_txt_bottom p {
-        top: 48px;
+        top: 37px;
         left: 4px;
         font-size: 1.6rem;
     }
     .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
-        left: 4px;
+        left: 3px;
     }
     .about_txt h3 {
         font-size: 2.3rem;
@@ -462,7 +462,7 @@
         font-size: 1.6rem;
     }
     .main_txt h2 {
-        margin-tpo: 18px;
+        margin-top: 18px;
         font-size: 3.8rem;
     }
     .main_video {
@@ -479,23 +479,23 @@
     .about_txt3 {
         background-size: 220px 220px;
     }
-    .about_txt_top {
+    .about_txt_top p {
         font-size: 1rem;
     }
     .about_txt_bottom p {
-        top: 48px;
+        top: 31px;
         left: 0px;
         font-size: 1.6rem;
     }
     .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
-        left: -2px;
+        left: 1px;
     }
     .about_txt h3 {
-        margin-top: 28px;
         letter-spacing: -0.44px;
         font-size: 2.2rem;
     }
     .about_box .about_txt .about_txt_bottom:nth-child(2) h3 {
+        margin-top: 28px;
         padding: 0 15px;
     }
     /* work */
@@ -549,7 +549,7 @@
     }
     .work_project_text li {
         padding: 10px 12px;
-        margin-bottom: 4px;
+        margin-bottom: 0px;
         font-size: 1rem;
     }
 }
@@ -559,12 +559,12 @@
         font-size: 0.9rem;
     }
     .about_txt_bottom p {
-        top: 49px;
+        top: 31px;
         left: 5px;
         font-size: 1.4rem;
     }
     .about_box:nth-child(2) > .about_txt > .about_txt_bottom:nth-child(2) p {
-        left: 3px;
+        left: 2px;
     }
     .about_txt h3 {
         font-size: 2rem;

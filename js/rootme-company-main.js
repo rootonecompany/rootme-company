@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoImg = document.querySelector('.logo img');
     const triggerOffset = 530;
     const storyCardWrap = document.querySelector(".story_card_wrap");
-    // const storyCardWrap = document.querySelector(".test_wrap");
 
     const brandSection = document.querySelector("#brand");
     let isHeaderHidden = false;
@@ -184,10 +183,6 @@ const setClipPath = (progress, size) => {
         ? `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`
         : `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)) round 2rem)`;
 
-    // const clipPathValueDel = progress === 0
-    //     ? ``
-    //     : clipPathValue;
-
     gsap.set(mainVideo, { clipPath: clipPathValue });
 };
 
@@ -330,119 +325,38 @@ gsap.utils.toArray(".fadein").forEach((elem) => {
         toggleClass: "fade-in",
     });
 });
-// scroll up -> section. about
-// gsap.utils.toArray(".Slide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top 100%",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".Slide2").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top -350",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".Slide3").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top -1100",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// scroll up -> section. story card
-// gsap.utils.toArray(".StoryCardSlide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top 100%",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".SrotySlide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top -210vh",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".BrandSlide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top 2%",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".ContactSlide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top 5%",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-
 
 // about
 ScrollTrigger.create({
     trigger: ".about",
     start: "top 50%",
     onEnter: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.add("SlideUp")),
-    // once: true
+    onLeave: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.remove("SlideUp")),
+    onEnterBack: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.add("SlideUp")),
+    onLeaveBack: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.remove("SlideUp"))
 });
 ScrollTrigger.create({
     trigger: ".about",
     start: "top -450",
     onEnter: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.add("SlideUp")),
-    // once: true
+    onLeave: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.remove("SlideUp")),
+    onEnterBack: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.add("SlideUp")),
+    onLeaveBack: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.remove("SlideUp")),
 });
 ScrollTrigger.create({
     trigger: ".about",
     start: "top -1500",
     onEnter: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.add("SlideUp")),
-    // once: true
+    onLeave: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.remove("SlideUp")),
+    onEnterBack: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.add("SlideUp")),
+    onLeaveBack: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.remove("SlideUp")),
 });
 
 // story card
 ScrollTrigger.create({
     trigger: ".story_card_wrap",
-    start: "top 130%",
+    start: "top 150%",
     onEnter: () => gsap.utils.toArray(".StoryCardSlide").forEach((elem) => elem.classList.add("SlideUp")),
-    once: true
+    // once: true
+    toggleActions: "play none none none"
 });
-
-// //story story
-// ScrollTrigger.create({
-//     trigger: ".story_story_wrap",
-//     start: "top 80%",
-//     // markers: true,
-//     onEnter: () => gsap.utils.toArray(".SrotySlide").forEach((elem) => elem.classList.add("SlideUp")),
-//     once: true
-// });
-
-// // brand
-// ScrollTrigger.create({
-//     trigger: ".brand",
-//     start: "top 50%",
-//     // markers: true,
-//     onEnter: () => gsap.utils.toArray(".BrandSlide").forEach((elem) => elem.classList.add("SlideUp")),
-//     once: true
-// });
-
-// //contact
-// ScrollTrigger.create({
-//     trigger: ".contact",
-//     start: "top 10%",
-//     // markers: true,
-//     onEnter: () => gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
-//     once: true
-// });
-
-
