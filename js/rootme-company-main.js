@@ -413,7 +413,7 @@ ScrollTrigger.create({
 // story card
 ScrollTrigger.create({
     trigger: ".story_card_wrap",
-    start: "top 95%",
+    start: "top 130%",
     onEnter: () => gsap.utils.toArray(".StoryCardSlide").forEach((elem) => elem.classList.add("SlideUp")),
     once: true
 });
@@ -444,3 +444,5 @@ ScrollTrigger.create({
     onEnter: () => gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
     once: true
 });
+
+

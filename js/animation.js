@@ -1,24 +1,24 @@
 // GSAP 스크롤 트리거(카드 애니메이션)
-// const storyCardWrap = document.querySelector(".story_card_wrap");
-// const storyCard = document.querySelectorAll(".story_card");
+const storyCardWrap = document.querySelector(".story_card_wrap");
+const storyCard = document.querySelectorAll(".story_card");
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-// gsap.to(storyCard, {
-//     xPercent: -100 * (storyCard.length - 1.5),
-//     x: () => -100 * (storyCard.length - 0.5),
-//     ease: "none",
-//     scrollTrigger: {
-//         trigger: storyCardWrap,
-//         // start: "center 50%",
-//         start: "top top",
-//         end: () => "+=" + storyCardWrap.offsetWidth * 2,
-//         pin: true,
-//         pinSpacing: true,
-//         scrub: true,
-//         // markers: true
-//     },
-// });
+gsap.to(storyCard, {
+    xPercent: -100 * (storyCard.length - 1.5),
+    x: () => -100 * (storyCard.length - 0.5),
+    ease: "none",
+    scrollTrigger: {
+        trigger: storyCardWrap,
+        // start: "center 50%",
+        start: "top top",
+        end: () => "+=" + storyCardWrap.offsetWidth * 2,
+        pin: true,
+        pinSpacing: true,
+        scrub: true,
+        // markers: true
+    },
+});
 
 //임시 테스트
 
