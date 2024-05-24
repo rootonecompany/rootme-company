@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // brand
             ScrollTrigger.create({
                 trigger: ".brand",
-                start: "top 70%",
+                start: "top 80%",
                 onEnter: () =>
                     gsap.utils
                         .toArray(".BrandSlide")
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //contact
             ScrollTrigger.create({
                 trigger: ".contact",
-                start: "top 10%",
+                start: "top 15%",
                 onEnter: () =>
                     gsap.utils
                         .toArray(".ContactSlide")
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     ease: "power1.out",
                     scrollTrigger: {
                         trigger: ".brand_logo_container",
-                        start: "top 70%",
+                        start: "top 80%",
                         end: "bottom top",
                         toggleActions: "play none none none",
                     },
