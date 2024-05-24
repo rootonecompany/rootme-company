@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             trigger: storyCardWrap,
             // start: "center 50%",
             start: "top top",
-            end: () => "+=" + storyCardWrap.offsetWidth * 2,
+            end: () => "+=" + storyCardFrame.offsetWidth * 2,
             pin: true,
             pinSpacing: true,
             scrub: true,
@@ -26,24 +26,33 @@ document.addEventListener("DOMContentLoaded", function () {
             ScrollTrigger.create({
                 trigger: ".story_story_wrap",
                 start: "top 60%",
-                onEnter: () => gsap.utils.toArray(".SrotySlide").forEach((elem) => elem.classList.add("SlideUp")),
-                once: true
+                onEnter: () =>
+                    gsap.utils
+                        .toArray(".SrotySlide")
+                        .forEach((elem) => elem.classList.add("SlideUp")),
+                once: true,
             });
 
             // brand
             ScrollTrigger.create({
                 trigger: ".brand",
                 start: "top 70%",
-                onEnter: () => gsap.utils.toArray(".BrandSlide").forEach((elem) => elem.classList.add("SlideUp")),
-                once: true
+                onEnter: () =>
+                    gsap.utils
+                        .toArray(".BrandSlide")
+                        .forEach((elem) => elem.classList.add("SlideUp")),
+                once: true,
             });
 
             //contact
             ScrollTrigger.create({
                 trigger: ".contact",
                 start: "top 10%",
-                onEnter: () => gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
-                once: true
+                onEnter: () =>
+                    gsap.utils
+                        .toArray(".ContactSlide")
+                        .forEach((elem) => elem.classList.add("SlideUp")),
+                once: true,
             });
 
             // brand logo 애니메이션
@@ -97,4 +106,3 @@ myDropDownBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     myDropdownContent.classList.toggle("show");
 });
-
