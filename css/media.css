@@ -365,7 +365,7 @@
         flex-direction: column;
         margin: 0 30px 134px;
     }
-    .project_wrap:nth-child(2) {
+    .project_wrap:nth-child(even) {
         justify-content: left;
         text-align: left;
         flex-direction: column-reverse;
