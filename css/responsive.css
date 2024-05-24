@@ -514,7 +514,7 @@
         font-size: 1.2rem;
         margin-top: 20px;
     }
-    .contact_title_txt p:nth-child(3) {
+    .contact_title_txt:nth-child(4) p {
         margin-top: 20px;
     }
 
@@ -545,7 +545,6 @@
     .footer_btm p {
         font-size: 1rem;
         text-align: start;
-        padding: 6px 0;
     }
     .footer_btm_address p:nth-child(1) {
         margin-top: 111px;
@@ -580,6 +579,12 @@
     }
     .brand_logo_container {
         grid-gap: 1.2rem;
+    }
+    .contact_container_txt {
+        margin-bottom: 160px;
+    }
+    .contact_title_txt:nth-child(4) p {
+        margin-top: 20px;
     }
 }
 
@@ -660,7 +665,6 @@
         margin-bottom: 160px;
     }
     .contact_title_txt h5 {
-        margin-bottom: 22px;
         font-size: 3rem;
     }
     .contact_title_txt h5 bold {
@@ -668,7 +672,6 @@
     }
     .contact_title_txt p {
         font-size: 1.2rem;
-        margin-top: 0;
     }
     /* footer */
     .footer_dropdown_btn img {
