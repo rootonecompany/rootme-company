@@ -324,6 +324,11 @@
     margin-bottom: 16px;
     line-height: normal;
 }
+.work_project_info div {
+    max-width: 860px;
+    min-width: 400px;
+    overflow: hidden;
+}
 .work_project_info img {
     max-width: 860px;
     min-width: 400px;
@@ -332,6 +337,10 @@
     object-fit: cover;
     box-shadow: 0px 26px 50px 0px rgba(0, 0, 0, 0.2);
     z-index: 2;
+    transition: all 0.8s ease-in-out;
+}
+.work_project_info img:hover {
+    scale: 1.06;
 }
 .work_project_btm {
     display: flex;
@@ -368,7 +377,7 @@
     border-radius: 22px;
     background-color: transparent;
 }
-.work_project_text li:nth-child(even) {
+.work_project_text li:nth-child(2) {
     background-color: var(--color-black);
     color: var(--color-white);
 }

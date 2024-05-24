@@ -355,7 +355,7 @@ ScrollTrigger.create({
 // story card
 ScrollTrigger.create({
     trigger: ".story_card_wrap",
-    start: "top 150%",
+    start: "top 170%",
     onEnter: () => gsap.utils.toArray(".StoryCardSlide").forEach((elem) => elem.classList.add("SlideUp")),
     // once: true
     toggleActions: "play none none none"
