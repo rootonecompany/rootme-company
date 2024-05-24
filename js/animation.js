@@ -19,32 +19,66 @@
 //         // markers: true
 //     },
 // });
+document.addEventListener("DOMContentLoaded", function () {
+    const storyCardWrap = document.querySelector(".story_card_wrap");
+    const storyCardFrame = document.querySelector(".story_card_frame");
+    const storyCard = document.querySelectorAll(".story_card");
 
-//임시 테스트
+    gsap.registerPlugin(ScrollTrigger);
 
-const storyCardWrap = document.querySelector(".story_card_wrap");
-const storyCard = document.querySelectorAll(".story_card");
+    gsap.to(storyCardFrame, {
+        // x: () => -(storyCardFrame.scrollWidth - window.innerWidth),
+        // ease: "none",
+        // scrollTrigger: {
+        //     trigger: storyCardWrap,
+        //     start: "top top",
+        //     end: () => `+=${storyCardFrame.scrollWidth - window.innerWidth}`,
+        //     pin: true,
+        //     pinSpacing: true,
+        //     scrub: true,
+        // },
+        xPercent: -100 * (storyCard.length - 1.5),
+        x: () => -100 * (storyCard.length - 0.5),
+        ease: "none",
+        scrollTrigger: {
+            trigger: storyCardWrap,
+            // start: "center 50%",
+            start: "top top",
+            end: () => "+=" + storyCardWrap.offsetWidth * 2,
+            pin: true,
+            pinSpacing: true,
+            scrub: true,
+            // markers: true
+        },
+        onComplete: function () {
+            //story story
+            ScrollTrigger.create({
+                trigger: ".story_story_wrap",
+                start: "top 60%",
+                onEnter: () => gsap.utils.toArray(".SrotySlide").forEach((elem) => elem.classList.add("SlideUp")),
+                once: true
+            });
 
-// story_sticky 클래스가 적용된 요소의 왼쪽 패딩 값을 가져오는 함수
-function getStickyPaddingLeft() {
-    const stickyElement = document.querySelector(".story_sticky");
-    const styles = window.getComputedStyle(stickyElement);
-    return parseFloat(styles.paddingLeft);
-}
+            // brand
+            ScrollTrigger.create({
+                trigger: ".brand",
+                start: "top 50%",
+                onEnter: () => gsap.utils.toArray(".BrandSlide").forEach((elem) => elem.classList.add("SlideUp")),
+                once: true
+            });
 
-gsap.to(storyCard, {
-    x: () => -getStickyPaddingLeft(),
-    ease: "none",
-    scrollTrigger: {
-        trigger: storyCardWrap,
-        start: "top top",
-        end: () => `+=${storyCardWrap.offsetWidth - window.innerWidth + getStickyPaddingLeft()}`,
-        pin: true,
-        pinSpacing: true,
-        scrub: true,
-        // markers: true
-    },
+            //contact
+            ScrollTrigger.create({
+                trigger: ".contact",
+                start: "top 50%",
+                onEnter: () => gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
+                once: true
+            });
+        }
+    });
 });
+
+
 
 
 
