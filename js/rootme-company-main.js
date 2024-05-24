@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoImg = document.querySelector('.logo img');
     const triggerOffset = 530;
     const storyCardWrap = document.querySelector(".story_card_wrap");
-    // const storyCardWrap = document.querySelector(".test_wrap");
 
     const brandSection = document.querySelector("#brand");
     let isHeaderHidden = false;
@@ -183,10 +182,6 @@ const setClipPath = (progress, size) => {
     const clipPathValue = progress === 1
         ? `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`
         : `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)) round 2rem)`;
-
-    // const clipPathValueDel = progress === 0
-    //     ? ``
-    //     : clipPathValue;
 
     gsap.set(mainVideo, { clipPath: clipPathValue });
 };
