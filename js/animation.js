@@ -8,13 +8,16 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(storyCardFrame, {
-        xPercent: -100 * (storyCard.length - 1.5),
-        x: () => -100 * (storyCard.length - 0.5),
+        // xPercent: -100 * (storyCard.length - 1.5),
+        xPercent: -20 * (storyCard.length - 1),
+        // x: () => -100 * (storyCard.length - 0.5),
+        x: () => -100 * (storyCard.length - 0.2),
         ease: "none",
         scrollTrigger: {
             trigger: storyCardWrap,
             // start: "center 50%",
             start: "top top",
+            // end: () => "+=" + storyCardFrame.offsetWidth * 2,
             end: () => "+=" + storyCardFrame.offsetWidth * 2,
             pin: true,
             pinSpacing: true,
