@@ -201,7 +201,6 @@ span {
 }
 .story_story_txt:nth-child(6) p {
     animation-delay: 1s;
-    padding-bottom: 30px;
 }
 .story_scroll_icon {
     display: flex;
@@ -288,7 +287,7 @@ span {
     animation-delay: 0s;
 }
 .brand_title_txt:nth-child(2) h5 {
-    animation-delay: 0.3s;
+    animation-delay: 0.4s;
     padding-top: 36px;
 }
 .brand_title_txt:nth-child(3) h5 {
