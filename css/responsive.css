@@ -3,9 +3,11 @@
         padding: 0 60px;
     }
     /* story */
+    .story_title_txt span {
+        padding-left: calc(340px - 140px);
+    }
     .story_title_txt h5 {
         font-size: 7.5rem;
-        padding: 42px 0;
     }
     .story_story_txt h5 {
         font-size: 7.5rem;
@@ -15,9 +17,6 @@
     }
     .story_story_txt p {
         margin-left: 28%;
-    }
-    .story_scroll_icon {
-        margin-top: 10%;
     }
     /* brand */
     .brand_header span {
@@ -33,9 +32,7 @@
     .brand_title_txt span {
         padding-top: 320px;
     }
-    .brand_logo_wrap {
-        margin-top: 20px;
-    }
+
     .brand_logo_container {
         grid-gap: 2rem;
     }
@@ -58,7 +55,7 @@
         margin-top: 120px;
     }
     .story_title_txt span {
-        margin-left: 11%;
+        padding-left: 130px;
     }
     .story_title_txt h5 {
         font-size: 5.2rem;
@@ -82,15 +79,21 @@
     }
     .brand_title_txt h5 {
         font-size: 6rem;
-        padding: 25px;
+        /* padding: 25px; */
     }
     .brand_title_txt h5 > span {
         font-size: 6rem;
+    }
+    .brand_logo_wrap {
+        padding-top: 65px;
     }
     .brand_logo_container {
         grid-gap: 1.4rem;
     }
     /* contact */
+    .contact_container span {
+        margin-left: calc(300px - 80px);
+    }
     .contact_title_txt h5,
     .contact_title_txt h5 bold {
         font-size: 6rem;
@@ -103,11 +106,10 @@
         margin-top: 100px;
     }
     .story_title_txt span {
-        margin-left: 11%;
+        padding-left: 110px;
     }
     .story_title_txt h5 {
         font-size: 4.5rem;
-        padding: 32px 0;
     }
     .story_card_inner {
         margin: 56px 60px;
@@ -157,7 +159,7 @@
     }
     .story_story_txt p {
         font-size: 2.4rem;
-        margin-left: 15%;
+        margin-left: 130px;
     }
     /* brand */
     .brand_header span {
@@ -172,13 +174,15 @@
     }
     .brand_title_txt h5 {
         font-size: 4.5rem;
-        padding: 25px;
+    }
+    .brand_title_txt:nth-child(2) h5 {
+        padding-top: 28px;
     }
     .brand_title_txt h5 > span {
         font-size: 4.5rem;
     }
     .brand_logo_wrap {
-        margin-top: 20px;
+        padding-top: 58px;
     }
     .brand_logo_container {
         grid-gap: 1.2rem;
@@ -186,6 +190,7 @@
     /* contact */
     .contact_container span {
         font-size: 1.4rem;
+        margin-left: 100px;
     }
     .contact_title_txt h5,
     .contact_title_txt h5 bold {
@@ -212,12 +217,15 @@
         margin-top: 120px;
     }
     .story_title_txt span {
-        margin-left: calc(100px - 40px);
+        padding-left: 60px;
         font-size: 1.2rem;
     }
     .story_title_txt h5 {
         font-size: 4.2rem;
-        padding: 28px 0;
+    }
+    .story_title_txt:nth-child(2) h5 {
+        padding-top: 28px;
+        margin-top: 0;
     }
     .story_title_txt h5 br.mobile {
         display: none;
@@ -263,14 +271,9 @@
     .story_story_txt h5 {
         font-size: 4.2rem;
         line-height: 1.4;
-        padding: 18px 0;
     }
     .story_story_txt p {
         font-size: 2.4rem;
-        padding: 40px;
-        margin-left: calc(124px - 40px);
-        padding-top: 18px;
-        padding-bottom: 0;
     }
     .story_scroll_icon {
         gap: 10px;
@@ -284,9 +287,6 @@
         left: calc(50% + 47px);
     }
     /* brand */
-    .brand_header {
-        margin-bottom: 196px;
-    }
     .brand_header span {
         margin-top: 16px;
         font-size: 1.8rem;
@@ -296,16 +296,16 @@
     }
     .brand_title_txt > span {
         font-size: 2.2rem;
+        padding-top: 196px;
     }
     .brand_title_txt h5 {
         font-size: 5.2rem;
-        padding: 24px;
     }
     .brand_title_txt h5 > span {
         font-size: 5.2rem;
     }
     .brand_logo_wrap {
-        margin-bottom: 0;
+        padding-bottom: calc(220px - 121px);
     }
     .brand_logo_container {
         display: grid;
@@ -338,6 +338,7 @@
     /* footer */
     footer {
         position: relative;
+        padding-top: 0;
     }
     .footer_dropdown {
         position: absolute;
@@ -376,7 +377,16 @@
     }
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 710px) {
+    .story_story_txt h5 {
+        font-size: 4rem;
+    }
+    .story_story_content {
+        margin-top: 200px;
+    }
+}
+
+@media screen and (max-width: 696px) {
     /* story */
     .story_title_txt span {
         font-size: 1.2rem;
@@ -386,7 +396,6 @@
     }
     .story_story_txt h5 {
         font-size: 4rem;
-        padding: 15px 0;
     }
     .story_story_txt p {
         font-size: 2rem;
@@ -406,9 +415,6 @@
     .brand_title_txt span {
         font-size: 1.6rem;
         padding-top: 180px;
-    }
-    .brand_header {
-        margin-bottom: 196px;
     }
     .brand_header span {
         font-size: 1.4rem;
@@ -451,11 +457,17 @@
 
 @media screen and (max-width: 585px) {
     .inner_wrap {
-        padding: 0 20px;
+        padding: 0 40px;
     }
     /* story */
+    .story_title_txt h5 br.mobile {
+        display: block;
+    }
+    .story_title_txt h5 br.mobile_block {
+        display: none;
+    }
     .story_title_txt span {
-        margin-left: 7%;
+        padding-left: 28px;
     }
     .story_story_txt h5 {
         font-size: 3.5rem;
@@ -463,6 +475,10 @@
     /* brand */
     .brand_header span {
         font-size: 1.2rem;
+    }
+    .brand_logo_wrap {
+        padding-top: 40px;
+        padding-bottom: clac(180px - 121px);
     }
     .brand_logo_container {
         grid-gap: 1.6rem;
@@ -490,7 +506,6 @@
     }
     .contact_title_txt h5 {
         font-size: 3.5rem;
-        margin-bottom: 22px;
     }
     .contact_title_txt h5 bold {
         font-size: 3.5rem;
@@ -502,6 +517,7 @@
     .contact_title_txt p:nth-child(3) {
         margin-top: 20px;
     }
+
     /* footer */
     footer {
         position: relative;
@@ -541,6 +557,9 @@
 }
 
 @media screen and (max-width: 470px) {
+    .inner_wrap {
+        padding: 0 20px;
+    }
     /* story */
     .story_title_txt h5 br.mobile {
         display: block;
@@ -567,11 +586,7 @@
 @media screen and (max-width: 360px) {
     /* story */
     .story_title_txt span {
-        margin-left: calc(48px - 20px);
         font-size: 1rem;
-    }
-    .story_title_txt h5 {
-        padding: 22px 0;
     }
     .story_title_txt h5 bold br.mobile {
         display: none;
@@ -615,17 +630,19 @@
         margin-top: 10px;
     }
     .brand_header span:nth-child(2) {
-        padding-right: 40px;
+        padding-right: 50px;
     }
     .brand_content_txt h5 {
         font-size: 3rem;
-        padding: 18px;
     }
     .brand_content_txt h5 > span {
         font-size: 3rem;
     }
     .brand_title_txt span {
-        padding-top: 0;
+        padding-top: 160px;
+    }
+    .brand_title_txt:nth-child(2) h5 {
+        padding-top: 18px;
     }
     .brand_logo_wrap {
         margin-top: calc(32px - 18px);

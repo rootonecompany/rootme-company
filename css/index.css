@@ -11,7 +11,6 @@ span {
 #story {
     display: flex;
     flex-direction: column;
-    /* background: pink; */
 }
 .story_txt_container {
     margin-top: 120px;
@@ -28,7 +27,7 @@ span {
     overflow: hidden;
 }
 .story_title_txt span {
-    margin-left: 15%;
+    padding-left: calc(340px - 80px);
     font-size: 1.4rem;
     display: inline-block;
     opacity: 0;
@@ -172,7 +171,6 @@ span {
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.58;
-    /* padding: 40px; */
     white-space: nowrap;
     margin-left: 450px;
     overflow: hidden;
@@ -202,8 +200,7 @@ span {
     animation-delay: 0.8s;
 }
 .story_story_txt:nth-child(6) p {
-    margin-bottom: 40px;
-    animation-delay: 1s;
+    animation-delay: 1.6s;
 }
 .story_scroll_icon {
     display: flex;
@@ -292,14 +289,14 @@ span {
 }
 .brand_title_txt:nth-child(2) h5 {
     animation-delay: 0.2s;
-    margin-top: 36px;
+    padding-top: 36px;
 }
 .brand_title_txt:nth-child(3) h5 {
     animation-delay: 0.4s;
 }
 .brand_logo_wrap {
-    margin-top: 80px;
-    margin-bottom: 258px;
+    padding-top: 80px;
+    padding-bottom: 258px;
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.4s ease;
@@ -329,9 +326,13 @@ span {
 
 /* contact */
 .contact_container span {
-    margin-left: 15%;
+    margin-left: calc(340px - 80px);
     font-size: 1.4rem;
     font-weight: 700;
+}
+
+.container_imgBox {
+    padding-top: 121px;
 }
 .contact_img {
     margin: 42px 0 52px 0;
