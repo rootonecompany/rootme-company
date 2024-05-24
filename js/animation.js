@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // brand logo 애니메이션
-
             gsap.fromTo(
                 ".brand_logo_inner",
                 { y: 100, opacity: 0 },
@@ -77,6 +76,23 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                 }
             );
+
+            gsap.fromTo(
+                ".story_scroll_down",
+                { opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.05,
+                    ease: "power1.out",
+                    scrollTrigger: {
+                        trigger: ".story_story_wrap",
+                        start: "top 70%",
+                    },
+                }
+            );
+
         },
     });
 });
