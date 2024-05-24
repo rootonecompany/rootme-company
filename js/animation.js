@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //story story
             ScrollTrigger.create({
                 trigger: ".story_story_wrap",
-                start: "top 60%",
+                start: "top 50%",
                 onEnter: () => gsap.utils.toArray(".SrotySlide").forEach((elem) => elem.classList.add("SlideUp")),
                 once: true
             });
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // brand
             ScrollTrigger.create({
                 trigger: ".brand",
-                start: "top 50%",
+                start: "top 70%",
                 onEnter: () => gsap.utils.toArray(".BrandSlide").forEach((elem) => elem.classList.add("SlideUp")),
                 once: true
             });
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //contact
             ScrollTrigger.create({
                 trigger: ".contact",
-                start: "top 50%",
+                start: "top 5%",
                 onEnter: () => gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
                 once: true
             });

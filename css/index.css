@@ -200,7 +200,7 @@ span {
     animation-delay: 0.8s;
 }
 .story_story_txt:nth-child(6) p {
-    animation-delay: 1.6s;
+    animation-delay: 1s;
 }
 .story_scroll_icon {
     display: flex;
@@ -288,11 +288,11 @@ span {
     animation-delay: 0s;
 }
 .brand_title_txt:nth-child(2) h5 {
-    animation-delay: 0.2s;
+    animation-delay: 0.3s;
     padding-top: 36px;
 }
 .brand_title_txt:nth-child(3) h5 {
-    animation-delay: 0.4s;
+    animation-delay: 0.7s;
 }
 .brand_logo_wrap {
     padding-top: 80px;
@@ -378,11 +378,11 @@ span {
     animation-delay: 0.2s;
 }
 .contact_title_txt:nth-child(3) p {
-    animation-delay: 0.4s;
+    animation-delay: 0.5s;
 }
 .contact_title_txt:nth-child(4) p {
     margin-top: 32px;
-    animation-delay: 0.6s;
+    animation-delay: 0.8s;
 }
 
 /* footer */

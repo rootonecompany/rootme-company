@@ -330,65 +330,6 @@ gsap.utils.toArray(".fadein").forEach((elem) => {
         toggleClass: "fade-in",
     });
 });
-// scroll up -> section. about
-// gsap.utils.toArray(".Slide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top 100%",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".Slide2").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top -350",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".Slide3").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top -1100",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// scroll up -> section. story card
-// gsap.utils.toArray(".StoryCardSlide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top 100%",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".SrotySlide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top -210vh",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".BrandSlide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top 2%",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-// gsap.utils.toArray(".ContactSlide").forEach((elem) => {
-//     ScrollTrigger.create({
-//         trigger: elem,
-//         start: "top 5%",
-//         toggleClass: "SlideUp",
-//         once: true
-//     });
-// });
-
 
 // about
 ScrollTrigger.create({
@@ -413,7 +354,7 @@ ScrollTrigger.create({
 // story card
 ScrollTrigger.create({
     trigger: ".story_card_wrap",
-    start: "top 130%",
+    start: "top 150%",
     onEnter: () => gsap.utils.toArray(".StoryCardSlide").forEach((elem) => elem.classList.add("SlideUp")),
     once: true
 });
