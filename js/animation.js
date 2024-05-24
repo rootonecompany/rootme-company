@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //contact
             ScrollTrigger.create({
                 trigger: ".contact",
-                start: "top 5%",
+                start: "top 10%",
                 onEnter: () => gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
                 once: true
             });
@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 1,
-                    stagger: 0.15,
+                    duration: 0.8,
+                    stagger: 0.05,
                     ease: "power1.out",
                     scrollTrigger: {
                         trigger: ".brand_logo_container",

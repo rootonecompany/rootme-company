@@ -336,19 +336,25 @@ ScrollTrigger.create({
     trigger: ".about",
     start: "top 50%",
     onEnter: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.add("SlideUp")),
-    // once: true
+    onLeave: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.remove("SlideUp")),
+    onEnterBack: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.add("SlideUp")),
+    onLeaveBack: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.remove("SlideUp"))
 });
 ScrollTrigger.create({
     trigger: ".about",
     start: "top -450",
     onEnter: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.add("SlideUp")),
-    // once: true
+    onLeave: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.remove("SlideUp")),
+    onEnterBack: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.add("SlideUp")),
+    onLeaveBack: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.remove("SlideUp")),
 });
 ScrollTrigger.create({
     trigger: ".about",
     start: "top -1500",
     onEnter: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.add("SlideUp")),
-    // once: true
+    onLeave: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.remove("SlideUp")),
+    onEnterBack: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.add("SlideUp")),
+    onLeaveBack: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.remove("SlideUp")),
 });
 
 // story card
@@ -356,5 +362,6 @@ ScrollTrigger.create({
     trigger: ".story_card_wrap",
     start: "top 150%",
     onEnter: () => gsap.utils.toArray(".StoryCardSlide").forEach((elem) => elem.classList.add("SlideUp")),
-    once: true
+    // once: true
+    toggleActions: "play none none none"
 });
