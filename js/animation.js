@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // brand
             ScrollTrigger.create({
                 trigger: ".brand",
-                start: "top 70%",
+                start: "top 50%",
                 onEnter: () => gsap.utils.toArray(".BrandSlide").forEach((elem) => elem.classList.add("SlideUp")),
                 once: true
             });
@@ -70,17 +70,13 @@ document.addEventListener("DOMContentLoaded", function () {
             //contact
             ScrollTrigger.create({
                 trigger: ".contact",
-                start: "top 5%",
+                start: "top 50%",
                 onEnter: () => gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
                 once: true
             });
-        }
+        },
     });
 });
-
-
-
-
 
 // 드롭다운 메뉴
 const myDropDownBtn = document.getElementById("footer_dropdown_btn");
