@@ -37,14 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
         //     pinSpacing: true,
         //     scrub: true,
         // },
-        xPercent: -100 * (storyCard.length - 1.5),
-        x: () => -100 * (storyCard.length - 0.5),
+        // xPercent: -100 * (storyCard.length - 1.5),
+        xPercent: -20 * (storyCard.length - 1),
+        x: () => -100 * (storyCard.length - 0.2),
         ease: "none",
         scrollTrigger: {
             trigger: storyCardWrap,
             // start: "center 50%",
             start: "top top",
-            end: () => "+=" + storyCardWrap.offsetWidth * 2,
+            end: () => "+=" + storyCardFrame.offsetWidth * 2,
             pin: true,
             pinSpacing: true,
             scrub: true,
@@ -55,24 +56,33 @@ document.addEventListener("DOMContentLoaded", function () {
             ScrollTrigger.create({
                 trigger: ".story_story_wrap",
                 start: "top 50%",
-                onEnter: () => gsap.utils.toArray(".SrotySlide").forEach((elem) => elem.classList.add("SlideUp")),
-                once: true
+                onEnter: () =>
+                    gsap.utils
+                        .toArray(".SrotySlide")
+                        .forEach((elem) => elem.classList.add("SlideUp")),
+                once: true,
             });
 
             // brand
             ScrollTrigger.create({
                 trigger: ".brand",
                 start: "top 50%",
-                onEnter: () => gsap.utils.toArray(".BrandSlide").forEach((elem) => elem.classList.add("SlideUp")),
-                once: true
+                onEnter: () =>
+                    gsap.utils
+                        .toArray(".BrandSlide")
+                        .forEach((elem) => elem.classList.add("SlideUp")),
+                once: true,
             });
 
             //contact
             ScrollTrigger.create({
                 trigger: ".contact",
                 start: "top 50%",
-                onEnter: () => gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
-                once: true
+                onEnter: () =>
+                    gsap.utils
+                        .toArray(".ContactSlide")
+                        .forEach((elem) => elem.classList.add("SlideUp")),
+                once: true,
             });
         },
     });
