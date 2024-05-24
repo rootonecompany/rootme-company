@@ -21,7 +21,6 @@ gsap.to(storyCard, {
 });
 
 //임시 테스트
-
 // const storyCardWrap = document.querySelector(".story_card_wrap");
 // const storyCard = document.querySelectorAll(".story_card");
 
@@ -45,8 +44,6 @@ gsap.to(storyCard, {
 //         // markers: true
 //     },
 // });
-
-
 
 // 드롭다운 메뉴
 const myDropDownBtn = document.getElementById("footer_dropdown_btn");

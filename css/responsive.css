@@ -101,6 +101,9 @@
 }
 
 @media screen and (max-width: 960px) {
+    .inner_wrap {
+        padding: 0 50px;
+    }
     /* story */
     .story_txt_container {
         margin-top: 100px;
@@ -161,6 +164,9 @@
         font-size: 2.4rem;
         margin-left: 130px;
     }
+    .story_scroll_icon img {
+        left: calc(50% + 30px);
+    }
     /* brand */
     .brand_header span {
         font-size: 2rem;
@@ -182,7 +188,8 @@
         font-size: 4.5rem;
     }
     .brand_logo_wrap {
-        padding-top: 58px;
+        padding-top: 56px;
+        padding-bottom: calc(220px - 121px);
     }
     .brand_logo_container {
         grid-gap: 1.2rem;
@@ -261,12 +268,13 @@
         font-size: 1rem;
     }
     .story_story_wrap {
-        height: 720px;
+        /* height: 720px; */
+        height: 100%;
         justify-content: space-evenly;
     }
     .story_story_content {
-        margin-top: 216px;
-        margin-bottom: 88px;
+        padding-top: 216px;
+        padding-bottom: 80px;
     }
     .story_story_txt h5 {
         font-size: 4.2rem;
@@ -275,16 +283,19 @@
     .story_story_txt p {
         font-size: 2.4rem;
     }
-    .story_scroll_icon {
-        gap: 10px;
+    .story_story_txt:nth-child(4) p {
+        padding-top: 18px;
     }
     .story_scroll_icon span {
         font-size: 1.2rem;
     }
+    .story_scroll_icon img {
+        left: calc(50% + 10px);
+        margin: 40px;
+    }
     .story_scroll_img {
         width: 28px;
         height: 28px;
-        left: calc(50% + 47px);
     }
     /* brand */
     .brand_header span {
@@ -381,9 +392,6 @@
     .story_story_txt h5 {
         font-size: 4rem;
     }
-    .story_story_content {
-        margin-top: 200px;
-    }
 }
 
 @media screen and (max-width: 696px) {
@@ -426,6 +434,9 @@
     .brand_title_txt > h5 > span {
         font-size: 4.6rem;
     }
+    .brand_logo_wrap {
+        padding-top: 32px;
+    }
     /* contact */
     .contact_container span {
         margin-left: 50px;
@@ -449,7 +460,7 @@
     }
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 625px) {
     .story_title_txt h5 {
         font-size: 3.2rem;
     }
@@ -477,7 +488,7 @@
         font-size: 1.2rem;
     }
     .brand_logo_wrap {
-        padding-top: 40px;
+        padding-top: 32px;
         padding-bottom: clac(180px - 121px);
     }
     .brand_logo_container {
@@ -616,14 +627,14 @@
         margin: 20px auto 43px auto;
     }
     .story_story_wrap {
-        height: 560px;
+        /* height: 560px; */
         align-items: center;
         justify-content: flex-start;
     }
-    .story_story_content {
+    /* .story_story_content {
         margin-top: 178px;
         margin-bottom: 68px;
-    }
+    } */
     .story_story_txt h5 {
         font-size: 2.4rem;
     }
