@@ -395,19 +395,19 @@ ScrollTrigger.create({
     trigger: ".about",
     start: "top 50%",
     onEnter: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.add("SlideUp")),
-    once: true
+    // once: true
 });
 ScrollTrigger.create({
     trigger: ".about",
     start: "top -450",
     onEnter: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.add("SlideUp")),
-    once: true
+    // once: true
 });
 ScrollTrigger.create({
     trigger: ".about",
     start: "top -1500",
     onEnter: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.add("SlideUp")),
-    once: true
+    // once: true
 });
 
 // story card
