@@ -388,7 +388,7 @@ span {
 /* footer */
 footer {
     padding-top: 129px;
-    padding-bottom: 60px;
+    padding-bottom: calc(60px - 6px);
     display: flex;
     flex-direction: column;
 }
