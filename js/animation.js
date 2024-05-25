@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 start: "top 60%",
                 onEnter: () =>
                     gsap.utils
-                        .toArray(".SrotySlide")
+                        .toArray(".StorySlide")
                         .forEach((elem) => elem.classList.add("SlideUp")),
                 once: true,
             });

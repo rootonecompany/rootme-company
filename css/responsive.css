@@ -16,7 +16,7 @@
         display: block;
     }
     .story_story_txt p {
-        margin-left: 28%;
+        margin-left: -70px;
     }
     /* brand */
     .brand_header span {
@@ -32,7 +32,6 @@
     .brand_title_txt span {
         padding-top: 320px;
     }
-
     .brand_logo_container {
         grid-gap: 2rem;
     }
@@ -51,20 +50,23 @@
 
 @media screen and (max-width: 1260px) {
     /* story */
+    .story_story_wrap {
+        height: 100%;
+        padding: 300px 0 230px 0;
+    }
     .story_txt_container {
         margin-top: 120px;
     }
     .story_title_txt span {
         padding-left: 130px;
     }
-    .story_title_txt h5 {
-        font-size: 5.2rem;
-    }
+    .story_title_txt h5,
     .story_story_txt h5 {
         font-size: 5.2rem;
     }
     .story_story_txt p {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+        margin-left: -190px;
     }
     /* brand */
     .brand_header span {
@@ -79,7 +81,6 @@
     }
     .brand_title_txt h5 {
         font-size: 6rem;
-        /* padding: 25px; */
     }
     .brand_title_txt h5 > span {
         font-size: 6rem;
@@ -153,16 +154,12 @@
     .story_card_btm span {
         font-size: 1.4rem;
     }
-    .story_story_content {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
     .story_story_txt h5 {
         font-size: 4.3rem;
     }
     .story_story_txt p {
         font-size: 2.4rem;
-        margin-left: 130px;
+        margin-left: -235px;
     }
     .story_scroll_icon img {
         left: calc(50% + 30px);
@@ -267,24 +264,13 @@
     .story_card_btm span {
         font-size: 1rem;
     }
-    .story_story_wrap {
-        /* height: 720px; */
-        height: 100%;
-        justify-content: space-evenly;
-    }
-    .story_story_content {
-        padding-top: 216px;
-        padding-bottom: 80px;
-    }
     .story_story_txt h5 {
         font-size: 4.2rem;
         line-height: 1.4;
     }
     .story_story_txt p {
         font-size: 2.4rem;
-    }
-    .story_story_txt:nth-child(4) p {
-        padding-top: 18px;
+        margin-left: -325px;
     }
     .story_scroll_icon span {
         font-size: 1.2rem;
@@ -396,6 +382,13 @@
 
 @media screen and (max-width: 696px) {
     /* story */
+    /* 텍스트 애니메이션 테스트 중 */
+    .story_story_content .web_view {
+        display: none;
+    }
+    .story_story_content .mobile_view {
+        display: block;
+    }
     .story_title_txt span {
         font-size: 1.2rem;
     }
@@ -405,17 +398,31 @@
     .story_story_txt h5 {
         font-size: 4rem;
     }
+    .story_story_txt:nth-child(1) h5 {
+        animation-delay: 0s;
+    }
+    .story_story_txt:nth-child(2) h5 {
+        animation-delay: 0.2s;
+    }
+    .story_story_txt:nth-child(3) h5 {
+        animation-delay: 0.4s;
+        padding-bottom: 0;
+    }
+    .story_story_txt:nth-child(4) h5 {
+        animation-delay: 0.6s;
+        padding-bottom: 18px;
+    }
+    .story_story_txt:nth-child(5) p {
+        animation-delay: 0.8s;
+    }
+    .story_story_txt:nth-child(6) p {
+        animation-delay: 1s;
+    }
+    .story_story_txt:nth-child(7) p {
+        animation-delay: 1.2s;
+    }
     .story_story_txt p {
         font-size: 2rem;
-    }
-    .story_story_txt h5 br {
-        display: none;
-    }
-    .story_story_txt h5 br.mobile {
-        display: block;
-    }
-    .story_story_txt p {
-        font-size: 1.6rem;
         padding: 0;
         margin-left: 0;
     }
@@ -471,12 +478,6 @@
         padding: 0 40px;
     }
     /* story */
-    .story_title_txt h5 br.mobile {
-        display: block;
-    }
-    .story_title_txt h5 br.mobile_block {
-        display: none;
-    }
     .story_title_txt span {
         padding-left: 28px;
     }
@@ -515,9 +516,7 @@
         margin: 22px 0 24px 0;
         height: 400px;
     }
-    .contact_title_txt h5 {
-        font-size: 3.5rem;
-    }
+    .contact_title_txt h5,
     .contact_title_txt h5 bold {
         font-size: 3.5rem;
     }
@@ -571,17 +570,11 @@
         padding: 0 20px;
     }
     /* story */
-    .story_title_txt h5 br.mobile {
-        display: block;
-    }
-    .story_title_txt h5 br.mobile_block {
-        display: none;
-    }
     .story_story_txt h5 {
         font-size: 2.8rem;
     }
     .story_story_txt p {
-        margin-left: 0;
+        font-size: 1.6rem;
     }
     /* brand */
     .brand_title_txt h5,
@@ -604,9 +597,6 @@
     .story_title_txt span {
         font-size: 1rem;
     }
-    .story_title_txt h5 bold br.mobile {
-        display: none;
-    }
     .story_card_wrap {
         height: 100vh;
     }
@@ -627,14 +617,9 @@
         margin: 20px auto 43px auto;
     }
     .story_story_wrap {
-        /* height: 560px; */
         align-items: center;
         justify-content: flex-start;
     }
-    /* .story_story_content {
-        margin-top: 178px;
-        margin-bottom: 68px;
-    } */
     .story_story_txt h5 {
         font-size: 2.4rem;
     }
