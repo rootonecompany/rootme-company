@@ -95,12 +95,19 @@ document.addEventListener("DOMContentLoaded", function () {
 // 드롭다운 메뉴
 const myDropDownBtn = document.getElementById("footer_dropdown_btn");
 const myDropdownContent = document.getElementById("myDropdownContent");
+const arrowImg = myDropDownBtn.querySelector("img");
 
 window.addEventListener("click", () => {
     myDropdownContent.classList.remove("show");
+    arrowImg.style.transform = "translateY(-50%) rotate(0deg)";
 });
 
 myDropDownBtn.addEventListener("click", (e) => {
     e.stopPropagation();
-    myDropdownContent.classList.toggle("show");
+    const isVisible = myDropdownContent.classList.toggle("show");
+    if (isVisible) {
+        arrowImg.style.transform = "translateY(-50%) rotate(-180deg)";
+    } else {
+        arrowImg.style.transform = "translateY(-50%) rotate(0deg)";
+    }
 });
