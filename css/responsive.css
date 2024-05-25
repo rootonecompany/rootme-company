@@ -58,11 +58,13 @@
         margin-top: 120px;
     }
     .story_title_txt span {
-        padding-left: 130px;
+        padding-left: 165px;
     }
-    .story_title_txt h5,
+    .story_title_txt h5 {
+        font-size: 6.5rem;
+    }
     .story_story_txt h5 {
-        font-size: 5.2rem;
+        font-size: 6.2rem;
     }
     .story_story_txt p {
         font-size: 2.5rem;
@@ -79,11 +81,9 @@
         font-size: 2.3rem;
         padding-top: 280px;
     }
-    .brand_title_txt h5 {
-        font-size: 6rem;
-    }
-    .brand_title_txt h5 > span {
-        font-size: 6rem;
+    .brand_title_txt h5,
+    .brand_title_txt h5 span {
+        font-size: 6.8rem;
     }
     .brand_logo_wrap {
         padding-top: 65px;
@@ -97,7 +97,24 @@
     }
     .contact_title_txt h5,
     .contact_title_txt h5 bold {
-        font-size: 6rem;
+        font-size: 6.8rem;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .story_title_txt h5 {
+        font-size: 5.5rem;
+    }
+    .story_story_txt h5 {
+        font-size: 5.2rem;
+    }
+    .brand_title_txt h5,
+    .brand_title_txt h5 span {
+        font-size: 5.8rem;
+    }
+    .contact_title_txt h5,
+    .contact_title_txt h5 bold {
+        font-size: 5.8rem;
     }
 }
 
@@ -159,7 +176,7 @@
     }
     .story_story_txt p {
         font-size: 2.4rem;
-        margin-left: -235px;
+        margin-left: -268px;
     }
     .story_scroll_icon img {
         left: calc(50% + 30px);
@@ -175,14 +192,12 @@
         font-size: 2.3rem;
         padding-top: 240px;
     }
-    .brand_title_txt h5 {
-        font-size: 4.5rem;
+    .brand_title_txt h5,
+    .brand_title_txt h5 span {
+        font-size: 4.8rem;
     }
     .brand_title_txt:nth-child(2) h5 {
-        padding-top: 28px;
-    }
-    .brand_title_txt h5 > span {
-        font-size: 4.5rem;
+        padding-top: 24px;
     }
     .brand_logo_wrap {
         padding-top: 56px;
@@ -198,7 +213,7 @@
     }
     .contact_title_txt h5,
     .contact_title_txt h5 bold {
-        font-size: 4.5rem;
+        font-size: 4.8rem;
     }
     .contact_title_txt p {
         font-size: 1.8rem;
@@ -226,13 +241,6 @@
     }
     .story_title_txt h5 {
         font-size: 4.2rem;
-    }
-    .story_title_txt:nth-child(2) h5 {
-        padding-top: 28px;
-        margin-top: 0;
-    }
-    .story_title_txt h5 br.mobile {
-        display: none;
     }
     .story_card_wrap {
         height: 100vh;
@@ -265,8 +273,7 @@
         font-size: 1rem;
     }
     .story_story_txt h5 {
-        font-size: 4.2rem;
-        line-height: 1.4;
+        font-size: 4rem;
     }
     .story_story_txt p {
         font-size: 2.4rem;
@@ -374,29 +381,31 @@
     }
 }
 
-@media screen and (max-width: 710px) {
-    .story_story_txt h5 {
-        font-size: 4rem;
-    }
-}
-
 @media screen and (max-width: 696px) {
     /* story */
-    /* 텍스트 애니메이션 테스트 중 */
-    .story_story_content .web_view {
+    .story_txt_container .story_title_web_view {
         display: none;
     }
-    .story_story_content .mobile_view {
+    .story_txt_container .story_title_mobile_view {
+        display: block;
+    }
+    .story_story_content .story_web_view {
+        display: none;
+    }
+    .story_story_content .story_mobile_view {
         display: block;
     }
     .story_title_txt span {
-        font-size: 1.2rem;
+        padding-left: 50px;
     }
     .story_title_txt h5 {
-        font-size: 3.8rem;
+        font-size: 5rem;
+    }
+    .story_title_txt:nth-child(1) h5 {
+        margin-top: 22px;
     }
     .story_story_txt h5 {
-        font-size: 4rem;
+        font-size: 4.7rem;
     }
     .story_story_txt:nth-child(1) h5 {
         animation-delay: 0s;
@@ -428,18 +437,14 @@
     }
     /* brand */
     .brand_title_txt span {
-        font-size: 1.6rem;
         padding-top: 180px;
     }
-    .brand_header span {
-        font-size: 1.4rem;
-    }
-    e .brand_header span:nth-child(2) {
+    .brand_header span:nth-child(2) {
         padding-right: 70px;
     }
     .brand_title_txt h5,
     .brand_title_txt > h5 > span {
-        font-size: 4.6rem;
+        font-size: 5.3rem;
     }
     .brand_logo_wrap {
         padding-top: 32px;
@@ -453,10 +458,10 @@
         margin: 32px 0 34px 0;
     }
     .contact_title_txt h5 {
-        font-size: 4.6rem;
+        font-size: 5.3rem;
     }
     .contact_title_txt h5 bold {
-        font-size: 4.6rem;
+        font-size: 5.3rem;
         margin-top: 22px;
     }
     .contact_title_txt p:nth-child(3) {
@@ -468,25 +473,45 @@
 }
 
 @media screen and (max-width: 625px) {
+    .inner_wrap {
+        padding: 0 30px;
+    }
     .story_title_txt h5 {
-        font-size: 3.2rem;
+        font-size: 4.5rem;
+    }
+    .story_story_txt h5 {
+        font-size: 4.3rem;
+    }
+    .brand_title_txt > span {
+        font-size: 2rem;
+    }
+    .brand_title_txt h5,
+    .brand_title_txt > h5 > span {
+        font-size: 4.8rem;
+    }
+    .contact_title_txt h5,
+    .contact_title_txt h5 bold {
+        font-size: 4.8rem;
     }
 }
 
 @media screen and (max-width: 585px) {
     .inner_wrap {
-        padding: 0 40px;
+        padding: 0 20px;
     }
     /* story */
     .story_title_txt span {
         padding-left: 28px;
     }
+    .story_title_txt h5 {
+        font-size: 4.3rem;
+    }
     .story_story_txt h5 {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
     /* brand */
     .brand_header span {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     .brand_logo_wrap {
         padding-top: 32px;
@@ -497,12 +522,11 @@
     }
     .brand_title_txt h5,
     .brand_title_txt > h5 > span {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
     }
     .brand_title_txt span {
         padding-top: 170px;
     }
-
     /* contact */
     .contact_container {
         display: flex;
@@ -510,7 +534,6 @@
     }
     .contact_container span {
         margin-left: calc(48px - 20px);
-        font-size: 1rem;
     }
     .contact_img {
         margin: 22px 0 24px 0;
@@ -518,16 +541,14 @@
     }
     .contact_title_txt h5,
     .contact_title_txt h5 bold {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
     }
     .contact_title_txt p {
-        font-size: 1.2rem;
         margin-top: 20px;
     }
     .contact_title_txt:nth-child(4) p {
         margin-top: 20px;
     }
-
     /* footer */
     footer {
         position: relative;
@@ -565,13 +586,13 @@
     }
 }
 
-@media screen and (max-width: 470px) {
-    .inner_wrap {
-        padding: 0 20px;
-    }
+@media screen and (max-width: 495px) {
     /* story */
+    .story_title_txt h5 {
+        font-size: 3.8rem;
+    }
     .story_story_txt h5 {
-        font-size: 2.8rem;
+        font-size: 3.3rem;
     }
     .story_story_txt p {
         font-size: 1.6rem;
@@ -579,7 +600,8 @@
     /* brand */
     .brand_title_txt h5,
     .brand_content_txt h5 span {
-        font-size: 3.2rem;
+        font-size: 4rem;
+        line-height: inherit;
     }
     .brand_logo_container {
         grid-gap: 1.2rem;
@@ -587,8 +609,56 @@
     .contact_container_txt {
         margin-bottom: 160px;
     }
+    .contact_title_txt h5,
+    .contact_title_txt h5 bold {
+        font-size: 4rem;
+    }
     .contact_title_txt:nth-child(4) p {
         margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    /* story */
+    .story_title_txt h5 {
+        font-size: 3rem;
+    }
+    .story_story_txt h5 {
+        font-size: 2.8rem;
+    }
+    .story_story_txt p {
+        font-size: 1.6rem;
+    }
+    /* brand */
+    .brand_header span {
+        font-size: 1.2rem;
+    }
+    .brand_title_txt span {
+        padding-top: 160px;
+    }
+    .brand_title_txt > span {
+        font-size: 1.6rem;
+    }
+    .brand_title_txt:nth-child(2) h5 {
+        padding-top: 18px;
+    }
+    .brand_title_txt h5,
+    .brand_content_txt h5 span {
+        font-size: 3.5rem;
+        line-height: inherit;
+    }
+    .brand_logo_container {
+        grid-gap: 1.2rem;
+    }
+    .contact_container_txt {
+        margin-bottom: 160px;
+    }
+    .contact_title_txt h5,
+    .contact_title_txt h5 bold {
+        font-size: 3.5rem;
+    }
+    .contact_title_txt p {
+        font-size: 1.4rem;
     }
 }
 
@@ -656,6 +726,9 @@
     .contact_container {
         display: flex;
         flex-direction: column;
+    }
+    .container_imgBox span {
+        font-size: 1rem;
     }
     .contact_container_txt {
         margin-bottom: 160px;
