@@ -232,6 +232,9 @@
         padding: 0 40px;
     }
     /* story */
+    .story_story_wrap {
+        padding: 216px 0 80px 0;
+    }
     .story_txt_container {
         margin-top: 120px;
     }
@@ -664,6 +667,9 @@
 
 @media screen and (max-width: 360px) {
     /* story */
+    .story_story_wrap {
+        padding: 176px 0 68px 0;
+    }
     .story_title_txt span {
         font-size: 1rem;
     }
