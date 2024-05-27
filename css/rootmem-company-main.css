@@ -72,7 +72,7 @@
     text-align: center;
     font-size: 3.2rem;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 800;
     line-height: normal;
     letter-spacing: -0.64px;
     margin: 208px 0 0;
@@ -163,8 +163,13 @@
     text-align: center;
 }
 .about_txt {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin: 0 auto;
     text-align: center;
+    white-space: nowrap;
 }
 .about_txt1 {
     background-image: url("../images/about1.png");
@@ -226,6 +231,7 @@
     margin-top: 0;
     animation-delay: 0.2s;
     margin-top: 46px;
+    margin-bottom: 10px;
     padding: 0 50px;
 }
 .about_box .about_txt .about_txt_bottom:nth-child(2) p {
@@ -239,7 +245,7 @@
 .work {
     position: relative;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 90px;
 }
 .work_top_txt {
     display: flex;
@@ -283,14 +289,14 @@
     font-weight: 900;
 }
 .work_move_txt h3:nth-child(3) {
-    font-weight: 350;
+    font-weight: 300;
     margin-bottom: 0;
 }
 
 /* project box */
 .work_project_box {
     display: flex;
-    margin-top: 340px;
+    margin-top: 320px;
     flex-direction: column;
     z-index: 2;
 }
@@ -324,6 +330,11 @@
     margin-bottom: 16px;
     line-height: normal;
 }
+.work_project_info div {
+    max-width: 860px;
+    min-width: 400px;
+    overflow: hidden;
+}
 .work_project_info img {
     max-width: 860px;
     min-width: 400px;
@@ -332,6 +343,10 @@
     object-fit: cover;
     box-shadow: 0px 26px 50px 0px rgba(0, 0, 0, 0.2);
     z-index: 2;
+    transition: all 0.8s ease-in-out;
+}
+.work_project_info img:hover {
+    scale: 1.06;
 }
 .work_project_btm {
     display: flex;
@@ -368,7 +383,7 @@
     border-radius: 22px;
     background-color: transparent;
 }
-.work_project_text li:nth-child(even) {
+.work_project_text li:nth-child(2) {
     background-color: var(--color-black);
     color: var(--color-white);
 }

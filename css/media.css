@@ -105,9 +105,13 @@
         display: block;
         position: absolute;
         bottom: 115px;
-        font-size: 1rem;
     }
-
+    .header_menu li span {
+        text-transform: capitalize;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 2;
+    }
     .header_menu li a {
         font-size: 2.6rem;
         padding: 0;
@@ -119,6 +123,7 @@
     }
     .header_menu li:nth-child(6):hover {
         text-decoration: none;
+        color: var(--color-white);
     }
 
     /* test */
@@ -183,6 +188,9 @@
     }
 
     /* about */
+    .about_txt {
+        top: 50%;
+    }
     .about_txt1 {
         background-size: 400px 400px;
     }
@@ -216,6 +224,7 @@
     /* work */
     .work {
         margin-top: 0;
+        /* top: -80px; */
     }
     .work_top_txt span {
         margin: 0 0 0 140px;
@@ -470,6 +479,9 @@
         clip-path: inset(0 calc((100% - 26rem) / 2) round 2rem);
     }
     /* about */
+    .about_txt {
+        top: 50%;
+    }
     .about_txt1 {
         background-size: 220px 220px;
     }
