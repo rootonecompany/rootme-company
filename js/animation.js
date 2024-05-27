@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(storyCardFrame, {
-        xPercent: -20 * (storyCard.length - 1),
+        xPercent: -0.5 * storyCard.length,
         x: () => -100 * (storyCard.length - 0.2),
         ease: "none",
         scrollTrigger: {
             trigger: storyCardWrap,
             start: "top top",
-            end: () => "+=" + storyCardFrame.offsetWidth * 2,
+            end: () => "+=" + storyCardFrame.offsetWidth,
             pin: true,
             pinSpacing: true,
             scrub: true,
