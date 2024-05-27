@@ -132,6 +132,9 @@
     .story_title_txt h5 {
         font-size: 4.5rem;
     }
+    .story_title_txt:nth-child(3) h5 {
+        margin-bottom: 0;
+    }
     .story_card_inner {
         margin: 56px 60px;
         gap: 220px;
@@ -479,6 +482,9 @@
     .inner_wrap {
         padding: 0 30px;
     }
+    .story_card_wrpa {
+        margin-top: 0;
+    }
     .story_title_txt h5 {
         font-size: 4.5rem;
     }
@@ -722,8 +728,7 @@
         padding-top: 18px;
     }
     .brand_logo_wrap {
-        margin-top: calc(32px - 18px);
-        margin-bottom: 0;
+        margin: 0;
     }
     .brand_logo_container {
         grid-gap: 0.8rem;
@@ -732,6 +737,9 @@
     .contact_container {
         display: flex;
         flex-direction: column;
+    }
+    .container_imgBox {
+        padding-top: 60px;
     }
     .container_imgBox span {
         font-size: 1rem;
