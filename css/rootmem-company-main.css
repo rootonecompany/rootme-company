@@ -309,7 +309,7 @@
     z-index: 2;
 }
 
-.project_wrap:nth-child(2) {
+.project_wrap:nth-child(even) {
     justify-content: right;
     text-align: right;
 }
@@ -368,7 +368,7 @@
     border-radius: 22px;
     background-color: transparent;
 }
-.work_project_text li:nth-child(2) {
+.work_project_text li:nth-child(even) {
     background-color: var(--color-black);
     color: var(--color-white);
 }

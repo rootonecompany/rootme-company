@@ -263,7 +263,7 @@ window.addEventListener("resize", () => {
 
 const workTopTxt = document.querySelector(".work_top_txt");
 const workSection = document.querySelector(".work");
-const thirdProjectWrap = document.querySelectorAll(".project_wrap")[2];
+const thirdProjectWrap = document.querySelectorAll(".project_wrap")[3];
 
 gsap.set(workTopTxt, { y: 0 });
 
