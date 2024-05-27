@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const triggerOffset = 530;
     const storyCardWrap = document.querySelector(".story_card_wrap");
 
-    const brandSection = document.querySelector("#brand");
+    const brandSection = document.querySelector("#inner_wrap");
     let isHeaderHidden = false;
     let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             logoImg.src = "./images/logoclose.png";
             //스크롤이 story 안에 있을경우 header에 .darkMode class가 붙어서 스타일이 바뀜
             // + 위치에 따라 header 내부 img src 값이 바뀜
-        } else if (st >= storyCardWrap.getBoundingClientRect().top + window.scrollY && st <= brandSection.offsetTop) {
+        } else if (st >= storyCardWrap.getBoundingClientRect().top + window.scrollY && st < brandSection.offsetTop) {
             const menuItems = document.querySelectorAll('.header_menu li');
             menuItems.forEach(function (item) {
                 item.classList.add('darkMode');
