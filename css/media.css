@@ -221,6 +221,7 @@
     /* work */
     .work {
         margin-top: 0;
+        /* top: -80px; */
     }
     .work_top_txt span {
         margin: 0 0 0 140px;

@@ -183,6 +183,7 @@ const setClipPath = (progress, size) => {
         ? `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`
         : `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)) round 2rem)`;
 
+
     gsap.set(mainVideo, { clipPath: clipPathValue });
 };
 
