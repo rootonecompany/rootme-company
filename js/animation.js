@@ -1,5 +1,4 @@
 // GSAP 스크롤 트리거(카드 애니메이션)
-
 document.addEventListener("DOMContentLoaded", function () {
     const storyCardWrap = document.querySelector(".story_card_wrap");
     const storyCardFrame = document.querySelector(".story_card_frame");
@@ -18,10 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
             pin: true,
             pinSpacing: true,
             scrub: true,
-            // markers: true
         },
         onComplete: function () {
-            //story story
+            // story story
             ScrollTrigger.create({
                 trigger: ".story_story_wrap",
                 start: "top 60%",
@@ -43,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 once: true,
             });
 
-            //contact
+            // contact
             ScrollTrigger.create({
                 trigger: ".contact",
                 start: "top 15%",

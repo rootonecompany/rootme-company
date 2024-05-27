@@ -376,7 +376,7 @@
         line-height: 1.2;
     }
     .footer_btm_address p:nth-child(1) {
-        margin-top: 118px;
+        margin-top: calc(118px - 12px);
         line-height: 1.4;
     }
     .footer_btm_address p:nth-child(2) {
