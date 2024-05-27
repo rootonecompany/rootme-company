@@ -22,6 +22,7 @@ span {
 .story_title_txt {
     width: 100%;
     overflow: hidden;
+    line-height: normal;
 }
 .story_txt_container .story_title_web_view {
     display: block;
@@ -41,7 +42,7 @@ span {
     font-weight: 400;
     line-height: 1.15;
     text-size-adjust: auto;
-    display: inline-block;
+    /* display: inline-block; */
     opacity: 0;
     overflow: hidden;
     line-height: normal;
@@ -62,6 +63,7 @@ span {
 }
 .story_title_txt:nth-child(3) h5 {
     animation-delay: 0.6s;
+    margin-bottom: 18px;
 }
 .story_title_txt h5 bold {
     font-weight: 900;
@@ -417,6 +419,8 @@ footer {
     padding: 15px 20px;
     cursor: pointer;
     margin: 135px 0 40px 0;
+    display: flex;
+    align-items: flex-end;
 }
 .footer_dropdown_btn img {
     width: 12px;
