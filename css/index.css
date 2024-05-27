@@ -472,6 +472,17 @@ footer {
     font-weight: 700;
     text-align: right;
 }
+.footer_baum_logo_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer_baum_logo_wrap img {
+    width: 100px;
+    height: 36px;
+    flex-shrink: 0;
+    margin-bottom: 36px;
+}
 .footer_btm_address > p {
     line-height: 1.3;
 }
