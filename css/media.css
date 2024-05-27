@@ -105,9 +105,13 @@
         display: block;
         position: absolute;
         bottom: 115px;
-        font-size: 1rem;
     }
-
+    .header_menu li span {
+        text-transform: capitalize;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 2;
+    }
     .header_menu li a {
         font-size: 2.6rem;
         padding: 0;
@@ -119,6 +123,7 @@
     }
     .header_menu li:nth-child(6):hover {
         text-decoration: none;
+        color: var(--color-white);
     }
 
     /* test */

@@ -202,15 +202,15 @@ span {
     animation-delay: 0.4s;
     padding-bottom: 40px;
 }
-.story_story_txt:nth-child(4) p {
+.story_story_txt:nth-child(3) p {
     animation-delay: 0.6s;
 }
-.story_story_txt:nth-child(5) p {
+.story_story_txt:nth-child(4) p {
     animation-delay: 0.8s;
-    margin-bottom: 25px;
 }
-.story_story_txt:nth-child(6) p {
+.story_story_txt:nth-child(5) p {
     animation-delay: 1s;
+    margin-bottom: 25px;
 }
 .story_scroll_icon {
     display: flex;
