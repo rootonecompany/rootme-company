@@ -456,7 +456,7 @@
     }
     /* brand */
     .brand_title_txt span {
-        padding-top: 180px;
+        padding-top: 218px;
     }
     .brand_header span:nth-child(2) {
         padding-right: 70px;
@@ -738,7 +738,7 @@
         font-size: 3rem;
     }
     .brand_title_txt span {
-        padding-top: 160px;
+        padding-top: 176px;
     }
     .brand_title_txt:nth-child(2) h5 {
         padding-top: 18px;
@@ -788,6 +788,10 @@
     }
     .footer_baum_logo_wrap {
         margin-bottom: 30px;
+    }
+    .footer_baum_logo_wrap img {
+        width: 70px;
+        height: 25px;
     }
     .footer_btm_address p:nth-child(1) {
         margin-top: 72px;
