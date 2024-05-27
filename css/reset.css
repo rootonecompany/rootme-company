@@ -160,7 +160,8 @@ table {
     border-spacing: 0;
 }
 input::placeholder,
-textarea::placeholder {
+textarea::placeholder,
+button {
     font-family: "NanumSquareNeo";
 }
 img {
