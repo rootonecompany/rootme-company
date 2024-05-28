@@ -206,7 +206,7 @@ const tl = gsap.timeline({
                 setClipPath(self.progress, "48rem");
             } else if (window.innerWidth >= 360) {
                 setClipPath(self.progress, "34rem");
-            } else {
+            } else if (window.innerWidth <= 360) {
                 setClipPath(self.progress, "26rem");
             }
         },
@@ -333,25 +333,25 @@ ScrollTrigger.create({
     trigger: ".about",
     start: "top 50%",
     onEnter: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.add("SlideUp")),
-    onLeave: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.remove("SlideUp")),
-    onEnterBack: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.add("SlideUp")),
-    onLeaveBack: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.remove("SlideUp"))
+    // onLeave: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.remove("SlideUp")),
+    // onEnterBack: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.add("SlideUp")),
+    // onLeaveBack: () => gsap.utils.toArray(".Slide").forEach((elem) => elem.classList.remove("SlideUp"))
 });
 ScrollTrigger.create({
     trigger: ".about",
     start: "top -450",
     onEnter: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.add("SlideUp")),
-    onLeave: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.remove("SlideUp")),
-    onEnterBack: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.add("SlideUp")),
-    onLeaveBack: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.remove("SlideUp")),
+    // onLeave: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.remove("SlideUp")),
+    // onEnterBack: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.add("SlideUp")),
+    // onLeaveBack: () => gsap.utils.toArray(".Slide2").forEach((elem) => elem.classList.remove("SlideUp")),
 });
 ScrollTrigger.create({
     trigger: ".about",
     start: "top -1500",
     onEnter: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.add("SlideUp")),
-    onLeave: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.remove("SlideUp")),
-    onEnterBack: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.add("SlideUp")),
-    onLeaveBack: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.remove("SlideUp")),
+    // onLeave: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.remove("SlideUp")),
+    // onEnterBack: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.add("SlideUp")),
+    // onLeaveBack: () => gsap.utils.toArray(".Slide3").forEach((elem) => elem.classList.remove("SlideUp")),
 });
 
 // story card
