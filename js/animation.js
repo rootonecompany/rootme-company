@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             pin: true,
             pinSpacing: true,
             scrub: true,
-            markers: true,
+            // markers: true,
         },
         onComplete: function () {
             // story story
