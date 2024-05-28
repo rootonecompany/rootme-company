@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(storyCardFrame, {
-        xPercent: -0.5 * storyCard.length,
+        xPercent: -20 * (storyCard.length - 1),
         x: () => -100 * (storyCard.length - 0.2),
         ease: "none",
         scrollTrigger: {
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             pin: true,
             pinSpacing: true,
             scrub: true,
+            markers: true,
         },
         onComplete: function () {
             // story story
