@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const isScrolledPastTrigger = st > mainVideo.offsetTop + triggerOffset;
         const isMenuActive = menuBar.classList.contains("active");
 
+        console.dir(video)
         // 스크롤 이동에 따른 헤더 나타남
         if (!isMenuActive) {
             if (!isHeaderHidden && st > lastScrollTop && isScrolledPastTrigger) {
@@ -181,7 +182,7 @@ const setClipPath = (progress, size) => {
     ScrollTrigger.saveStyles(".main_video");
     const clipPathValue = progress === 1
         ? `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)))`
-        : `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)) round 2rem)`;
+        : `inset(0 calc(${1 - progress} * ((100% - ${size}) / 2)) round ${2 - (progress * 2)}rem )`;
 
 
     gsap.set(mainVideo, { clipPath: clipPathValue });
