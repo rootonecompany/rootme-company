@@ -2,15 +2,15 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // scroll
-const lenis = new Lenis();
+// const lenis = new Lenis();
 
-lenis.on("scroll", ScrollTrigger.update);
+// lenis.on("scroll", ScrollTrigger.update);
 
-gsap.ticker.add((time) => {
-    lenis.raf(time * 700);
-});
+// gsap.ticker.add((time) => {
+//     lenis.raf(time * 700);
+// });
 
-gsap.ticker.lagSmoothing(0);
+// gsap.ticker.lagSmoothing(0);
 
 //header
 document.addEventListener("DOMContentLoaded", function () {
