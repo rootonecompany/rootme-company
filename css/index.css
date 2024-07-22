@@ -441,7 +441,7 @@ footer {
     border: 1px solid #cfcfcf;
     background: var(--color-white);
     border-radius: 10px;
-    margin-top: -222px;
+    margin-top: -265px;
     overflow: hidden;
     width: 100%;
 }
@@ -452,7 +452,7 @@ footer {
     padding: 14px 25px;
     text-align: center;
 }
-.footer_dropdown_content a:nth-child(3) {
+.footer_dropdown_content a:last-child {
     border-bottom: none;
 }
 .footer_dropdown_btn:focus .footer_dropdown_content {
