@@ -78,7 +78,6 @@ span {
     align-items: center;
     margin-top: 42px;
     overflow: hidden;
-
     width: 100%;
 }
 .story_sticky {
@@ -88,7 +87,6 @@ span {
     justify-content: center;
     padding-left: 232px;
     overflow: hidden;
-
     position: sticky;
     top: 0;
     left: 0;
@@ -99,11 +97,12 @@ span {
     align-items: center;
     gap: 32px;
     white-space: nowrap;
-
     height: 100%;
 }
 .story_card {
     background: var(--color-white);
+
+    flex: 0 0 calc(25% - 32px);
 }
 .story_card:nth-child(even) {
     background: var(--color-black);
