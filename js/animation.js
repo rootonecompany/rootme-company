@@ -1,35 +1,59 @@
-// GSAP 스크롤 트리거(카드 애니메이션)
+// GSAP 스크롤 트리거 (카드 애니메이션)
 document.addEventListener("DOMContentLoaded", function () {
     const storyCardWrap = document.querySelector(".story_card_wrap");
     const storyCardFrame = document.querySelector(".story_card_frame");
-    const storyCard = document.querySelectorAll(".story_card");
 
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(storyCardFrame, {
-        xPercent: -20 * (storyCard.length - 1),
-        x: () => -100 * (storyCard.length - 0.2),
+        x: function () {
+            const screenWidth = document.documentElement.clientWidth;
+            const frameWidth = storyCardFrame.scrollWidth;
+            const visibleWidth = screenWidth * 0.8;
+            return -(frameWidth - visibleWidth) + "px";
+        },
         ease: "none",
         scrollTrigger: {
             trigger: storyCardWrap,
-            start: "top top",
-            end: () => "+=" + storyCardFrame.offsetWidth,
-            pin: true,
-            pinSpacing: true,
+            start: "center center",
+            end: function () {
+                const screenWidth = document.documentElement.clientWidth;
+                const frameWidth = storyCardFrame.scrollWidth;
+                const visibleWidth = screenWidth * 0.8;
+                return "+=" + (frameWidth - visibleWidth) + "px";
+            },
+            pin: storyCardWrap,
             scrub: true,
-            // markers: true,
         },
+
         onComplete: function () {
             // story story
             ScrollTrigger.create({
                 trigger: ".story_story_wrap",
                 start: "top 60%",
-                onEnter: () =>
+                onEnter: () => {
                     gsap.utils
                         .toArray(".StorySlide")
-                        .forEach((elem) => elem.classList.add("SlideUp")),
+                        .forEach((elem) => elem.classList.add("SlideUp"));
+                },
                 once: true,
             });
+
+            gsap.fromTo(
+                ".story_scroll_down",
+                { opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.05,
+                    ease: "power1.out",
+                    scrollTrigger: {
+                        trigger: ".story_story_wrap",
+                        start: "top 70%",
+                    },
+                }
+            );
 
             // brand
             ScrollTrigger.create({
@@ -68,22 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         start: "top 80%",
                         end: "bottom top",
                         toggleActions: "play none none none",
-                    },
-                }
-            );
-
-            gsap.fromTo(
-                ".story_scroll_down",
-                { opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    stagger: 0.05,
-                    ease: "power1.out",
-                    scrollTrigger: {
-                        trigger: ".story_story_wrap",
-                        start: "top 70%",
                     },
                 }
             );

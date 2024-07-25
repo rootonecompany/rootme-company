@@ -93,7 +93,7 @@
     }
     /* contact */
     .contact_container span {
-        margin-left: calc(300px - 80px);
+        margin-left: calc(200px - 80px);
     }
     .contact_title_txt h5,
     .contact_title_txt h5 bold {
@@ -249,7 +249,7 @@
         font-size: 4.2rem;
     }
     .story_card_wrap {
-        height: 100vh;
+        /* height: 100vh; */
     }
     .story_sticky {
         padding-left: 120px;
@@ -366,7 +366,7 @@
     .footer_dropdown_content {
         position: absolute;
         z-index: 2;
-        margin-top: -230px;
+        margin-top: -265px;
     }
     .footer_btm {
         flex-direction: column;
@@ -591,7 +591,7 @@
     .footer_dropdown_content {
         position: absolute;
         z-index: 1;
-        margin-top: -230px;
+        margin-top: -265px;
     }
     .footer_btm {
         flex-direction: column;
@@ -696,7 +696,7 @@
         font-size: 1rem;
     }
     .story_card_wrap {
-        height: 100vh;
+        /* height: 100vh; */
     }
     .story_card_inner {
         margin: 26px;
@@ -784,7 +784,7 @@
     .footer_dropdown_content {
         position: absolute;
         z-index: 1;
-        margin-top: -230px;
+        margin-top: -265px;
     }
     .footer_baum_logo_wrap {
         margin-bottom: 30px;

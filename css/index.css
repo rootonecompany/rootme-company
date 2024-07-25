@@ -45,7 +45,6 @@ span {
     font-weight: 400;
     line-height: 1.15;
     text-size-adjust: auto;
-    /* display: inline-block; */
     opacity: 0;
     overflow: hidden;
     line-height: normal;
@@ -78,19 +77,30 @@ span {
     display: flex;
     align-items: center;
     margin-top: 42px;
+    overflow: hidden;
+
+    width: 100%;
 }
 .story_sticky {
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-left: 232px;
     overflow: hidden;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 .story_card_frame {
     display: flex;
     align-items: center;
     gap: 32px;
     white-space: nowrap;
+
+    height: 100%;
 }
 .story_card {
     background: var(--color-white);
@@ -223,6 +233,12 @@ span {
     justify-content: center;
     position: relative;
     height: 100px;
+    opacity: 0;
+    animation: scrollUpTxt 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.8s;
+}
+.story_scroll_icon.animation-visible {
+    opacity: 1;
 }
 .story_scroll_icon span {
     font-size: 1.6rem;
@@ -231,13 +247,14 @@ span {
     text-transform: capitalize;
     font-style: normal;
 }
-.story_scroll_img {
+.story_scroll_icon img {
     position: absolute;
     width: 38px;
     height: 38px;
     top: 20px;
     left: calc(50% + 35px);
     margin: 35px;
+    animation: bounce 1.5s infinite ease-in-out;
 }
 
 /* brand */
@@ -398,6 +415,9 @@ span {
     margin-top: 32px;
     animation-delay: 0.8s;
 }
+.ContactSlide a {
+    text-decoration: none;
+}
 
 /* footer */
 footer {
@@ -494,4 +514,7 @@ footer {
 }
 .footer_btm_address p:nth-child(2) {
     margin-top: 16px;
+}
+.footer_btm_address a {
+    text-decoration: none;
 }
