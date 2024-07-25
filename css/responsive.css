@@ -504,6 +504,10 @@
     .story_story_txt h5 {
         font-size: 4.3rem;
     }
+    .story_scroll_icon img {
+        width: 30px;
+        height: 30px;
+    }
     .brand_title_txt > span {
         font-size: 2rem;
     }
