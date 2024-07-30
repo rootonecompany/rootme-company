@@ -67,11 +67,9 @@ myDropDownBtn.addEventListener("click", (e) => {
 });
 
 // card animation error test
-let ticking = false;
-
-const isMobile = () => window.matchMedia("(max-width: 1200px)").matches;
-
-ScrollTrigger.normalizeScroll({ allowNestedScroll: true });
+// let ticking = false;
+// const isMobile = () => window.matchMedia("(max-width: 1200px)").matches;
+// ScrollTrigger.normalizeScroll({ allowNestedScroll: true });
 
 gsap.utils.toArray(".StorySlide").forEach((card, index) => {
     gsap.set(card, { opacity: 0, y: 100 });
