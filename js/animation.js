@@ -73,34 +73,40 @@ const isMobile = () => window.matchMedia("(max-width: 1200px)").matches;
 
 ScrollTrigger.normalizeScroll({ allowNestedScroll: true });
 
-// scroll trigger
-ScrollTrigger.create({
-    trigger: ".story_story_wrap",
-    start: "top 60%",
-    onEnter: () =>
-        gsap.utils.toArray(".StorySlide").forEach((elem) => elem.classList.add("SlideUp")),
-    once: true,
+gsap.utils.toArray(".StorySlide").forEach((card, index) => {
+    gsap.set(card, { opacity: 0, y: 100 });
+
+    ScrollTrigger.create({
+        trigger: card,
+        start: "top 80%",
+        end: "bottom 20%",
+        ease: "none",
+        onEnter: () => {
+            gsap.fromTo(
+                card,
+                { opacity: 0, y: 100 },
+                {
+                    opacity: 1,
+                    y: 0,
+                }
+            );
+        },
+    });
 });
 
-gsap.fromTo(
-    ".story_scroll_down",
-    { opacity: 0 },
-    {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.05,
-        ease: "power1.out",
-        scrollTrigger: {
-            trigger: ".story_story_wrap",
-            start: "top 70%",
-        },
-    }
-);
+ScrollTrigger.create({
+    trigger: ".story_scroll_icon",
+    start: "top 65%",
+    end: "bottom 10%",
+    ease: "none",
+    onEnter: () => {
+        gsap.fromTo(".story_scroll_icon", { opacity: 0 }, { opacity: 1, delay: 0.2 });
+    },
+});
 
 ScrollTrigger.create({
     trigger: ".brand",
-    start: "top 80%",
+    start: "top 140%",
     onEnter: () =>
         gsap.utils.toArray(".BrandSlide").forEach((elem) => elem.classList.add("SlideUp")),
     once: true,

@@ -49,12 +49,3 @@
         opacity: 1;
     }
 }
-
-@keyframes fadeInIcon {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
