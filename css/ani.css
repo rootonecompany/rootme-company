@@ -17,10 +17,6 @@
 }
 
 /* bounce 애니메이션 */
-.story_scroll_icon img {
-    animation: bounce 1.5s infinite ease-in-out;
-}
-
 @keyframes bounce {
     0% {
         top: 35px;
@@ -50,6 +46,15 @@
     }
     100% {
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInIcon {
+    from {
+        opacity: 0;
+    }
+    to {
         opacity: 1;
     }
 }

@@ -1,102 +1,49 @@
 // GSAP 스크롤 트리거 (카드 애니메이션)
-document.addEventListener("DOMContentLoaded", function () {
-    const storyCardWrap = document.querySelector(".story_card_wrap");
-    const storyCardFrame = document.querySelector(".story_card_frame");
+const storyCardWrap = document.querySelector(".story_card_wrap");
+const storySticky = document.querySelector(".story_sticky");
+const storyCardFrame = document.querySelector(".story_card_frame");
+const storyCard = document.querySelectorAll(".story_card");
 
-    gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(storyCardFrame, {
-        x: function () {
-            const screenWidth = document.documentElement.clientWidth;
-            const frameWidth = storyCardFrame.scrollWidth;
-            const visibleWidth = screenWidth * 0.8;
-            return -(frameWidth - visibleWidth) + "px";
-        },
+let cardAnimationTrigger;
+
+const updateAnimation = () => {
+    let storyCardFrameWidth = storyCardFrame.scrollWidth;
+    let storyStickyPadding = Number(
+        window.getComputedStyle(storySticky).paddingLeft.split("px")[0]
+    );
+    let xPercentValue = -(
+        storyCardFrameWidth +
+        storyStickyPadding * 2 -
+        document.documentElement.clientWidth
+    );
+
+    if (cardAnimationTrigger) {
+        cardAnimationTrigger.scrollTrigger.kill();
+    }
+
+    cardAnimationTrigger = gsap.to(storyCardFrame, {
+        x: xPercentValue,
         ease: "none",
         scrollTrigger: {
             trigger: storyCardWrap,
-            start: "center center",
-            end: function () {
-                const screenWidth = document.documentElement.clientWidth;
-                const frameWidth = storyCardFrame.scrollWidth;
-                const visibleWidth = screenWidth * 0.8;
-                return "+=" + (frameWidth - visibleWidth) + "px";
-            },
-            pin: storyCardWrap,
+            start: "top top",
+            end: () => "+=" + storyCardFrame.offsetWidth,
+            pin: true,
+            pinSpacing: true,
             scrub: true,
-        },
-
-        onComplete: function () {
-            // story story
-            ScrollTrigger.create({
-                trigger: ".story_story_wrap",
-                start: "top 60%",
-                onEnter: () => {
-                    gsap.utils
-                        .toArray(".StorySlide")
-                        .forEach((elem) => elem.classList.add("SlideUp"));
-                },
-                once: true,
-            });
-
-            gsap.fromTo(
-                ".story_scroll_down",
-                { opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    stagger: 0.05,
-                    ease: "power1.out",
-                    scrollTrigger: {
-                        trigger: ".story_story_wrap",
-                        start: "top 70%",
-                    },
-                }
-            );
-
-            // brand
-            ScrollTrigger.create({
-                trigger: ".brand",
-                start: "top 80%",
-                onEnter: () =>
-                    gsap.utils
-                        .toArray(".BrandSlide")
-                        .forEach((elem) => elem.classList.add("SlideUp")),
-                once: true,
-            });
-
-            // contact
-            ScrollTrigger.create({
-                trigger: ".contact",
-                start: "top 15%",
-                onEnter: () =>
-                    gsap.utils
-                        .toArray(".ContactSlide")
-                        .forEach((elem) => elem.classList.add("SlideUp")),
-                once: true,
-            });
-
-            // brand logo 애니메이션
-            gsap.fromTo(
-                ".brand_logo_inner",
-                { y: 100, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    stagger: 0.05,
-                    ease: "power1.out",
-                    scrollTrigger: {
-                        trigger: ".brand_logo_container",
-                        start: "top 80%",
-                        end: "bottom top",
-                        toggleActions: "play none none none",
-                    },
-                }
-            );
+            markers: false,
         },
     });
+
+    ScrollTrigger.refresh();
+};
+
+updateAnimation();
+
+window.addEventListener("resize", () => {
+    updateAnimation();
 });
 
 // 드롭다운 메뉴
@@ -106,15 +53,80 @@ const arrowImg = myDropDownBtn.querySelector("img");
 
 window.addEventListener("click", () => {
     myDropdownContent.classList.remove("show");
-    arrowImg.style.transform = "translateY(-50%) rotate(0deg)";
+    arrowImg.style.transform = "rotate(0deg)";
 });
 
 myDropDownBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     const isVisible = myDropdownContent.classList.toggle("show");
     if (isVisible) {
-        arrowImg.style.transform = "translateY(-50%) rotate(-180deg)";
+        arrowImg.style.transform = "rotate(-180deg)";
     } else {
-        arrowImg.style.transform = "translateY(-50%) rotate(0deg)";
+        arrowImg.style.transform = "rotate(0deg)";
     }
 });
+
+// card animation error test
+let ticking = false;
+
+const isMobile = () => window.matchMedia("(max-width: 1200px)").matches;
+
+ScrollTrigger.normalizeScroll({ allowNestedScroll: true });
+
+ScrollTrigger.create({
+    trigger: ".story_story_wrap",
+    start: "top 60%",
+    onEnter: () =>
+        gsap.utils.toArray(".StorySlide").forEach((elem) => elem.classList.add("SlideUp")),
+    once: true,
+});
+
+gsap.fromTo(
+    ".story_scroll_down",
+    { opacity: 0 },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.05,
+        ease: "power1.out",
+        scrollTrigger: {
+            trigger: ".story_story_wrap",
+            start: "top 70%",
+        },
+    }
+);
+
+ScrollTrigger.create({
+    trigger: ".brand",
+    start: "top 80%",
+    onEnter: () =>
+        gsap.utils.toArray(".BrandSlide").forEach((elem) => elem.classList.add("SlideUp")),
+    once: true,
+});
+
+ScrollTrigger.create({
+    trigger: ".contact",
+    start: "top 15%",
+    onEnter: () =>
+        gsap.utils.toArray(".ContactSlide").forEach((elem) => elem.classList.add("SlideUp")),
+    once: true,
+});
+
+gsap.fromTo(
+    ".brand_logo_inner",
+    { y: 100, opacity: 0 },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.05,
+        ease: "power1.out",
+        scrollTrigger: {
+            trigger: ".brand_logo_container",
+            start: "top 80%",
+            end: "bottom top",
+            toggleActions: "play none none none",
+        },
+    }
+);

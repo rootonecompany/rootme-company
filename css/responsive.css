@@ -36,6 +36,9 @@
         grid-gap: 2rem;
     }
     /* contact */
+    .container_imgBox span {
+        margin-left: calc(340px - 180px);
+    }
     .contact_img {
         height: 460px;
     }
@@ -93,7 +96,7 @@
     }
     /* contact */
     .contact_container span {
-        margin-left: calc(200px - 80px);
+        margin-left: calc(300px - 180px);
     }
     .contact_title_txt h5,
     .contact_title_txt h5 bold {
@@ -249,7 +252,7 @@
         font-size: 4.2rem;
     }
     .story_card_wrap {
-        /* height: 100vh; */
+        height: 100vh;
     }
     .story_sticky {
         padding-left: 120px;
@@ -322,6 +325,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
     }
+
     /* contact */
     .contact_container {
         display: flex;
@@ -359,8 +363,6 @@
         margin: 145px 0 40px 0;
     }
     .footer_dropdown_btn img {
-        width: 12px;
-        height: 6px;
         margin-left: 12px;
     }
     .footer_dropdown_content {
@@ -537,7 +539,7 @@
     }
     .brand_logo_wrap {
         padding-top: 32px;
-        padding-bottom: clac(180px - 121px);
+        padding-bottom: calc(180px - 121px);
     }
     .brand_logo_container {
         grid-gap: 1.6rem;
@@ -584,8 +586,6 @@
         margin: 200px 0 40px 0;
     }
     .footer_dropdown_btn img {
-        width: 12px;
-        height: 6px;
         margin-left: 12px;
     }
     .footer_dropdown_content {
@@ -696,7 +696,7 @@
         font-size: 1rem;
     }
     .story_card_wrap {
-        /* height: 100vh; */
+        height: 100vh;
     }
     .story_card_inner {
         margin: 26px;
@@ -715,7 +715,6 @@
         margin: 20px auto 43px auto;
     }
     .story_story_wrap {
-        align-items: center;
         justify-content: flex-start;
     }
     .story_story_txt h5 {
@@ -749,6 +748,7 @@
     .brand_logo_container {
         grid-gap: 0.8rem;
     }
+
     /* contact */
     .contact_container {
         display: flex;
@@ -777,8 +777,6 @@
         margin-top: -68px;
     }
     .footer_dropdown_btn img {
-        width: 12px;
-        height: 6px;
         margin-left: 12px;
     }
     .footer_dropdown_content {
