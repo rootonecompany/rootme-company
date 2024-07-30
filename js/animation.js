@@ -73,6 +73,7 @@ const isMobile = () => window.matchMedia("(max-width: 1200px)").matches;
 
 ScrollTrigger.normalizeScroll({ allowNestedScroll: true });
 
+// scroll trigger
 ScrollTrigger.create({
     trigger: ".story_story_wrap",
     start: "top 60%",
